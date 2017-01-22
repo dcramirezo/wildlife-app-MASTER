@@ -79,7 +79,21 @@ $('#arrow-up').click(function(){
 });
 
 
+ // -------------------------------------
 
+function liveDead(imageID){
+    $('#WS').hide();
+    $('.rdo').hide();
+    $('.land').hide();
+    $('.sea').hide();
+    $('.sky').hide();
+    $('.river').hide();
+    $('#ML').hide();
+    
+    $('#liveDead').show();
+
+    
+}
 
 
 

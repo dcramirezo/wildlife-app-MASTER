@@ -8,7 +8,7 @@
         <!-- Utility Bar -->    
         <?php include('/includes/utilityBar.php'); ?> 
     </div>
-    <div class="WS row">
+    <div class="WS row" id="WS">
         <br>
         <b> What species is the animal?</b>
 
@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col s4 m4 l4" id="r1c1">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/kangaroo.jpg">
+                    <img class="responsive-img" id="kangaroo" src="img/wildlife/land/kangaroo.jpg" onclick="liveDead(this.id)">
                     <br>
                     <p>Kangaroo</p>
                 </div>
@@ -486,7 +486,7 @@
 <!-- RRRRRRRRRRRRRRRRR End of River RRRRRRRRRRRRRRRRRR -->    
     
     <br>
-    <div class="WS">
+    <div class="WS" id="ML">
         <p><b><span id="MoreLess">More</span></b></p>
         <img class="responsive-img" src="img/arrow-down.png" id="arrow-down" >
         <img class="responsive-img" src="img/arrow-up.png" id="arrow-up" >
@@ -497,7 +497,9 @@
         <input type="text" id="taxonID" style="text-align:center;">
         <h5><strong>Common Name:</strong></h5><br>
     </div-->
-    
+  
+    <!-- here the liveDead page is included -->
+    <?php include('includes/liveDead.php'); ?>
     
 </div>
 

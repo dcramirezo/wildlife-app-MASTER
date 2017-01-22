@@ -22,27 +22,26 @@ p{
     height: 50px;
 }
 .rdo{ margin-top: 10px;}
-.sea, .sky, .river, .toggleDiv{ display: none;}
+.sea, .sky, .river, .toggleDiv, #liveDead{ display: none;}
 
-.WS{
+#isAlive, .WS{
+    padding: 0px;
+    margin: 0px;
     background-color: #00b7bd;
 }
-
+.buttons{
+    width: 200px;
+    font-size: 20px;
+}
+#yes{    //background-color: yellow; }
+#no{    background-color: #201647;; }
+#donKnow{    background-color: antiquewhite; }
+#FAid{    background-color: darkred; }
 #arrow-up{
     display: none;
 }
 
-#r1c1{
-    //padding-left: 20px;
-    //float: right;
-}
-#r1c2{
-    //float: none;
-}
-#r1c3{
-    //float: left;
-    //padding-right: 20px;
-}
+
 .img_caption_div{
     text-align: center;
 }

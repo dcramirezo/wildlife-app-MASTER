@@ -17,9 +17,6 @@ $(document).ready(function() {
 }); // End of document.ready func
 */
 
-
-
-$(function(){
     
     $( "#srch" ).autocomplete({
       source: function( request, response ) {
@@ -27,7 +24,7 @@ $(function(){
         valor = $( "#srch" ).val();
         console.log(valor);
         $.ajax( {
-          url: "https://vbaspecies.herokuapp.com/species/search?q=" + valor,
+          url: "http://vbaspecies.herokuapp.com/species/search?q=" + valor,
           contentType: "application/json; charset=utf-8",
           dataType: "json",
           success: function( data ) {
@@ -45,7 +42,9 @@ $(function(){
             console.log("Error getting Species Information");
           }
         });
-      },
+      }
+        /*
+        ,
       minLength: 1,
       select: function( event, ui ) {
           console.log(ui.item.value);
@@ -88,6 +87,5 @@ $(function(){
             });
          });
       }
+       */ 
     });
-    
-});
