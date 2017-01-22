@@ -1,9 +1,6 @@
 <div class="row" id="liveDead">
-    <div id="isAlive">
-        <p><h4>Is animal alive?</h4></p>
-        <div>insert img here</div>
-    </div>
-    <br>
+    <?php include('/includes/imgTitle.php'); ?>
+
     <div id="btns">
         <div>
              <a class="waves-effect waves-light btn buttons" id="yes">Yes</a>

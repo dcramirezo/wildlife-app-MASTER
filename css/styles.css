@@ -3,7 +3,9 @@ body {
     font-weight: normal;
     font-style: normal;
     text-align: center;
+    height: 100%
 }
+#wrapper{height: 100%;}
 .row{
     text-align: center;
     margin: 0px;
@@ -13,35 +15,55 @@ p{
     margin: 0px;
     padding: 0px;    
 }
-.utilityBar{
+#utilityBar{
     background-color: #201647;
     color: white;
-    height: 70px;
+    height: 80px;
 }
 #logo{
     height: 50px;
 }
+#WhatSpe{ font-size: 20px;}
 .rdo{ margin-top: 10px;}
-.sea, .sky, .river, .toggleDiv, #liveDead{ display: none;}
+.sea, .sky, .river, .toggleDiv, #liveDead, #whatHap{ display: none;}
 
+#liveDead{//padding-top:-10px; margin-top:-24px;}
 #isAlive, .WS{
-    padding: 0px;
-    margin: 0px;
     background-color: #00b7bd;
 }
+#underUtility{ height: 120px; background-color: #00b7bd;}
 .buttons{
     width: 200px;
-    font-size: 20px;
+    height: 45px;
+    font-size: 15px;
+    padding-top: 6px;
+    border-radius: 5px;
 }
-#yes{    //background-color: yellow; }
-#no{    background-color: #201647;; }
-#donKnow{    background-color: antiquewhite; }
-#FAid{    background-color: darkred; }
+#yes{    background-color: #00b7bd; }
+#no{    background-color: #201647; }
+#donKnow{background-color: #cdd0d6; color: black;}
+#FAid{    background-color: #891111; }
 #arrow-up{
     display: none;
 }
 
-
+#ML{ height: 95px; background-color:#00b7bd; }
 .img_caption_div{
     text-align: center;
+}
+
+.theImg{ margin-top: 15px; border-radius: 50%; }
+#imgText{background-color:#00b7bd;}
+.imgQuestion{ font-size: 24px; font-weight: bold;}
+.bckNxt{
+    display: none;
+    position:absolute; 
+    top:130px; 
+    left:2px; 
+    width: 40px;
+}
+
+@font-face {
+    font-family: VIC;
+    src: url(fonts/VIC font/WEBFONT/Light/VIC-Light.woff);
 }

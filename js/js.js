@@ -40,29 +40,20 @@ $('#btn1').click(function(){
 
 $('#rdo-land').click(function(){
     $('.land').show();
-    $('.sea').hide();
-    $('.sky').hide();
-    $('.river').hide();
+    $('.sea, .sky, .river').hide();
 });
 $('#rdo-sea').click(function(){
     $('.sea').show();
-    $('.land').hide();
-    $('.sky').hide();
-    $('.river').hide();
+    $('.land, .sky, .river').hide();
 });
 $('#rdo-sky').click(function(){
     $('.sky').show();
-    $('.land').hide();
-    $('.sea').hide();
-    $('.river').hide();
+    $('.land, .sea, .river').hide();
 });
 $('#rdo-river').click(function(){
     $('.river').show();
-    $('.sea').hide();
-    $('.sky').hide();
-    $('.land').hide();
+    $('.sea, .sky, .land').hide();
 });
-
 
 $('#arrow-down').click(function(){
     $('.toggleDiv').show();
@@ -81,20 +72,28 @@ $('#arrow-up').click(function(){
 
  // -------------------------------------
 
-function liveDead(imageID){
-    $('#WS').hide();
-    $('.rdo').hide();
-    $('.land').hide();
-    $('.sea').hide();
-    $('.sky').hide();
-    $('.river').hide();
-    $('#ML').hide();
-    
-    $('#liveDead').show();
+function liveDead(src,txt){
+    $('#WS, .rdo, .land, .sea, .sky, .river, #arrow-down , #arrow-up, #MoreLess, #WhatSpe, #srch, #underUtility').hide();
 
+    $('#liveDead, .bckNxt').show();
+    
+    var srcArr = src.split('/');
+    var source = 
+        srcArr[(srcArr.length-4)] +'/'+
+        srcArr[(srcArr.length-3)] +'/'+
+        srcArr[(srcArr.length-2)] +'/'+ srcArr[(srcArr.length-1)];
+    $("#insIMG").append("<img class='theImg' src='" + source + "'>");
+    $(".imgQuestion").append(txt);
     
 }
 
+function leftArrow(){
+    $('#WS, .rdo, .land,  #arrow-down , #MoreLess, #WhatSpe, #srch, #underUtility').show();
+    $('#liveDead, .bckNxt, .toggleDiv, .sea, .sky, .river').hide();
+    $('.theImg').remove();
+    $(".imgQuestion").empty();
+    
+}
 
 
 

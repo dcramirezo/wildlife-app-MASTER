@@ -17,7 +17,7 @@ $(document).ready(function() {
 }); // End of document.ready func
 */
 
-    
+$(function(){    
     $( "#srch" ).autocomplete({
       source: function( request, response ) {
         console.log(request);
@@ -89,3 +89,5 @@ $(document).ready(function() {
       }
        */ 
     });
+
+});
