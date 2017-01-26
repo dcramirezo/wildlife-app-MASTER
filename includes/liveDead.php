@@ -15,8 +15,8 @@
         </div>
         <br>
         <div>
-            <a class="waves-effect waves-light btn buttons" id="FAid">First Aid Advice</a>
-        </div>
+            <a class="waves-effect waves-light btn buttons"  id="FAid">First Aid Advice</a>
+        </div>        
         
     </div>
 
