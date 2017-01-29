@@ -16,11 +16,58 @@ $(document).ready(function(){
     winHeight = $(document).height();
     panelPos = winWidth*.96;
     //defaul position of the panel
-    $( ".panel, .panel_keys" ).animate({
+    $('.panel').animate({
         width: panelPos,
         //height: (winHeight),
         left: -panelPos
     });
+  
+    
+    
+// ****** auto complete function **********
+    /*
+     var arr = [];    
+      $.getJSON( "https://vbaspecies.herokuapp.com/species/search?q=a" , function(sp){
+            $.each( sp, function( key, val ) {
+                arr.push(val.COMMON_NAME);
+            });
+        }).done(function() {
+            console.log('here is: ' +arr[0]);
+        })
+        .fail(function() {
+            console.log( "error" );
+        });
+
+      
+     $( function() {
+        $( "#srch" ).keyup(function(){
+          Uinput = $( "#srch" ).val();
+          if(Uinput){
+              console.log(Uinput);
+              $.getJSON( "https://vbaspecies.herokuapp.com/species/search?q=" + Uinput, function(sp){
+                        $.each( sp, function( key, val ) {
+                            //console.log( (val.COMMON_NAME) );
+                            arr.push(val.COMMON_NAME);
+                        });
+                    }).done(function() {
+                        console.log('here is: ' +arr[0]);
+                        $("srch").trigger(40);
+                    });
+
+                    $( "#srch" ).autocomplete({
+                        source: arr 
+                    }); 
+
+          } else console.log('User input is empty!');
+        }); 
+
+      }); 
+   */
+    
+// ****** End of Auto complete ************
+    
+       
+    
 });
 /*
 $(window).resize(function(){
@@ -29,29 +76,30 @@ $(window).resize(function(){
         bottom: (0)
     })
 });
-*/
+
 //____________________
-/*
-$('#btn').click(function(){
+
+//$('#btn').click(function(){
 
     $.getJSON( "https://vbaspecies.herokuapp.com/species", function( data ) {
       var items = [];
       $.each( data, function( key, val ) {
         
         items.push( "<li>" + val.COMMON_NAME+ "</li>" );
+          console.log('Name: ' + val.COMMON_NAME);
       });
 
-        
+     /*   
       $( "<ul/>", {
         "class": "my-new-list",
         html: items.join( "" )
       }).appendTo( "body" );
-    
+        
     });
     
     
-});    
-
+//});    
+/*
 $('#btn1').click(function(){
     var taxonID = $('#taxonID').val();
     var url = "https://vbaspecies.herokuapp.com/species/" + taxonID;
@@ -159,10 +207,10 @@ $('#no').click(function(){
     imgSource = "<img src='img/wildlife/land/" + Wname + ".jpg' class='theImg' >";
     $("#panelIMG").html(imgSource);
     $("#panelTxt").html(Wname);
-    $('#firstAidAdvice').html(deadTxt); 
+    $('.firstAidAdvice').html(deadTxt); 
 
-    $('#firstAidOrDead').hide();
-    $('#keys').show();
+    $('.firstAidOrDead, .keys, .centers').hide();
+    $('.shelter').show();
     $( ".panel" ).animate({left: 0}, 700);
         
 });
@@ -193,7 +241,7 @@ $('.close').click(function(){
     $( ".panel" ).animate({left: (-panelPos)}, 700);
 });
 
-$( "#FAid" ).click(function(){
+$( "#FAid, #mapFA" ).click(function(){
     noOrFAid ='FAid';
     var src = $('.theImg').attr('src');
     Wname = getWildlifeName(src);
@@ -203,8 +251,8 @@ $( "#FAid" ).click(function(){
     $("#panelTxt").html(Wname + txt);
     $('#firstAidAdvice').html(firstAidAdvice); 
 
-    $('#firstAidOrDead').show();
-    $('#keys').hide();
+    $('.firstAidOrDead').show();
+    $('.keys, .centers, .shelter').hide();
     $( ".panel" ).animate({left: 0}, 700);
 });
 $(document).keyup(function(e) {
@@ -220,12 +268,48 @@ $('#done').click(function(){
         //('#map-div').show();
     }
 });
+$('#Kdone, #Cdone, #sdone').click(function(){$( ".panel" ).animate({left: (-panelPos)}, 700);});
 
+$('#DesOrOpen').click(function(){
+    if($('#divTxt').text() =='Opening Hours'){
+        $('#divTxt').text('Description');
+        
+        $('#DesArrow').hide();
+        $('#OpenHArrow').show();
+        
+        $('#shelterDes').hide(1000);
+        $('#openingHours').show(1000);
+        $('#hr').show();
+        
+    }else if($('#divTxt').text() =='Description'){
+        $('#divTxt').text('Opening Hours');
+        
+        $('#OpenHArrow').hide();
+        $('#DesArrow').show();
+        $('#hr').hide();
+        
+        $('#shelterDes').show(1000);
+        $('#openingHours').hide(1000);
+    }
+    
+});
 
+$('.Qbtns').click(function(){
+    $('#liveDead, #whatHapn, #leftArrow, #leftArrow2, .footer').hide();
+    $('#mapDiv, #mapFooter').show();
+    
+});
 
-
-
-
+$('#mapKeys').click(function(){
+    $('.firstAidOrDead, .shelter, .centers').hide();
+    $('.keys').show();
+    $( ".panel" ).animate({left: 0}, 700);    
+});
+$('#mapList').click(function(){
+    $('.firstAidOrDead, .shelter, .keys').hide();
+    $('.centers').show();
+    $( ".panel" ).animate({left: 0}, 700);    
+});
 
 
 

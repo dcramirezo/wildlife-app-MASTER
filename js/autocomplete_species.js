@@ -1,35 +1,54 @@
-/*
+
 $(document).ready(function() {
-    var items = [];  
+    var species = [];  
 
-    $.getJSON( "https://vbaspecies.herokuapp.com/species", function( data ) {
+    $.getJSON( "species.json", function( data ) {
       $.each( data, function( key, val ) {
-         items.push(val.COMMON_NAME);
-          console.log(val.COMMON_NAME);
-      });
-
-    $( "#srch" ).autocomplete({
-      source: items
+        
+        species.push(val);
+          
+      }); 
+      
     });
-  });
-
+    
+    
+    $( "#srch" ).autocomplete({
+        source: species 
+    });    
     
 }); // End of document.ready func
-*/
+
 /*
 
-$(function(){    
-    $( "#srch" ).autocomplete({
+   
+    
+$( "#srch" ).autocomplete({
+    source: function() {
+        $.ajax({
+        url: "species.json" ,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json"
+            //,
+        //success: function( data ) {
+        //console.log(data);
+
+           // return data
+            //} 
+        });
+    }
+
+});
+
+
+
+$( "#Species" ).autocomplete({
       source: function( request, response ) {
-        console.log(request);
-        valor = $( "#srch" ).val();
-        console.log(valor);
+      	valor = $( "#Species" ).val();
         $.ajax( {
-          url: "https://vbaspecies.herokuapp.com/species/search?q=" + valor,
+          url: "http://vbaspecies.herokuapp.com/species/search?q=" + valor,
           contentType: "application/json; charset=utf-8",
           dataType: "json",
           success: function( data ) {
-            //console.log(data);
             response($.map(data, function(v,i){
              return {
                 label: v.COMMON_NAME + " - " + v.SCIENTIFIC_NAME,
@@ -40,37 +59,20 @@ $(function(){
             }));
           },
           error : function(jqXHR, textStatus, errorThrown) {
-            console.log("Error getting Species Information");
+          	console.log("Error getting Species Information");
           }
         });
-      }
-        // kkkkkkkkkk
-        ,
+      },
       minLength: 1,
       select: function( event, ui ) {
-          console.log(ui.item.value);
           var specieWord = ui.item.value.replace(/ /g,"+");
           var promise = speciesExtraInfo(specieWord);
           //execution and access to the succes event
           promise.success(function(JsonRes){
             console.log('first query pages and second jsonres');
-            //console.log(JsonRes.query.pages);
-            console.log(JsonRes);
-            //console.log(JsonRes[0].media.medium.uri);
-            console.log(JsonRes.animalSubType);
             $.each( JsonRes, function( key, value ) {
-              console.log( key);
-              console.log( value);
-              console.log( value.media);
               $.each( value.media, function( keyx, valuex ) {
-                console.log( keyx);
-                console.log( valuex);
-                console.log( valuex.medium);
-                console.log( valuex.medium.uri);
-                console.log( valuex.rightsStatement);
-
                 if (typeof valuex.medium.uri != "undefined") {
-                //  //ValidLinkSpecies = " <a target='_blank' href="+WikiLinkPattern+pages.pageid+"> Wikipedia Reference </a>";
                   ValidLinkSpecies = " <a target='_blank' href="+valuex.medium.uri+"> Museum Victoria Photo Reference </a>";
                   $("#log").prepend( "<p>" + "<b>Scientific Name: </b>" + ui.item.value.italics()  + "<br/><b>Common Name: </b>" + ui.item.label 
                     + "<br/><b>Taxon ID:</b> " + ui.item.taxon_id.fontcolor("green") + "<br/>" + ValidLinkSpecies+ "<br/>" + valuex.rightsStatement + "</p>");
@@ -78,20 +80,13 @@ $(function(){
                   } else {
                   ValidLinkSpecies = "";
                   $("#log").prepend( "<p>" + "<b>Scientific Name: </b>" + ui.item.value.italics()  + "<br/><b>Common Name: </b>" + ui.item.label 
-                    + "<br/><b>Taxon ID:</b> " + ui.item.taxon_id.fontcolor("green") + "<br/>" + "There is no Wikipedia Reference"+"</p>");
-                  //console.log(valuex.medium.uri);
+                    + "<br/><b>Taxon ID:</b> " + ui.item.taxon_id.fontcolor("green") + "<br/>" + "There is no Museum Victoria Photo Reference Reference"+"</p>");
+                  console.log(valuex.medium.uri);
                   } 
-
-
               });
-
             });
          });
       }
-       
     });
-
-});
-
- 
-*/
+    
+    */

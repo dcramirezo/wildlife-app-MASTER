@@ -1,4 +1,4 @@
-        <div id="firstAidOrDead">
+        <div class="firstAidOrDead">
             <div class="panelHeader imgText">
                 <div style="position:absolute; right: 4%; top:1.5%;">
                     <span class="close" style="font-size:22px;">X</span>

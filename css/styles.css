@@ -63,7 +63,7 @@ p { margin: 0; padding: 0; }
 #no{    background-color: #201647; }
 #donKnow{background-color: #cdd0d6; color: black;}
 #FAid{    background-color: #891111; }
-.keys, #arrow-up{    display: none; }
+.keys, .centers, .shelter, #arrow-up, #openingHours, #OpenHArrow, #shelterOpenH, #mapDiv{    display: none; }
 #moreLess{color:white; margin-top: 10px;}
 
 .img_caption_div{
@@ -117,9 +117,7 @@ p { margin: 0; padding: 0; }
 .buttons, Qbtns {
     overflow: hidden;
 }
-.buttons:hover:before {
-  opacity:1;
-}
+.buttons:hover:before {  opacity:1;}
 
 .buttons:before {
     content: '';
@@ -146,10 +144,8 @@ p { margin: 0; padding: 0; }
     overflow:scroll;
 }
 .panelContent{
-    text-align:left;
+    text-align:left; 
     margin: 10px;
-}
-.panelContent{
     text-align: justify;
     text-justify: inter-word;    
 }
@@ -160,6 +156,32 @@ p { margin: 0; padding: 0; }
 .keysHeader{background-color: lightgray;}
 .KHIMG{width: 60%;    padding-top: 15%; }
 .KCIMG{width: 60%;    padding-top: 15%; }
+.CCIMG{width: 80%;    padding-top: 25%; }
+.CCIMGI{width: 100%;    padding-top: 87%; }
+.centersHeader{ background-color: #00b7bd;}
+.shelterHeader {background-color:#dbeeed;}
+#hr{display: none;}
+
+
+
+/* Map styles */
+#mapDiv {
+    padding: 0;
+    //margin: -95px 0px 0px 0px;
+    height: 100%;
+    width: 100%;
+  }
+
+#mapFooter{
+    display: none;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    z-index: 100;
+    bottom: 1%;
+}
+.MFB{ width: 50%;}
+
 
 
 

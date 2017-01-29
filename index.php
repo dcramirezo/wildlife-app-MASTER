@@ -49,12 +49,13 @@
                 <!-- RRRRRRRRRRRRR End of River RRRRRRRRRRRR -->    
             </div>
         </div> 
-    
+        <?php include('includes/mapDiv.php'); ?>
         <!-- here the liveDead section is included -->
         <?php include('includes/liveDead.php'); ?>
         <!-- here the whatHapn section is included -->
         <?php include('includes/whatHapn.php'); ?>
         <?php include('/includes/panel.php'); ?>
+        <!--?php include('/includes/mapDiv.php'); ?-->
 
         <img class="bckNxt" src="img/left.png" id="leftArrow">
         <img class="bckNxt" src="img/left.png" id="leftArrow2">

@@ -1,4 +1,4 @@
-        <div id="keys">
+        <div class="keys">
             <div class="keysHeader">
                 <div style="position:absolute; right: 4%; top:1.5%;">
                     <span class="close" style="font-size:22px;">X</span>
@@ -160,7 +160,7 @@
             </div>              
             <div class="panelFooter">
                 <hr>
-                <div style="float:right;font-size: 20px; margin:3% 0% 5% 0%;">
+                <div style="float:right;font-size: 20px; margin:3% 5% 5% 0%;">
                     <span class='fontCol' id="Kdone"><b>DONE&#10095;</b></span>
                 </div>
             </div>

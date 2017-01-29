@@ -1,6 +1,8 @@
     <div class="panel">
         <?php include('/includes/firstAidOrDead.php') ?>
         <?php include('/includes/keys.php') ?>
+        <?php include('/includes/centers.php') ?>
+        <?php include('/includes/shelter.php') ?>
 
     </div>
 
