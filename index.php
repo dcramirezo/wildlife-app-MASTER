@@ -1,17 +1,21 @@
-<?php include('/includes/header.php'); ?>
+<?php include('includes/header.php'); ?>
 
 <div id="wrapper" class ="container-fluid" >
     <div class="headCont">
         <div class="row">  
             <!-- Utility Bar -->    
-            <?php include('/includes/utilityBar.php'); ?> 
+            <?php include('includes/utilityBar.php'); ?> 
+        </div>
+        <div>
+            <?php include('includes/menuBar.php'); ?>
         </div>
         <div class="WS row" id="underUtility">
             <br>
             <b> <span id="WhatSpe">What species is the animal?</span></b>
 
-            <input type="text" id="srch" placeholder="Search.." style="text-align:center;">
-
+            <input type="text" id="srch" placeholder="Search Species" style="text-align:center;">
+            <div class="AutoUL" id="species" ></div>
+            <span> Or select a common species bellow</span>
         </div>
         <div class="cont">
             <!-- Radio buttons -->
@@ -33,19 +37,19 @@
             <!-- Radio Buttons -- Land See Sky River -->
             <div id="lssr">
                 <!-- LLLLLLLLLLLL Land Wildlifes LLLLLLLLLLLL--> 
-                <?php include('/includes/land.php'); ?>
+                <?php include('includes/land.php'); ?>
                 <!-- LLLLLLLLLLLL End of LAND LLLLLLLLLLLLLLL-->  
 
                 <!-- SSSSSSSSSSSSS Sea WildLife SSSSSSSSSSSSS--> 
-                <?php include('/includes/sea.php'); ?>   
+                <?php include('includes/sea.php'); ?>   
                 <!-- SSSSSSSSSSSSSSS End Sea SSSSSSSSSSSSSSSS--> 
 
                 <!-- KKKKKKKKKKKKKK Sky Wildlife KKKKKKKKKKK -->
-                <?php include('/includes/sky.php'); ?>    
+                <?php include('includes/sky.php'); ?>    
                 <!-- KKKKKKKKKKKkk End of Sky KKKKKKKKKkkKKK -->
 
                 <!-- RRRRRRRRRRRRR River Wildlife RRRRRRRRRR -->
-                <?php include('/includes/river.php'); ?>     
+                <?php include('includes/river.php'); ?>     
                 <!-- RRRRRRRRRRRRR End of River RRRRRRRRRRRR -->    
             </div>
         </div> 
@@ -54,15 +58,15 @@
         <?php include('includes/liveDead.php'); ?>
         <!-- here the whatHapn section is included -->
         <?php include('includes/whatHapn.php'); ?>
-        <?php include('/includes/panel.php'); ?>
-        <!--?php include('/includes/mapDiv.php'); ?-->
+        <?php include('includes/panel.php'); ?>
+        <!--?php include('includes/mapDiv.php'); ?-->
 
-        <img class="bckNxt" src="img/left.png" id="leftArrow">
-        <img class="bckNxt" src="img/left.png" id="leftArrow2">
+        <!--img class="bckNxt" src="img/left.png" id="leftArrow">
+        <img class="bckNxt" src="img/left.png" id="leftArrow2"-->
     
     </div> <!-- End of headCont -->
     <!-- footer needs to be down here otherwise jquery stuff will not work as they all include into footer.php -->
-    <?php include('/includes/footer.php'); ?>   
+    <?php include('includes/footer.php'); ?>   
     
 </div>
 

@@ -9,7 +9,7 @@ body {
     font-style: normal;
     text-align: center;
 }
-#wrapper{height: 100%;}
+hr{ margin: 0px;}
 p { margin: 0; padding: 0; }
 
 .headCont{
@@ -21,10 +21,14 @@ p { margin: 0; padding: 0; }
   content: "";
   display: block;
 }
+.menuBar{ background-color:#797390; color:white;}
 .footer, .headCont:after {
   height: 95px; 
 }
-
+.headCont.extr:after {
+  height: 0px; 
+}
+.Wimages{ //width: 100%;}
 .footer{  
     background-color:#00b7bd;
     position: relative;
@@ -41,16 +45,15 @@ p { margin: 0; padding: 0; }
 #utilityBar{
     background-color: #201647;
     color: white;
-    height: 80px;
+    //height: 15%; //80px;
     text-align: left;
 }
-#logo{ height: 50px;}
-#WhatSpe{ font-size: 20px; color: white;}
+#logo{ height: 50%; //50px;}
+#WhatSpe{ font-size: 20px; }
 .rdo{ margin-top: 20px;}
 .sea, .sky, .river, .toggleDiv, #liveDead, #whatHapn{ display: none;}
 
-#isAlive, .WS{    background-color: #00b7bd; }
-#underUtility{ height: 120px; background-color: #00b7bd;}
+#isAlive{    background-color: #00b7bd; }
 .buttons{
     width: 200px;
     height: 45px;
@@ -70,7 +73,7 @@ p { margin: 0; padding: 0; }
     text-align: center;
 }
 
-.theImg{ margin-top: 15px; border-radius: 50%; }
+.theImg{ margin-top: 2%; border-radius: 50%; width: 30%; }
 .imgText{background-color:#00b7bd;}
 .imgQuestion{ 
     font-size: 24px;
@@ -78,13 +81,7 @@ p { margin: 0; padding: 0; }
     color:white;
     text-align: center;
 }
-.bckNxt{
-    display: none;
-    position:absolute; 
-    top:130px; 
-    left:2px; 
-    width: 40px;
-}
+.bckNxt{ display: none;    width: 60%; }
 
 .Qbtns{
     background-color:#00b7bd;
@@ -156,12 +153,11 @@ p { margin: 0; padding: 0; }
 .keysHeader{background-color: lightgray;}
 .KHIMG{width: 60%;    padding-top: 15%; }
 .KCIMG{width: 60%;    padding-top: 15%; }
-.CCIMG{width: 80%;    padding-top: 25%; }
-.CCIMGI{width: 100%;    padding-top: 87%; }
+.CCIMG{width: 80%;    margin: 5% 0% 2% 0%;; }
+.CCIMGI{width: 100%;    padding-top: 70%; }
 .centersHeader{ background-color: #00b7bd;}
-.shelterHeader {background-color:#dbeeed;}
+.headersBgCol {background-color:#dbeeed;}
 #hr{display: none;}
-
 
 
 /* Map styles */
@@ -180,7 +176,125 @@ p { margin: 0; padding: 0; }
     z-index: 100;
     bottom: 1%;
 }
-.MFB{ width: 50%;}
+.MFB{ width: 40%;}
+
+#mapModal{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: black;
+    opacity: 0.3;
+    width: 100%;
+    height: 100%;
+    z-index: 105;
+}
+#LocationBox{
+    position: absolute;
+    width: 83%;
+    height: 55%;
+    top: 20%;
+    left: 10%;
+    opacity: 1;
+    background-color: lightgray;
+    border-radius: 5px;
+    z-index: 105;
+}
+.centersRow:hover{    background-color: lightgray; }
+
+#mapDGeoQ{padding:15% 0% 5% 0%;}
+input::-webkit-input-placeholder {
+    color: black !important;
+}
+input:-moz-placeholder { /* Firefox 18- */
+    color: black !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+    color: black !important;  
+}
+
+.AutoUL{
+    background-color: white; 
+    z-index:106;
+    position:relative;
+    //list-style:none outside none;
+    //opacity: 1;
+    
+}
+
+.AutoLiH{
+    background-color: '#cfcfcf';
+}
+
+@media screen and (min-width: 400px) {
+    .Wimages{ width: 80%;}
+    .theImg{width: 28%;}
+    #mapDGeoQ{padding:10% 0% 5% 0%;}
+    #LocationBox{height: 47%;}
+    .MFB{ width: 35%;}
+    .KHIMG{width: 45%; padding-top: 5%;}
+    .KHIMG{width: 60%;}
+}
+
+@media screen and (min-width: 600px) {
+    .Wimages{ width: 60%;}
+    .theImg{width: 25%;}   
+    #mapDGeoQ{padding:9% 0% 5% 0%;}
+    #LocationBox{height: 65%;}
+    .MFB{ width: 28%;}
+    .KHIMG{width: 45%; padding-top: 5%;} 
+    .KCIMG{width: 60%}
+    .CCIMG{width: 60%;}
+    .CCIMGI{width: 70%;padding-top: 35%;}
+}
+
+@media screen and (min-width: 800px) {
+    .Wimages{ width: 50%;}
+    .theImg{width: 20%;}
+    #mapDGeoQ{padding:7% 0% 5% 0%;}
+    #LocationBox{height: 70%;}
+    .MFB{ width: 20%;}
+    .KHIMG{width: 35%;} 
+    .KCIMG{width: 50%; padding-top: 3%;}
+    .CCIMG{width: 40%;}
+    .CCIMGI{width: 55%;padding-top: 25%;}    
+}
+
+@media screen and (min-width: 1000px) {
+    .Wimages{ width: 35%;}
+    .theImg{width: 15%;}
+    #mapDGeoQ{padding:5% 0% 4% 0%;}
+    #LocationBox{height: 72%;}
+    .MFB{ width: 15%;}
+    .KHIMG{width: 20%;} 
+    .KCIMG{width: 30%; padding-top: 3%;}
+    .CCIMG{width: 30%;}
+    .CCIMGI{width: 43%;padding-top: 18%;}    
+}
+@media screen and (min-width: 1300px) {
+    .Wimages{ width: 25%;}
+    .theImg{width: 10%;}
+    #mapDGeoQ{padding:3% 0% 3% 0%;}
+    #LocationBox{height: 76%;}
+    .MFB{ width: 13%;}
+    .KHIMG{width: 15%;} 
+    .KCIMG{width: 20%; padding-top: 3%;}
+    .CCIMG{width: 24%;}
+    .CCIMGI{width: 30%;padding-top: 18%;}      
+}
+
+@media screen and (min-width: 1800px) {
+    .Wimages{ width: 8%;}
+    #mapDGeoQ{padding:2% 0% 2% 0%;}
+    #LocationBox{height: 75%;}
+    .MFB{ width: 8%;}
+    .KHIMG{width: 10%;} 
+    .KCIMG{width: 10%; padding-top: 3%;}
+    .CCIMG{width: 30%;}
+    .CCIMGI{width: 40%;padding-top: 20%;}     
+}
+
+
 
 
 

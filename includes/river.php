@@ -2,23 +2,23 @@
         <div class="row">
             <div class="col s4 m4 l4" id="r1c1">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Snake.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Fruit Bat.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Kangaroo</p>
+                    <p>Fruit Bat</p>
                 </div>
             </div>
             <div class="col s4 m4 l4" id="r1c2">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Snake.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Green Frog.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Kuala</p>
+                    <p>Green Frog</p>
                 </div>        
             </div>
             <div class="col s4 m4 l4" id="r1c3">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Snake.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Long Necked Turtle.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Passum</p>
+                    <p>Long Nacked Turtle</p>
                 </div>           
             </div>
         </div>
@@ -28,23 +28,23 @@
         <div class="row">
             <div class="col s4 m4 l4" id="r2c1">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Wombat.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Platypus.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Wombat</p>
+                    <p>Platypus</p>
                 </div>
             </div>
             <div class="col s4 m4 l4" id="r2c2">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Snake.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Water Rat.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Snake</p>
+                    <p>Water Rat</p>
                 </div>        
             </div>
             <div class="col s4 m4 l4" id="r2c3">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Echinda.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Blue Mountains Water Skink.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Echinda</p>
+                    <p>Blue Mountains Water Skink</p>
                 </div>           
             </div>       
 
@@ -57,23 +57,23 @@
              <br>
             <div class="col s4 m4 l4" id="r3c1">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Wombat.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Southern Swamp Rat.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Wombat</p>
+                    <p>Southern Swamp Rat</p>
                 </div>
             </div>
             <div class="col s4 m4 l4" id="r3c2">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Snake.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Broad Shelled Turtle.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Snake</p>
+                    <p>Broad Shelled Turtle</p>
                 </div>        
             </div>
             <div class="col s4 m4 l4" id="r3c3">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Echinda.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Murray River Turtle.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Echinda</p>
+                    <p>Murray River Turtle</p>
                 </div>           
             </div>       
 
@@ -83,23 +83,23 @@
              <br>
             <div class="col s4 m4 l4" id="r4c1">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Wombat.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Blue Billed Duck.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Wombat</p>
+                    <p>Blue Billed Duck</p>
                 </div>
             </div>
             <div class="col s4 m4 l4" id="r4c2">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Snake.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Ibis.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Snake</p>
+                    <p>Ibis</p>
                 </div>        
             </div>
             <div class="col s4 m4 l4" id="r4c3">
                 <div class="img_caption_div">
-                    <img class="responsive-img" src="img/wildlife/land/Echinda.jpg">
+                    <img class="Wimages responsive-img" src="img/wildlife/river/Black Swan.png" onclick="liveDead(this.src,'Is animal alive?')">
                     <br>
-                    <p>Echinda</p>
+                    <p>Black Swan</p>
                 </div>           
             </div>       
 

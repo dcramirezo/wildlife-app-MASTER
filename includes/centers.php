@@ -10,14 +10,14 @@
             </div>
             <div class="centersContent fontCol" id="">
                 <!-- 1st row -->
-                <div class="row">
+                <div class="row centersRow">
                     <div class="col s4 m4 l4">
                         <div >
                             <img class="CCIMG" src="img/keys/wildliferehab-aqua.png">
                         </div>
                     </div>
                     <div class="col s6 m6 l6">
-                        <div class="fontCol" style="font-size:20px; font-weight:bold; padding:5% 12% 0% 0%">
+                        <div class="fontCol" style="font-size:16px; font-weight:bold; padding:5% 12% 0% 0%">
                             <div>
                                 <span >Lorne Wildlife Shelter</span>
                             </div>
@@ -33,18 +33,18 @@
                 </div>
                 <hr>
                 <!-- 2ed row -->
-                <div class="row">
+                <div class="row centersRow">
                     <div class="col s4 m4 l4">
                         <div >
                             <img class="CCIMG" src="img/keys/vet-icon-orange.png">
                         </div>
                     </div>
                     <div class="col s6 m6 l6">
-                        <div class="fontCol" style="font-size:20px; font-weight:bold; padding:5% 12% 0% 0%">
+                        <div class="fontCol" style="font-size:16px; font-weight:bold; padding:5% 12% 0% 0%">
                             <div>
-                                <span >Lorne Wildlife Shelter</span>
+                                <span >Wye River Wildlife Rescue</span>
                             </div>
-                            <div><a href="03) 5236 1223>"><span class="fontCol;">03)5236 1223</span></a>
+                            <div><a href="03) 5236 1223>"><span class="fontCol;">03)5221 8282</span></a>
                             </div>
                         </div>
                     </div>        
@@ -56,18 +56,18 @@
                 </div> 
                 <hr>
                 <!-- 3rd row -->
-                <div class="row">
+                <div class="row centersRow">
                     <div class="col s4 m4 l4">
                         <div >
                             <img class="CCIMG" src="img/keys/wildliferehab-pink.png">
                         </div>
                     </div>
                     <div class="col s6 m6 l6">
-                        <div class="fontCol" style="font-size:20px; font-weight:bold; padding:5% 12% 0% 0%">
+                        <div class="fontCol" style="font-size:16px; font-weight:bold; padding:5% 12% 0% 0%">
                             <div>
-                                <span >Lorne Wildlife Shelter</span>
+                                <span >Wongarra Wildlife Clinic</span>
                             </div>
-                            <div><a href="03) 5236 1223>"><span class="fontCol;">03)5236 1223</span></a>
+                            <div><a href="03) 5236 1223>"><span class="fontCol;">03)5237 9297</span></a>
                             </div>
                         </div>
                     </div>        
@@ -81,7 +81,7 @@
             <div class="centersFooter">
                 <hr>
                 <div class="row">
-                    <div class="col s4 m4 l4">
+                    <!--div class="col s4 m4 l4">
                         <div >
                             <img class="CCIMG" src="img/keys/mapicon.png">
                         </div>
@@ -95,7 +95,8 @@
                             <div >
                             <img class="CCIMG" src="img/keys/keyicon.png">
                         </div>
-                    </div>
+                    </div-->
+                    
                 </div>
             </div>
         </div>

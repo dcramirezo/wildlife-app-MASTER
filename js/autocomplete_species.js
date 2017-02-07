@@ -1,4 +1,41 @@
+/*
+$( "#srch" ).autocomplete({
+    
+    source: function(){ 
+        valor = $( "#srch" ).val();
+        $.getJSON("https://vbaspecies.herokuapp.com/species/search?q=" + valor, function(data){
+            
+            $.each(data, function(index, val) {
+                console.log(index +' :'+val.COMMON_NAME); 
+            });
+                   
+            //console.log(data);
+            return data
+        });
+    }
+});
+*/
 
+
+$( "#srch" ).keyup(function(){
+    srchVal = $( "#srch" ).val();
+    if(srchVal!=null && srchVal!=undefined && srchVal!=''){
+        $( "#species" ).html('');
+        $.getJSON("https://vbaspecies.herokuapp.com/species/search?q=" + srchVal, function(data){
+            $.each(data, function(index, val) {
+                if(val.COMMON_NAME!=null && val.COMMON_NAME !=undefined && val.COMMON_NAME !=''){
+
+                    $('#species').append('<div class="AutoLi">'+val.COMMON_NAME+ " - " + val.SCIENTIFIC_NAME+'</div>');
+                    //console.log('called');
+                }
+            });
+
+        });
+    } else{$( "#species" ).html('');}
+});
+
+
+/*
 $(document).ready(function() {
     var species = [];  
 
@@ -17,29 +54,45 @@ $(document).ready(function() {
     });    
     
 }); // End of document.ready func
+*/
 
 /*
-
-   
+  //var src = $( "#srch" ).val(); 
     
 $( "#srch" ).autocomplete({
-    source: function() {
+    
+    source: function(request, response) {
         $.ajax({
         url: "species.json" ,
+        //url: "http://vbaspecies.herokuapp.com/species/search?q=" + src,
+            
         contentType: "application/json; charset=utf-8",
-        dataType: "json"
-            //,
-        //success: function( data ) {
-        //console.log(data);
+        dataType: "json",
+            
+        success: function( data ) {
+            console.log('working');
+            response(data);
+        } 
+        }).done(function(data) {
 
-           // return data
-            //} 
+            console.log('Done');
+            /*
+             // filter the array for the starting char
+            var matcher = new RegExp( "^" + $.ui.autocomplete.escapeRegex( data.term ), "i" );
+            response( $.grep( data, function( data ){
+          return matcher.test( data);            
+            }).splice(15) ); */
+/*
+            //response(data);
+        })
+        .fail(function(err) {
+            console.log('fail: ' +err );
         });
     }
-
 });
+*/
 
-
+/*
 
 $( "#Species" ).autocomplete({
       source: function( request, response ) {

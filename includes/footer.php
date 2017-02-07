@@ -46,6 +46,7 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript" src="js/autocomplete_species.js"></script>
+        <script type="text/javascript" src="js/dynamicCss.js"></script>
 
 
         <!-- Map js includes -->

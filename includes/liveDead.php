@@ -1,5 +1,5 @@
 <div class="row" id="liveDead">
-    <?php include('/includes/imgTitle.php'); ?>
+    <?php include('includes/imgTitle.php'); ?>
 
     <div id="btns">
         <div>

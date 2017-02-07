@@ -1,5 +1,5 @@
         <div class="shelter">
-            <div class="shelterHeader" >
+            <div class="headersBgCol" >
                 
                 <div style="position:absolute; right: 4%; top:1.5%;">
                     <span class="close" style="font-size:22px;">X</span>
@@ -7,13 +7,13 @@
                 
                 <div class="row">
                     <div class="col s6 ms ls">
-                        <div style="padding: 25% 22% 0% 0%;">
-                            <img style="width:100%; padding:0% 0% 30% 15%;" src="img/keys/wildliferehab-aqua.png">
+                        <div id="Cimage" style="padding: 25% 22% 0% 0%;">
+                            <!--img style="width:100%; padding:0% 0% 30% 15%;" src="img/keys/wildliferehab-aqua.png"-->
                         </div>
                     </div>
                     <div class="col s6 ms ls">
                         <div style="padding: 25% 22% 0% 0%;">
-                            <span class="fontCol" style="font-size:22px; font-weight:bold;">Lorne Wildlife Shelter</span>
+                            <span id="Cname" class="fontCol" style="font-size:22px; font-weight:bold;">Lorne Wildlife Shelter</span>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                 <div class="row">
                     <div class="col s12 m12 l12">
                         <div>
-                            <img style="padding:2% 0% 0% 0%; width:35%;" src="img/keys/websiteicon.png">
+                            <img style="padding:2% 0% 0% 0%; width:35%;" src="img/keys/phoneicon.png">
                         </div>
                     </div>
                 
