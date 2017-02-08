@@ -36,21 +36,21 @@
             <br>    
             <!-- Radio Buttons -- Land See Sky River -->
             <div id="lssr">
-                <!-- LLLLLLLLLLLL Land Wildlifes LLLLLLLLLLLL--> 
+                <!-- LLLLLL Land Wildlifes LLLLLLLL--> 
                 <?php include('includes/land.php'); ?>
-                <!-- LLLLLLLLLLLL End of LAND LLLLLLLLLLLLLLL-->  
+                <!-- LLLLLLL End of LAND LLLLLLLLLL-->  
 
-                <!-- SSSSSSSSSSSSS Sea WildLife SSSSSSSSSSSSS--> 
+                <!-- SSSSSSS Sea WildLife SSSSSSSSS--> 
                 <?php include('includes/sea.php'); ?>   
-                <!-- SSSSSSSSSSSSSSS End Sea SSSSSSSSSSSSSSSS--> 
+                <!-- SSSSSSSSS End Sea SSSSSSSSSSSS--> 
 
-                <!-- KKKKKKKKKKKKKK Sky Wildlife KKKKKKKKKKK -->
+                <!-- KKKKKKKKK Sky Wildlife KKKKKKKKK -->
                 <?php include('includes/sky.php'); ?>    
-                <!-- KKKKKKKKKKKkk End of Sky KKKKKKKKKkkKKK -->
+                <!-- KKKKKKKKk End of Sky KKKKKKkkKKK -->
 
-                <!-- RRRRRRRRRRRRR River Wildlife RRRRRRRRRR -->
+                <!-- RRRRRRRRR River Wildlife RRRRRRR -->
                 <?php include('includes/river.php'); ?>     
-                <!-- RRRRRRRRRRRRR End of River RRRRRRRRRRRR -->    
+                <!-- RRRRRRRR End of River RRRRRRRRRR -->    
             </div>
         </div> 
         <?php include('includes/mapDiv.php'); ?>
@@ -59,10 +59,15 @@
         <!-- here the whatHapn section is included -->
         <?php include('includes/whatHapn.php'); ?>
         <?php include('includes/panel.php'); ?>
+        <?php include('includes/warning.php'); ?>
         <!--?php include('includes/mapDiv.php'); ?-->
 
-        <!--img class="bckNxt" src="img/left.png" id="leftArrow">
-        <img class="bckNxt" src="img/left.png" id="leftArrow2"-->
+
+        <div class="downF" >
+            <p><b><span id="moreLess">More</span></b></p>
+            <img class="responsive-img" src="img/arrow-down.png" id="arrow-down" style="position:relative; top:-13px;">
+            <img class="responsive-img" src="img/arrow-up.png" id="arrow-up" >
+        </div>
     
     </div> <!-- End of headCont -->
     <!-- footer needs to be down here otherwise jquery stuff will not work as they all include into footer.php -->

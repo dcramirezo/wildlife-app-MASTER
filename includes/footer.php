@@ -1,10 +1,10 @@
     
-    <br>
+    <!--br>
     <div class="footer" id="ML">
         <p style="position:relative; top:10px"><b><span id="moreLess">More</span></b></p>
         <img class="responsive-img" src="img/arrow-down.png" id="arrow-down" style="position:relative; top:-4px;">
         <img class="responsive-img" src="img/arrow-up.png" id="arrow-up" >
-    </div> 
+    </div--> 
 
 
 

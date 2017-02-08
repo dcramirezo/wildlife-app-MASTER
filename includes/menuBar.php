@@ -3,6 +3,6 @@
         <img class="bckNxt" src="img/left.png" id="leftArrow">
     </div>
     <div class="col s10 m10 l10">
-        <span style="font-size:100%; padding-left:1%;"> Wildlife Emergencies and Incidents  </span>
+        <span style="font-size:100%; //padding-left:1%;"> Wildlife Emergencies and Incidents  </span>
     </div>
 </div>

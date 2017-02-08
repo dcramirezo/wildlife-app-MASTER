@@ -103,13 +103,19 @@ function liveDead(src,txt){
     
     if(comeFromMap==1){$('#btns').show(); comeFromMap =0; }
     
-    //var srcArr = src.split('/');
-    //var source = 
-        //srcArr[(srcArr.length-4)] +'/'+
-        //srcArr[(srcArr.length-3)] +'/'+
-        //srcArr[(srcArr.length-2)] +'/'+ srcArr[(srcArr.length-1)];
-    //$("#insIMG").append("<img class='theImg' src='" + source + "'>");
-    $(".imgQuestion").append(txt);
+    var srcArr = src.split('/');
+    var source = 
+        srcArr[(srcArr.length-4)] +'/'+
+        srcArr[(srcArr.length-3)] +'/'+
+        srcArr[(srcArr.length-2)] +'/'+ srcArr[(srcArr.length-1)];
+    $("#insIMG").append("<img class='theImg' src='" + source + "'>");
+    srcArr[(srcArr.length-1)].slice(0, -4)
+    
+    Wn = (srcArr[(srcArr.length-1)].slice(0, -4)).replace(/\%20/g, ' ');
+    
+    //console.log(srcArr[(srcArr.length-1)].slice(0, -4));
+    
+    $(".imgQuestion").append( Wn+ '<br> '+ txt);
     $('#leftArrow').show();
 }
 
@@ -271,12 +277,15 @@ $('#mapCenters').click(function(){
 });
 
 $('#mapList').click(function(){
-    $('.firstAidOrDead, .shelter, .keys, #mapDiv, .centers').hide();
+    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #mapDiv, .centers').hide();
     $('.theImg').remove(); $(".imgQuestion").empty();
     $('.cont, .land, #arrow-down, #underUtility, .footer').show();  //#WS, 
     $('body').css('overflow', 'auto');
     comeFromMap = 1;
     checkRadioBtn();
+    
+    leftArrowVisibility =0;
+    tmp ='home';
     
 });
  $('#mapModalClose').click(function(){
@@ -349,4 +358,15 @@ $('.AutoUL').on('click', '.AutoLi', function(){
     $('#srch').val($(this).text() );
     $('#species').html('');
 });
+
+$('#warnFooter').click(function(){
+    $('.warning').hide();
+});
+
+
+
+
+
+
+
 
