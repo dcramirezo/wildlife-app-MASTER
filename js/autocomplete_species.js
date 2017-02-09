@@ -17,7 +17,7 @@ $( "#srch" ).autocomplete({
 */
 
 
-$( "#srch" ).keyup(function(){
+$( "#srch" ).keyup(function(e){
     srchVal = $( "#srch" ).val();
     if(srchVal!=null && srchVal!=undefined && srchVal!=''){
         $( "#species" ).html('');
@@ -31,10 +31,19 @@ $( "#srch" ).keyup(function(){
             });
 
         });
+        if (e.keyCode == 13) {
+            autoCompFunc($( "#srch" ).val() )
+          }
     } else{$( "#species" ).html('');}
 });
-
-
+/*
+$( "#srchSubmit" ).submit(function( event ) {
+  if( $.trim($( "#srch" ).val())  && $( "#srch" ).val() !=null){
+      $('.AutoUL').click();
+  }
+    event.preventDefault();
+});
+*/
 /*
 $(document).ready(function() {
     var species = [];  

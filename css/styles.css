@@ -170,7 +170,7 @@ p { margin: 0; padding: 0; }
     z-index: 100;
     bottom: 1%;
 }
-.MFB{ width: 40%;}
+.MFB{ width: 15%;}
 
 #mapModal{
     position: absolute;
@@ -232,12 +232,11 @@ input::-moz-placeholder {  /* Firefox 19+ */
 }
 
 #warnFooter{ position: absolute; padding: 1rem;
-    bottom: 0; left: 0; right: 0; }
-#warnFooter{text-align:right;}
+    bottom: 0; left: 0; right: 0; text-align:right;}
+
 #warnHead{background-color:#00b7bd; 
-    color:white; font-size: 250%;
-    //height: 10%;}
-#warnContent{color:#00b7bd; font-size: 150%;padding:5%;
+    color:white; font-size: 230%;}
+#warnContent{color:#00b7bd; font-size: 135%;padding:5%;
 text-align: justify; }
 /* Warning box settings end */
 
@@ -260,7 +259,7 @@ text-align: justify; }
     .theImg{width: 28%;}
     #mapDGeoQ{padding:10% 0% 5% 0%;}
     #LocationBox{height: 47%;}
-    .MFB{ width: 35%;}
+    .MFB{ width: 15%;}
     .KHIMG{width: 45%; padding-top: 5%;}
     .KHIMG{width: 60%;}
 }
@@ -270,7 +269,7 @@ text-align: justify; }
     .theImg{width: 25%;}   
     #mapDGeoQ{padding:9% 0% 5% 0%;}
     #LocationBox{height: 65%;}
-    .MFB{ width: 28%;}
+    .MFB{ width: 7%;}
     .KHIMG{width: 45%; padding-top: 5%;} 
     .KCIMG{width: 60%}
     .CCIMG{width: 60%;}
@@ -282,7 +281,7 @@ text-align: justify; }
     .theImg{width: 20%;}
     #mapDGeoQ{padding:7% 0% 5% 0%;}
     #LocationBox{height: 70%;}
-    .MFB{ width: 20%;}
+    .MFB{ width: 8%;}
     .KHIMG{width: 35%;} 
     .KCIMG{width: 50%; padding-top: 3%;}
     .CCIMG{width: 40%;}
@@ -294,7 +293,7 @@ text-align: justify; }
     .theImg{width: 15%;}
     #mapDGeoQ{padding:5% 0% 4% 0%;}
     #LocationBox{height: 72%;}
-    .MFB{ width: 15%;}
+    .MFB{ width: 5%;}
     .KHIMG{width: 20%;} 
     .KCIMG{width: 30%; padding-top: 3%;}
     .CCIMG{width: 30%;}
@@ -305,7 +304,7 @@ text-align: justify; }
     .theImg{width: 10%;}
     #mapDGeoQ{padding:3% 0% 3% 0%;}
     #LocationBox{height: 76%;}
-    .MFB{ width: 13%;}
+    .MFB{ width: 3%;}
     .KHIMG{width: 15%;} 
     .KCIMG{width: 20%; padding-top: 3%;}
     .CCIMG{width: 24%;}

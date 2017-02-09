@@ -4,8 +4,10 @@ var noOrFAid; // this variable says what to do when DONE (in panel.php) is press
 var leftArrowVisibility = 0; //this var determines where this icon should be shown and what should be done based on that
 var tmp = 'home'; // possible values for this var are: home/isLive/WhatHapn/
 var LandRiverSeaSky = 'land';
+var moreLessText = 'more';
 var Wname;
 var imgSource;
+var imgQuestionOrText = 'Is animal alive?';
 var firstAidAdvice = "<p><b>Caution!</b> This animal may be dangerous.<br>Stay calm, speak softly and move slowly to avoid distress to the animal.<br>Do not approach the animal or attempt to catch it - chasing it may result in a worse injury and unnecessary stress for the animal. Secure the area and try to prevent pets or other people from approaching the injured animal.<br>Call a licenced wildlife shelter to capture the animal or call DELWP on 136 185 to be put in touch with a Wildlife Officer.<br>In the event of a traffic collision or an animal on the road, the police can also be contacted on 000 for assistance. Check the area to make sure a pouch young has not been thrown out during the collision. dddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddd dddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddd</p>";
 
 var deadTxt ="Unfortunately, at this stage, if the animal is not alive, not much can be done, other that removing the animal from dangerous locations such as the road. <br> Please remain calm, do not call the police. Make sure the scene is safe for others and move on.<br> If you would like to inform DELWP, please call this number and someone will note the location of the animal. <br> <a href='136 186'><u>136 186</u> </a>";
@@ -66,6 +68,7 @@ $('#rdo-river').click(function(){
 $('#arrow-down').click(function(){
     $('.toggleDiv, #arrow-up').show();
     $('#arrow-down').hide(); 
+    //moreLessText = 'less';
     $('#moreLess').text('Less');
     $('body, html').animate({ scrollTop: 1000 }, 1500);
     
@@ -73,7 +76,8 @@ $('#arrow-down').click(function(){
 $('#arrow-up').click(function(){
     $('.toggleDiv').hide(1500);
     $('#arrow-up').hide();
-    $('#arrow-down').show(); 
+    $('#arrow-down').show();
+    //moreLessText = 'more';
     $('#moreLess').text('More');
 });
 $('#moreLess').click(function(){
@@ -86,8 +90,7 @@ $('#moreLess').click(function(){
 
  // -------------------------------------
 
-function liveDead(src,txt){
-    
+function liveDead(src, txt){
     $('#WS, .cont, .land, .sea, .sky, .river, #arrow-down, #arrow-up, #moreLess, #underUtility').hide();
     $('#liveDead').show();
     
@@ -95,21 +98,25 @@ function liveDead(src,txt){
     
     if(tmp == 'isLive'){
         leftArrowVisibility = 1;
+        imgQuestionOrText = 'Is animal alive?';
     } else if(leftArrowVisibility == 'whatHapn'){
         leftArrowVisibility = 2;
+        imgQuestionOrText = 'What has happened?';
     } else if( leftArrowVisibility == 'map'){
         leftArrowVisibility = 3;
+        imgQuestionOrText= 'First Aid Advice';
     }
     
     if(comeFromMap==1){$('#btns').show(); comeFromMap =0; }
     
-    var srcArr = src.split('/');
+    imgSource = src;
+    var srcArr = imgSource.split('/');
     var source = 
         srcArr[(srcArr.length-4)] +'/'+
         srcArr[(srcArr.length-3)] +'/'+
         srcArr[(srcArr.length-2)] +'/'+ srcArr[(srcArr.length-1)];
-    $("#insIMG").append("<img class='theImg' src='" + source + "'>");
-    srcArr[(srcArr.length-1)].slice(0, -4)
+    //$("#insIMG").append("<img class='theImg' src='" + source + "'>");
+    
     
     Wn = (srcArr[(srcArr.length-1)].slice(0, -4)).replace(/\%20/g, ' ');
     
@@ -120,12 +127,13 @@ function liveDead(src,txt){
 }
 
 $('#leftArrow').click(function(){
-    if(leftArrowVisibility ==1){
+    if(leftArrowVisibility ==1){        
         $('#WS, .cont, .land,  #arrow-down , #moreLess, #WhatSpe, #srch, #underUtility').show();
-        $('#liveDead, .bckNxt, .toggleDiv, .sea, .sky, .river, #leftArrow').hide();
+        $('#liveDead, .toggleDiv, .sea, .sky, .river, #leftArrow').hide();
+        $('#moreLess').text('more');
         $('.theImg').remove();
         $(".imgQuestion").empty();
-
+        //liveDead(imgSource
         checkRadioBtn();
         leftArrowVisibility =0;
         tmp ='home';
@@ -151,7 +159,7 @@ $('#yes, #donKnow').click(function(){
     $('#btns, .footer, #leftArrow').hide();
     var src = $('.theImg').attr('src');
     $('.theImg').remove(); $(".imgQuestion").empty();
-    liveDead(src, 'What has happend?');
+    liveDead(imgSource, 'What has happend?');
     $('#whatHapn').show(); 
     leftArrowVisibility =2;
     tmp ='whatHapn';
@@ -160,12 +168,13 @@ $('#yes, #donKnow').click(function(){
 $('#no').click(function(){
     //noOrFAid ='no';
     var src = $('.theImg').attr('src');
+    var src = imgSource;
     Wname = getWildlifeName(src);
     
-    imgSource = "<img src='img/wildlife/" + Wname + "' class='theImg' >";
+    //imgSource = "<img src='img/wildlife/" + Wname + "' class='theImg' >";
     
     $("#panelIMG >img").remove();
-    $("#panelIMG").html(imgSource);
+    //$("#panelIMG").html(imgSource);
     $("#panelTxt").empty();
     wnArr= Wname.split('/');
     $("#panelTxt").html(wnArr[1].slice(0, -4));
@@ -180,7 +189,8 @@ $('#no').click(function(){
 function getWildlifeName(src){
 // this func returns the name of the species from it's image url
     var srcArr = src.split('/');
-    var Wn = srcArr[2] +'/'+srcArr[3]; 
+    
+    var Wn = srcArr[(srcArr.length-2)] +'/'+srcArr[(srcArr.length-1)]; 
     return  Wn   
 }
 
@@ -191,14 +201,13 @@ $('.close').click(function(){
 
 $( "#FAid, #mapFA" ).click(function(){
     //noOrFAid ='FAid';
-    var src = $('.theImg').attr('src');
+    var src = imgSource;
     Wname = getWildlifeName(src);
     wnArr = Wname.split('/');
-    imgSource = "<img src='img/wildlife/" + Wname + "' class='theImg' >";
     
     $("#panelIMG >img").remove();
     $("#panelIMG").html(imgSource);
-    var txt = " First Aid Advice.";
+    var txt = "<br> First Aid Advice.";
     $("#panelTxt").empty();
     $("#panelTxt").html(wnArr[1].slice(0, -4) + txt);
     $('#firstAidAdvice').html(firstAidAdvice); 
@@ -265,6 +274,9 @@ $('.Qbtns').click(function(){
     tmp ='map';
 });
 
+$('#listicon').click(function(){
+   
+});
 $('#mapKeys').click(function(){
     $('.firstAidOrDead, .shelter, .centers').hide();
     $('.keys').show();
@@ -277,9 +289,9 @@ $('#mapCenters').click(function(){
 });
 
 $('#mapList').click(function(){
-    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #mapDiv, .centers').hide();
+    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #mapDiv, .centers, .toggleDiv').hide();
     $('.theImg').remove(); $(".imgQuestion").empty();
-    $('.cont, .land, #arrow-down, #underUtility, .footer').show();  //#WS, 
+    $('.cont, .land, #arrow-down, #underUtility, .footer, #moreLess').show();  //#WS, 
     $('body').css('overflow', 'auto');
     comeFromMap = 1;
     checkRadioBtn();
@@ -355,12 +367,24 @@ $('.AutoUL').on('mouseout', '.AutoLi' ,function(){
     $(this).css({'backgroundColor':'#FFF'})
 });
 $('.AutoUL').on('click', '.AutoLi', function(){
-    $('#srch').val($(this).text() );
-    $('#species').html('');
+    autoCompFunc($(this).text())
 });
-
+function autoCompFunc(text){
+    $('#srch').val( text);
+    $('#species').html('');
+    CName = (text.split(' - ') );
+    //console.log(CName[0]);
+    Wname = CName[0];
+    
+    liveDead('img/wildlife/any/'+CName[0]+'.png', 'Is animal alive?');   
+}
 $('#warnFooter').click(function(){
     $('.warning').hide();
+});
+$(document).keydown(function (e) {
+  if (e.keyCode == 13) {
+    $('.warning').hide();
+  }
 });
 
 

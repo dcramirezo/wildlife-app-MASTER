@@ -7,7 +7,6 @@
         <div id="warnContent">
             <p>
                 Please before treating or attending to any wildlife that you make sure you are safe and that you are clear of any vehicles or any other obstructions that could harm you or your other passengers.
-            </p>
         </div>
         
         <div id="warnFooter">

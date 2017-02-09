@@ -9,7 +9,8 @@
 
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-
+        
+        
         <link type="text/css" rel="stylesheet" href="css/styles.css"/>
 
         <!--Let browser know website is optimized for mobile-->
@@ -22,7 +23,6 @@
   
         <!-- include for autocomplete-->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        
         
         
     </head>
