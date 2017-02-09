@@ -19,8 +19,11 @@ $(document).ready(function(){
     });
     $('#warnTitle').css({
         marginLeft: ( ($('#warnHead').width() -$('#warnTitle').width() )/2  )
-    })
-
+    });
+    $('#mapMenuModal').css({
+        top: ( $(window).height()*.10 )
+    });    
+    
     //console.log( $('#warnTitle').width()  );
     
     
@@ -50,6 +53,9 @@ $('#utilityBar').css({
     });
     $('#warnTitle').css({
         marginLeft: ( ($('#warnHead').width() -$('#warnTitle').width() )/2  )
-    });    
+    });  
+    $('#mapMenuModal').css({
+        top: ( $(window).height()*.10 )
+    });     
     
 })

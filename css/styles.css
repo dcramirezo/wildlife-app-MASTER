@@ -170,8 +170,8 @@ p { margin: 0; padding: 0; }
     z-index: 100;
     bottom: 1%;
 }
-.MFB{ width: 15%;}
-
+.MFB{ width: 15%; float:right;margin-right:1%}
+#mapKey, #mapMenu{display:none}
 #mapModal{
     position: absolute;
     top: 0%;
@@ -240,19 +240,12 @@ input::-moz-placeholder {  /* Firefox 19+ */
 text-align: justify; }
 /* Warning box settings end */
 
-.headCont{
-  min-height: 100%;
-  /* equal to footer height */
-  //margin-bottom: -95px; 
-}
-.headCont:after {
-  //content: "";
-  //display: block;
-}
-.footer, .headCont:after {
-  //height: 95px; 
-}
+.headCont{  min-height: 100%; /* equal to footer height */
+  //margin-bottom: -95px; }
+.headCont:after { //content: ""; //display: block;}
+.footer, .headCont:after { //height: 95px; }
 
+#mapMenuModal{display: none;z-index: 200; position: absolute; width: 100%; left:0;}
 
 @media screen and (min-width: 400px) {
     .Wimages{ width: 80%;}

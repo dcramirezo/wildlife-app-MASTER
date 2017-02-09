@@ -275,13 +275,18 @@ $('.Qbtns').click(function(){
 });
 
 $('#listicon').click(function(){
-   
+    $('#mapMenu').toggle(300);
+    $('#mapKey').toggle(500);
 });
-$('#mapKeys').click(function(){
+$('#mapKey').click(function(){
     $('.firstAidOrDead, .shelter, .centers').hide();
     $('.keys').show();
     $( ".panel" ).animate({left: 0}, 700);    
 });
+$('#mapMenu').click(function(){
+    $('#mapMenuModal').toggle(500);   
+});
+
 $('#mapCenters').click(function(){
     $('.firstAidOrDead, .shelter, .keys').hide();
     $('.centers').show();
