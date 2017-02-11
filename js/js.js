@@ -3,7 +3,7 @@ comeFromMap = 0; //if this variable is equal to 1, #btns should be shown otherwi
 var noOrFAid; // this variable says what to do when DONE (in panel.php) is pressed.
 var leftArrowVisibility = 0; //this var determines where this icon should be shown and what should be done based on that
 var tmp = 'home'; // possible values for this var are: home/isLive/WhatHapn/
-var LandRiverSeaSky = 'land';
+var LandRiverSeaSky = 'commonSpecies';
 var moreLessText = 'more';
 var Wname;
 var imgSource;
@@ -46,22 +46,22 @@ $(window).resize(function(){
 
 $('#rdo-land').click(function(){
     $('.land').show();
-    $('.sea, .sky, .river').hide();
+    $('.sea, .sky, .river, .commonSpecies').hide();
     LandRiverSeaSky = 'land';
 });
 $('#rdo-sea').click(function(){
     $('.sea').show();
-    $('.land, .sky, .river').hide();
+    $('.land, .sky, .river, .commonSpecies').hide();
     LandRiverSeaSky = 'sea';
 });
 $('#rdo-sky').click(function(){
     $('.sky').show();
-    $('.land, .sea, .river').hide();
+    $('.land, .sea, .river, .commonSpecies').hide();
     LandRiverSeaSky = 'sky';
 });
 $('#rdo-river').click(function(){
     $('.river').show();
-    $('.sea, .sky, .land').hide();
+    $('.sea, .sky, .land, .commonSpecies').hide();
     LandRiverSeaSky = 'river';
 });
 
@@ -127,27 +127,52 @@ function liveDead(src, txt){
 }
 
 $('#leftArrow').click(function(){
-    if(leftArrowVisibility ==1){        
-        $('#WS, .cont, .land,  #arrow-down , #moreLess, #WhatSpe, #srch, #underUtility').show();
-        $('#liveDead, .toggleDiv, .sea, .sky, .river, #leftArrow').hide();
+    if(leftArrowVisibility ==1){ 
+        
+        $('.cont, #arrow-down , #moreLess, #WhatSpe, #srch, #underUtility').show();
+        $('#liveDead, .toggleDiv, #leftArrow').hide();
+        
+        if( LandRiverSeaSky== 'commonSpecies' ){        
+            $('.commonSpeices').show();
+            $('.land,.sea,.sky,.river').hide();
+        }else if( LandRiverSeaSky== 'land' ){        
+            $('.land').show();
+            $('.commonSpecies,.sea,.sky,.river').hide();
+        }else if( LandRiverSeaSky== 'sea' ){        
+            $('.sea').show();
+            $('.commonSpecies,.land,.sky,.river').hide();
+        }else if( LandRiverSeaSky== 'sky' ){        
+            $('.sky').show();
+            $('.commonSpecies,.sea,.land,.river').hide();
+        }else if( LandRiverSeaSky== 'river' ){        
+            $('.river').show();
+            $('.commonSpecies,.sea,.sky,.land').hide();
+        }
+        
         $('#moreLess').text('more');
         $('.theImg').remove();
         $(".imgQuestion").empty();
-        //liveDead(imgSource
+        
+       // liveDead(imgSource,imgQuestionOrText);
+        
         checkRadioBtn();
         leftArrowVisibility =0;
         tmp ='home';
     } else if(leftArrowVisibility ==2){
+        console.log('leftArrow2: ' +leftArrowVisibility);
+        
         $('#btns, #leftArrow, #liveDead, .bckNxt, .footer').show();
         $('#whatHapn').hide();
         $(".imgQuestion").empty();
-        $(".imgQuestion").append('Is animal alive?');
+        liveDead(imgSource,imgQuestionOrText);
         leftArrowVisibility =1;
         tmp ='isLive';
     }else if(leftArrowVisibility ==3){
+        console.log('leftArrow3: ' +leftArrowVisibility);
+        
         $(' #mapDiv, #mapFooter').hide();
         $('#liveDead, #whatHapn, .footer').show();
-        $('body').css('overflow', 'auto');
+        //$('body').css('overflow', 'auto');
 
         leftArrowVisibility =2;
         tmp ='whatHapn';
@@ -183,7 +208,8 @@ $('#no').click(function(){
     $('.shelter, .keys, .centers').hide();
     $('.firstAidOrDead').show();
     $( ".panel" ).animate({left: 0}, 700);
-        
+     
+    setFooterHeight();
 });
 
 function getWildlifeName(src){
@@ -214,8 +240,11 @@ $( "#FAid, #mapFA" ).click(function(){
 
     $('.firstAidOrDead').show();
     $('.keys, .centers, .shelter').hide();
+    
+    setFooterHeight();
     $( ".panel" ).animate({left: 0}, 700);
 });
+
 $(document).keyup(function(e) {
      if (e.keyCode == 27) { 
          $( ".panel" ).animate({left: (-panelPos)}, 700);
@@ -257,9 +286,8 @@ $('#DesOrOpen').click(function(){
 
 $('.Qbtns').click(function(){
     $('#liveDead, #whatHapn, .footer').hide();
-    $('#mapDiv, #mapFooter').show();
-    $('body').css('overflow', 'hidden');
-    $('body, html').animate({ scrollTop: 0 });
+    $('#mapDiv, #mapFooter, #mapModal, #LocationBox').show();
+    //$('body, html').animate({ scrollTop: 0 });
     
     // set the width of the search field dynamically
     $('.searchInput').animate({
@@ -293,11 +321,28 @@ $('#mapCenters').click(function(){
     $( ".panel" ).animate({left: 0}, 700);    
 });
 
-$('#mapList').click(function(){
-    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #mapDiv, .centers, .toggleDiv').hide();
+$('#mapHome').click(function(){
+    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #mapDiv, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey').hide();
     $('.theImg').remove(); $(".imgQuestion").empty();
-    $('.cont, .land, #arrow-down, #underUtility, .footer, #moreLess').show();  //#WS, 
-    $('body').css('overflow', 'auto');
+    $('.cont, #arrow-down, #underUtility, #moreLess').show(); 
+    
+    if( LandRiverSeaSky== 'commonSpeices' ){        
+        $('.commonSpeices').show();
+        $('.river,.sea,.sky,.land').hide();
+    }else if( LandRiverSeaSky== 'land' ){        
+        $('.land').show();
+        $('.commonSpecies,.sea,.sky,.river').hide();
+    }else if( LandRiverSeaSky== 'sea' ){        
+        $('.sea').show();
+        $('.commonSpecies,.river,.sky,.land').hide();
+    }else if( LandRiverSeaSky== 'sky' ){        
+        $('.sky').show();
+        $('.commonSpecies,.sea,.river,.land').hide();
+    }else if( LandRiverSeaSky== 'river' ){        
+        $('.river').show();
+        $('.commonSpecies,.sea,.sky,.land').hide();
+    }
+    //$('body').css('overflow', 'auto');
     comeFromMap = 1;
     checkRadioBtn();
     
@@ -358,6 +403,8 @@ function checkRadioBtn(){
         $('#rdo-sky').prop("checked", true);
         $('.sky').show();
         $('.sea, .river, .land').hide();
+    }else{
+        $('#rdo-land,#rdo-sea,#rdo-sky,#rdo-river').prop("checked", false);
     }
 }
 $('#locBoxSrch').click(function(){

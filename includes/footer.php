@@ -48,6 +48,8 @@
         <script type="text/javascript" src="js/autocomplete_species.js"></script>
         <script type="text/javascript" src="js/dynamicCss.js"></script>
 
+        <!-- Parse CSV file about injured WF-->
+        <script type="text/javascript" src="js/csv.js"> </script>
 
         <!-- Map js includes -->
         <script type="text/javascript" src="js/responsive_map.js"> </script>

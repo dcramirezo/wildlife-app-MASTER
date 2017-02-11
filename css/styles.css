@@ -45,7 +45,7 @@ p { margin: 0; padding: 0; }
 #logo{ height: 50%; }
 #WhatSpe{ font-size: 20px; }
 .rdo{ margin-top: 20px;}
-.sea, .sky, .river, .toggleDiv, #liveDead, #whatHapn{ display: none;}
+.land, .sea, .sky, .river, .toggleDiv, #liveDead, #whatHapn{ display: none;}
 #whatHapn{margin-bottom: 5%;}
 
 #isAlive{    background-color: #00b7bd; }
@@ -140,6 +140,9 @@ p { margin: 0; padding: 0; }
     text-align: justify;
     text-justify: inter-word;    
 }
+#firstAidFooter{position: absolute;//margin: 6%;
+    font-size: 20px;text-align: right;bottom: 0px;
+    left: 0px;right: 0px;margin-top: 6%;}
 .WHL{ margin-right: -4px; }
 .WHR{ margin-left: -4px; }
 .fontCol{color:#00b7bd;}
@@ -210,8 +213,9 @@ input::-moz-placeholder {  /* Firefox 19+ */
 .AutoUL{
     background-color: white; 
     z-index:106;
-    position:relative;
-    //list-style:none outside none;    
+    position:absolute;
+    width: 100%;
+    margin-top: -2%;  
 }
 
 .AutoLiH{

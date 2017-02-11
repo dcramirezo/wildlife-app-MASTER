@@ -20,7 +20,7 @@
         <div class="cont">
             <!-- Radio buttons -->
             <div class="rdo row">  
-                <input type="radio" name="cat" id="rdo-land" value="Land" checked/>
+                <input type="radio" name="cat" id="rdo-land" value="Land"/>
                 <label for="rdo-land">Land</label>
 
                 <input type="radio" name="cat" id="rdo-sea" value="sea"/>
@@ -36,6 +36,11 @@
             <br>    
             <!-- Radio Buttons -- Land See Sky River -->
             <div id="lssr">
+                
+                <!-- CCCCCCC Common Species CCCCCCC--> 
+                <?php include('includes/commonSpecies.php'); ?>
+                <!-- CCCCC End Common Species CCCCCCC-->  
+                
                 <!-- LLLLLL Land Wildlifes LLLLLLLL--> 
                 <?php include('includes/land.php'); ?>
                 <!-- LLLLLLL End of LAND LLLLLLLLLL-->  

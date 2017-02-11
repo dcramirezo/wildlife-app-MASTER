@@ -22,7 +22,10 @@ $(document).ready(function(){
     });
     $('#mapMenuModal').css({
         top: ( $(window).height()*.10 )
-    });    
+    });   
+
+    
+    
     
     //console.log( $('#warnTitle').width()  );
     
@@ -56,6 +59,26 @@ $('#utilityBar').css({
     });  
     $('#mapMenuModal').css({
         top: ( $(window).height()*.10 )
-    });     
+    });
+    $('#firstAidFooter').css({
+        top: ( $('.panelContent').height() + $('.panelHeader').height() )
+    });
     
 })
+
+function setFooterHeight(){
+    if ( ($('.panelContent').height() + $('.panelHeader').height() ) >= $(window).height() ){
+        
+        console.log('FA Pressed: '+($('.panelContent').height() + $('.panelHeader').height() )  );
+        
+        $('#firstAidFooter').css({
+            top: ( ( $('.panelContent').height() + $('.panelHeader').height() ))
+        });
+    }else if(($('.panelContent').height() + $('.panelHeader').height() ) < $(window).height()){
+        
+        console.log('No Pressed: '+$(window).height());
+        $('#firstAidFooter').css({
+            top: ($('.panel').height()-$('#firstAidFooter').height()-20 )
+        });        
+    }    
+} 

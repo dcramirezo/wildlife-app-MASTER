@@ -23,10 +23,10 @@ $( "#srch" ).keyup(function(e){
         $( "#species" ).html('');
         $.getJSON("https://vbaspecies.herokuapp.com/species/search?q=" + srchVal, function(data){
             $.each(data, function(index, val) {
-                if(val.COMMON_NAME!=null && val.COMMON_NAME !=undefined && val.COMMON_NAME !=''){
+                if(val.COMMON_NAME!=null && val.COMMON_NAME !=undefined && val.COMMON_NAME !='' && val.PRIMARY_DISCIPLINE!='Flora'){
 
                     $('#species').append('<div class="AutoLi">'+val.COMMON_NAME+ " - " + val.SCIENTIFIC_NAME+'</div>');
-                    //console.log('called');
+                    //console.log('PD: '+ val.PRIMARY_DISCIPLINE);
                 }
             });
 
