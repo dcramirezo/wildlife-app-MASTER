@@ -1,3 +1,71 @@
+var map;
+var currentLocation;
+
+function initMap() {
+      
+    map = new google.maps.Map(document.getElementById('map-canvas'), {
+        center: {lat: -36.8152554, lng: 143.8},
+        zoom: 8,
+        draggable: true
+    });
+
+    //console.log();
+
+} 
+
+
+function resizeMap(){
+    google.maps.event.trigger(map,'resize');
+}
+function showPosition(position){
+    //console.log(position.coords.latitude);
+    //console.log(position.coords.longitude);   
+
+    currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+    setMarker(currentLocation);
+}
+
+function setMarker(currentLocation){
+    var marker = new google.maps.Marker({
+        position: currentLocation,
+        map: map
+    });
+}
+
+function getCoordinates(address){
+    var geocoder = new google.maps.Geocoder();
+    
+    geocoder.geocode({address:address}, function(results,status){
+        var coordinates = new google.maps.LatLng( results[0].geometry.location.lng(),results[0].geometry.location.lat() );
+        
+            
+        //results[0].geometry.location; 
+        //console.log(results[0].geometry.location.lat());
+        //console.log(results[0].geometry.location.lng());
+        console.log('coords: '+coordinates);
+    });
+}
+
+/*<?php    @mysql_connect("$db_host","$db_username","$db_password") or die("Could not connect to MYSQL");
+    @mysql_select_db("$db_name") or die("No database");
+
+
+    $sql = "SELECT * FROM organisations";
+    $query = mysql_query($sql);
+    //$row = mysql_fetch_object($query);
+
+    while($row = mysql_fetch_object($query)) {
+?>
+<script>
+    console.log("<?php echo $row->org_name . '<br>'; ?> ");
+</script>
+<?php        
+    }
+ ?>
+ */
+
+
 /*require([
   "esri/Map",
   "esri/views/MapView",
@@ -29,7 +97,9 @@ require(["esri/map", "dojo/domReady!"], function(Map) {
 
 /* global flag for setting all layers on/off */
 /* allLayersOnOff = 0  means layers off by default */
- var allLayersOnOff = 0;
+ 
+/*
+var allLayersOnOff = 0;
  
 require([
 	"esri/map", 
@@ -73,11 +143,13 @@ require([
           description: 
 		  "Contact Person: {f1}  <br /> Address: {f2} <br /> City: {f3}  <br /> Post Code: {f4} <br /> State: {f5}  <br /> Tel: {f6}"
         }); 
-		
+*/		
 		/* Set markers for different layers */
 		
 		/* Safe icon marker*/
-		var Safemarker = new PictureMarkerSymbol('img/keys/vet-icon-aqua.png', 30, 30);
+		
+/*
+        var Safemarker = new PictureMarkerSymbol('img/keys/vet-icon-aqua.png', 30, 30);
 		var SafeRenderer = new SimpleRenderer(Safemarker);
 	
 			
@@ -90,22 +162,25 @@ require([
 		  infoWindow: popup
 		});
 
-		
+*/		
 		/* Search option*/
+/*
         var search = new Search({
            map: map
         }, "Pcode");
         search.startup();	
-
+*/
 		/* Search option for mobile/tablet */
+/*
         var searchM = new Search({
            map: map
         }, "srch-term-m");
         searchM.startup();		
 		
-		
+*/		
 		
 		/* Home button */
+/*
 		var home = new HomeButton({
 			map: map
 		  }, "defaultMap");
@@ -301,12 +376,8 @@ require([
 
 		
     });
-
+*/
 // national-geographic, hybrid, topo, gray, dark-gray, oceans, osm
-
-
-
-
 
 
 

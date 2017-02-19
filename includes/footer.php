@@ -51,10 +51,15 @@
         <!-- Parse CSV file about injured WF-->
         <script type="text/javascript" src="js/csv.js"> </script>
 
-        <!-- Map js includes -->
+        <!-- Google map javascript API -->
+            <script type="text/javascript" src="js/map.js"> </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-z1AKKI962bUQPGTMhaIp9bDfnmZkL-o&callback=initMap"></script>
+        <!-- End of Google map API-->
+
+        <!-- Esri Map js includes >
         <script type="text/javascript" src="js/responsive_map.js"> </script>
-        <script src="//js.arcgis.com/3.18/"></script> 
-        <script type="text/javascript" src="js/map.js"> </script>
+        <script src="//js.arcgis.com/3.18/"></script--> 
+
 
     </body>
   </html>

@@ -76,7 +76,9 @@
     
     </div> <!-- End of headCont -->
     <!-- footer needs to be down here otherwise jquery stuff will not work as they all include into footer.php -->
-    <?php include('includes/footer.php'); ?>   
+    <?php include('includes/footer.php'); ?>
+    <?php include('includes/connect_db.php'); ?> 
+    <?php include('includes/mapjs.php'); ?> 
     
 </div>
 

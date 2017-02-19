@@ -19,10 +19,12 @@
         <!-- esri css includes -->
         <!--link rel="stylesheet" href="https://js.arcgis.com/4.2/esri/css/main.css"-->
         
-        <link rel="stylesheet" href="http://js.arcgis.com/3.18/esri/css/esri.css">
+        <!--link rel="stylesheet" href="http://js.arcgis.com/3.18/esri/css/esri.css"-->
   
         <!-- include for autocomplete-->
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        
+
         
         
     </head>

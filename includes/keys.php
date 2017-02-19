@@ -157,8 +157,9 @@
                         </div>
                     </div>
                 </div>
-            </div>              
-            <div class="panelFooter">
+            </div>
+            
+            <div class="keysFooter">
                 <hr>
                 <div style="float:right;font-size: 20px; margin:3% 9% 5% 0%;">
                     <span class='fontCol' id="Kdone"><b>DONE&#10095;</b></span>

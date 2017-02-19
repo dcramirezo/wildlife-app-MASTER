@@ -159,7 +159,7 @@ $('#leftArrow').click(function(){
         leftArrowVisibility =0;
         tmp ='home';
     } else if(leftArrowVisibility ==2){
-        console.log('leftArrow2: ' +leftArrowVisibility);
+        //console.log('leftArrow2: ' +leftArrowVisibility);
         
         $('#btns, #leftArrow, #liveDead, .bckNxt, .footer').show();
         $('#whatHapn').hide();
@@ -168,9 +168,9 @@ $('#leftArrow').click(function(){
         leftArrowVisibility =1;
         tmp ='isLive';
     }else if(leftArrowVisibility ==3){
-        console.log('leftArrow3: ' +leftArrowVisibility);
+        //console.log('leftArrow3: ' +leftArrowVisibility);
         
-        $(' #mapDiv, #mapFooter').hide();
+        $(' #map-canvas, #mapFooter').hide();
         $('#liveDead, #whatHapn, .footer').show();
         //$('body').css('overflow', 'auto');
 
@@ -214,9 +214,9 @@ $('#no').click(function(){
 
 function getWildlifeName(src){
 // this func returns the name of the species from it's image url
-    var srcArr = src.split('/');
-    
-    var Wn = srcArr[(srcArr.length-2)] +'/'+srcArr[(srcArr.length-1)]; 
+    var srcArr = src.split('/');    
+    var Wn = srcArr[(srcArr.length-2)] +'/'+srcArr[(srcArr.length-1)].replace(/\%20/g, ' '); 
+
     return  Wn   
 }
 
@@ -224,7 +224,10 @@ function getWildlifeName(src){
 $('.close').click(function(){
     $( ".panel" ).animate({left: (-panelPos)}, 700);
 });
-
+$('#closeMapMenu').click(function(){
+    $('#mapModal').toggle(500);
+    $('#mapMenuModal').toggle(500);
+});
 $( "#FAid, #mapFA" ).click(function(){
     //noOrFAid ='FAid';
     var src = imgSource;
@@ -255,7 +258,6 @@ $('#done').click(function(){
     $( ".panel" ).animate({left: (-panelPos)}, 700);
     if(noOrFAid == 'FAid'){
         alert('Hide exteral elements and show the Map!');
-        //('#map-div').show();
     }
 });
 $('#Kdone, #Cdone, #sdone').click(function(){$( ".panel" ).animate({left: (-panelPos)}, 700);});
@@ -286,7 +288,12 @@ $('#DesOrOpen').click(function(){
 
 $('.Qbtns').click(function(){
     $('#liveDead, #whatHapn, .footer').hide();
-    $('#mapDiv, #mapFooter, #mapModal, #LocationBox').show();
+    $('#map-canvas, #mapFooter, #mapModal, #LocationBox').show();
+    resizeMap();
+    getCoordinates('15 Poplar Street Box Hill VIC');
+    navigator.geolocation.getCurrentPosition(showPosition);
+    
+    //
     //$('body, html').animate({ scrollTop: 0 });
     
     // set the width of the search field dynamically
@@ -312,6 +319,7 @@ $('#mapKey').click(function(){
     $( ".panel" ).animate({left: 0}, 700);    
 });
 $('#mapMenu').click(function(){
+    $('#mapModal').toggle(500);
     $('#mapMenuModal').toggle(500);   
 });
 
@@ -322,7 +330,7 @@ $('#mapCenters').click(function(){
 });
 
 $('#mapHome').click(function(){
-    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #mapDiv, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey').hide();
+    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey').hide();
     $('.theImg').remove(); $(".imgQuestion").empty();
     $('.cont, #arrow-down, #underUtility, #moreLess').show(); 
     
@@ -356,8 +364,6 @@ $('#mapHome').click(function(){
 $('#mapYes').click(function(){
     $('#mapModal, #LocationBox').hide();
     $('.firstAidOrDead, .keys, .shelter').hide();
-    //$('.centers').show();
-    //$( ".panel" ).animate({left: 0}, 700);
     
 });
 
@@ -425,7 +431,6 @@ function autoCompFunc(text){
     $('#srch').val( text);
     $('#species').html('');
     CName = (text.split(' - ') );
-    //console.log(CName[0]);
     Wname = CName[0];
     
     liveDead('img/wildlife/any/'+CName[0]+'.png', 'Is animal alive?');   

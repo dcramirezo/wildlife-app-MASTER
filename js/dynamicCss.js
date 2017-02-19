@@ -23,9 +23,11 @@ $(document).ready(function(){
     $('#mapMenuModal').css({
         top: ( $(window).height()*.10 )
     });   
-
-    
-    
+    $('#map-canvas').css({
+        height: ($(window).height()*0.83),
+        //overflow: 'visible'
+        
+    });
     
     //console.log( $('#warnTitle').width()  );
     
@@ -63,22 +65,35 @@ $('#utilityBar').css({
     $('#firstAidFooter').css({
         top: ( $('.panelContent').height() + $('.panelHeader').height() )
     });
+    $('#map-canvas').css({
+        height: ($(window).height()*0.83)
+    });
     
 })
 
 function setFooterHeight(){
     if ( ($('.panelContent').height() + $('.panelHeader').height() ) >= $(window).height() ){
         
-        console.log('FA Pressed: '+($('.panelContent').height() + $('.panelHeader').height() )  );
-        
         $('#firstAidFooter').css({
             top: ( ( $('.panelContent').height() + $('.panelHeader').height() ))
         });
     }else if(($('.panelContent').height() + $('.panelHeader').height() ) < $(window).height()){
         
-        console.log('No Pressed: '+$(window).height());
         $('#firstAidFooter').css({
-            top: ($('.panel').height()-$('#firstAidFooter').height()-20 )
+            top: ($('.panel').height()-$('#firstAidFooter').height()-40 )
         });        
-    }    
+    }  
+    
+    //set keysFooter top property    
+    if ($('.keys').height()  >= $(window).height() ){
+        
+        $('.keysFooter').css({
+            top: ( $('.keys').height() )
+        });
+    }else if( $('.keys').height()  < $(window).height() ){
+        
+        $('.keysFooter').css({
+            top: ($('.keys').height()-$('.keysFooter').height()-40 )
+        });        
+    } 
 } 

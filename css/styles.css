@@ -1,4 +1,4 @@
-body, html, #wrapper{
+body, html{
     width: 100%;
     height:100%;
 }
@@ -9,28 +9,40 @@ body {
     font-style: normal;
     text-align: center;
 }
+
+/* Map styles 
+#mapDiv,*/
+#map-canvas {
+    //height: 100%;
+    display: none;
+    overflow:visible;
+    /*width: 100%;
+    //margin: -95px 0px 0px 0px; */
+}
+
 hr{ margin: 0px;}
 p { margin: 0; padding: 0; }
 
 .headCont{
   min-height: 100%;
-  /* equal to footer height *///margin-bottom: -95px; 
+  /* equal to footer height margin-bottom: -95px; */
 }
+/*
 .headCont:after { //content: ""; //display: block;}
 .footer, .headCont:after {//height: 95px; }
-
+*/
 .menuBar{ background-color:#797390; color:white;}
-.headCont.extr:after {
+/*.headCont.extr:after {
   height: 0px; 
-}
+}*/
 .Wimages{ width: 100%;}
-//.footer{  
+/*.footer{  
     //background-color:#00b7bd;
     //position: relative;
     //margin-bottom: 0;
     //width: 100%;
     //height: 95px;
-//}
+}*/
 .downF{margin-top: 1%;}
 .row{
     text-align: center;
@@ -140,14 +152,13 @@ p { margin: 0; padding: 0; }
     text-align: justify;
     text-justify: inter-word;    
 }
-#firstAidFooter{position: absolute;//margin: 6%;
+#firstAidFooter, .keysFooter{position: absolute;//margin: 6%;
     font-size: 20px;text-align: right;bottom: 0px;
     left: 0px;right: 0px;margin-top: 6%;}
 .WHL{ margin-right: -4px; }
 .WHR{ margin-left: -4px; }
 .fontCol{color:#00b7bd;}
 
-.keysHeader{background-color: lightgray;}
 .KHIMG{width: 60%;    padding-top: 15%; }
 .KCIMG{width: 60%;    padding-top: 15%; }
 .CCIMG{width: 80%;    margin: 5% 0% 2% 0%;; }
@@ -155,15 +166,6 @@ p { margin: 0; padding: 0; }
 .centersHeader{ background-color: #00b7bd;}
 .headersBgCol {background-color:#dbeeed;}
 #hr{display: none;}
-
-
-/* Map styles */
-#mapDiv {
-    padding: 0;
-    //margin: -95px 0px 0px 0px;
-    height: 100%;
-    width: 100%;
-  }
 
 #mapFooter{
     display: none;
