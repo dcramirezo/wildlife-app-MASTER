@@ -2,6 +2,11 @@
 comeFromMap = 0; //if this variable is equal to 1, #btns should be shown otherwise it's hidden
 var noOrFAid; // this variable says what to do when DONE (in panel.php) is pressed.
 var leftArrowVisibility = 0; //this var determines where this icon should be shown and what should be done based on that
+
+var addresses = []; // Keeps the addresses of the wildlife centers
+var LatLngs = [] // Keeps lat and lng of markers
+var centersInDb = [] // keeps all details of centers which retrived from DB
+var icons = []; // Keeps the wildlife speciallities to set the icons based on that
 var tmp = 'home'; // possible values for this var are: home/isLive/WhatHapn/
 var LandRiverSeaSky = 'commonSpecies';
 var moreLessText = 'more';
@@ -18,6 +23,7 @@ var winHeight;
 var panelPos; 
 
 $(document).ready(function(){
+    initMap();
     winWidth = $(document).width();
     winHeight = $(document).height();
     panelPos = winWidth*.96;
@@ -192,6 +198,7 @@ $('#yes, #donKnow').click(function(){
 
 $('#no').click(function(){
     //noOrFAid ='no';
+    //getCoordinates('3 Point Addis Rd');
     var src = $('.theImg').attr('src');
     var src = imgSource;
     Wname = getWildlifeName(src);
@@ -290,11 +297,13 @@ $('.Qbtns').click(function(){
     $('#liveDead, #whatHapn, .footer').hide();
     $('#map-canvas, #mapFooter, #mapModal, #LocationBox').show();
     resizeMap();
-    getCoordinates('15 Poplar Street Box Hill VIC');
     navigator.geolocation.getCurrentPosition(showPosition);
+    //plotMarkers();
+    testPM();
+    //getCoordinates('15 Poplar Street Box Hill VIC 3128');
+    //console.log('this is box hill');
     
-    //
-    //$('body, html').animate({ scrollTop: 0 });
+ 
     
     // set the width of the search field dynamically
     $('.searchInput').animate({

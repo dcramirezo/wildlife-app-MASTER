@@ -40,6 +40,11 @@
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
+        <!-- Google map javascript API -->
+        <script type="text/javascript" src="js/map.js"> </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-z1AKKI962bUQPGTMhaIp9bDfnmZkL-o"  async defer></script>
+        <!-- End of Google map javascript API -->
+
         <script type="text/javascript" src="js/js.js"></script>
 
         <!-- include autocomplete js file --> 
@@ -51,9 +56,8 @@
         <!-- Parse CSV file about injured WF-->
         <script type="text/javascript" src="js/csv.js"> </script>
 
-        <!-- Google map javascript API -->
-            <script type="text/javascript" src="js/map.js"> </script>
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-z1AKKI962bUQPGTMhaIp9bDfnmZkL-o&callback=initMap"></script>
+
+        <!-- &callback=initMap -->
         <!-- End of Google map API-->
 
         <!-- Esri Map js includes >

@@ -1,6 +1,24 @@
 var map;
 var currentLocation;
 
+
+// Defining Centers' icons ***************
+var vet_grey = 'img/keys/vet-icon-grey.png';
+var vet_org  = 'img/keys/vet-icon-orange.png';
+var vet_pink = 'img/keys/vet-icon-pink.png';
+var vet_aqua = 'img/keys/vet-icon-aqua.png';
+var vet_red  = 'img/keys/vet-icon-red.png';
+var vet_blue = 'img/keys/vet-icon-blue.png';
+
+var rehab_grey = 'img/keys/wildliferehab-grey.png';
+var rehab_org  = 'img/keys/wildliferehab-orange.png';
+var rehab_pink = 'img/keys/wildliferehab-pink.png';
+var rehab_aqua = 'img/keys/wildliferehab-aqua.png';
+var rehab_red  = 'img/keys/wildliferehab-red.png';
+var rehab_blue = 'img/keys/wildliferehab-blue.png';
+// End of defining Centers' icons ********
+
+
 function initMap() {
       
     map = new google.maps.Map(document.getElementById('map-canvas'), {
@@ -8,8 +26,7 @@ function initMap() {
         zoom: 8,
         draggable: true
     });
-
-    //console.log();
+    console.log('map initialized!');
 
 } 
 
@@ -18,15 +35,15 @@ function resizeMap(){
     google.maps.event.trigger(map,'resize');
 }
 function showPosition(position){
-    //console.log(position.coords.latitude);
-    //console.log(position.coords.longitude);   
-
     currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-    setMarker(currentLocation);
+    
+    var marker = new google.maps.Marker({
+        position: currentLocation,
+        map: map
+    });
 }
 
-function setMarker(currentLocation){
+function setMarker(location){
     var marker = new google.maps.Marker({
         position: currentLocation,
         map: map
@@ -34,18 +51,78 @@ function setMarker(currentLocation){
 }
 
 function getCoordinates(address){
+    var coordinates;
     var geocoder = new google.maps.Geocoder();
-    
     geocoder.geocode({address:address}, function(results,status){
-        var coordinates = new google.maps.LatLng( results[0].geometry.location.lng(),results[0].geometry.location.lat() );
-        
+         //console.log(results[0].geometry.location.lat(),results[0].geometry.location.lng());
+        console.log('lat: '+results[0].geometry.location.lat() +' ' +results[0].geometry.location.lng());
+        if (status == google.maps.GeocoderStatus.OK) {
+           
+            //coordinates = results[0].geometry.location.lat();
+            //coordinates.push(results[0].geometry.location.lat() );          //coordinates.push(results[0].geometry.location.lng() );
+            var markerPos = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
             
-        //results[0].geometry.location; 
-        //console.log(results[0].geometry.location.lat());
-        //console.log(results[0].geometry.location.lng());
-        console.log('coords: '+coordinates);
-    });
+            var marker = new google.maps.Marker({
+                position: markerPos,
+                map: map
+            });
+            //setMarker(marker);
+        
+        } else console.log('unsuccessful!');
+        
+    });    
+        //return coordinates
+        //console.log('coordinates is empty!');
 }
+
+function iconIdentifier(centerSpec){
+    var iconURL;
+    switch (centerSpec) { 
+        case 'vet_grey': 
+            iconURL = vet_grey;
+            break;
+        case 'vet_org': 
+            iconURL = vet_org;
+            break;
+        case 'vet_pink': 
+            iconURL = vet_pink;
+            break;		
+        case 'vet_aqua': 
+            iconURL = vet_aqua;
+            break;
+        case 'vet_red': 
+            iconURL = vet_red;
+            break;
+        case 'vet_blue': 
+            iconURL = vet_blue;
+            break;
+        case 'rehab_grey': 
+            iconURL = rehab_grey;
+            break;
+        case 'rehab_org': 
+            iconURL = rehab_org;
+            break;
+        case 'rehab_pink': 
+            iconURL = rehab_pink;
+            break;		
+        case 'rehab_aqua': 
+            iconURL = rehab_aqua;
+            break;
+        case 'rehab_red': 
+            iconURL = rehab_red;
+            break;
+        case 'rehab_blue': 
+            iconURL = rehab_blue;
+            break;
+        default:
+            console.log('The marker s icon, cannot be found!');
+    }
+    return iconURL
+}
+
+
+
+
 
 /*<?php    @mysql_connect("$db_host","$db_username","$db_password") or die("Could not connect to MYSQL");
     @mysql_select_db("$db_name") or die("No database");
