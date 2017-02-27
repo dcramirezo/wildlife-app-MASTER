@@ -101,6 +101,51 @@ function removeMarkers(m){
         m[i].setMap(null);
     }
 }
+  
+function IPaddressLocator(){
+
+   
+       
+<?php 
+    
+    require_once('includes/geoplugin.class.php');
+
+    $geoplugin = new geoPlugin();
+    $ip = $_SERVER["REMOTE_ADDR"];
+    
+    $geoplugin->locate($ip);
+    
+?>
+    
+    UserLat = "<?php echo $geoplugin->latitude; ?>" ;
+    UserLng = "<?php echo $geoplugin->longitude; ?>" ;
+    
+    //console.log('َUser IP: ' +ip);
+    //console.log(UserLat+ ' '+ UserLng);
+    
+    
+    removeMarkers(filteredMarkers);
+    removeMarkers(markers);
+    IPlocation = new google.maps.LatLng(UserLat, UserLng);
+    
+    IPmarker = new google.maps.Marker({
+        position: IPlocation,
+        id: 'IPLocation',
+        map: map
+    });
+    if(UAmarker){UAmarker.setMap(null);//clears this marker 
+    }
+    if(CLmarker){CLmarker.setMap(null);//clears this marker
+    }
+    //console.log(CLmarker.id);
+    map.setCenter(IPlocation);
+    map.setZoom(10);
+    
+    
+    filterMarkers(UserLat, UserLng);    
+    console.log('IP location is done!');
+
+}
      
 </script>  
  

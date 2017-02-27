@@ -2,11 +2,14 @@ var map;
 var currentLocation;
 var CLmarker // golabal marker for Current Location
 var UAmarker // golabal marker for User Address
+var IPmarker // golabal marker for User Address that obtains from User IP address
 
 //var filteredMa = [];
 var centersDetails = []; // keeps all centers details
 var markers =[];  // keeps all markers
 var filteredMarkers = []; // keeps filtered markers based on the user location
+
+var ifShowPosWorks = 0; // If showPosition func works, this var will be set to 1
 
 
 // Defining Centers' icons ***************
@@ -77,7 +80,9 @@ function initMap() {
             
             //console.log(UAmarker.id);
             if(CLmarker){CLmarker.setMap(null); //clears this marker
-                        }
+            }
+            if(IPmarker){IPmarker.setMap(null); //clears this marker
+            }
             map.setCenter(userAddress);
             map.setZoom(10);
             filterMarkers(places[0].geometry.location.lat(), places[0].geometry.location.lng());
@@ -91,6 +96,9 @@ function resizeMap(){
 }
 
 function showPosition(position){
+    
+    ifShowPosWorks = 1;
+    
     removeMarkers(filteredMarkers);
     removeMarkers(markers);
     currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
@@ -101,13 +109,15 @@ function showPosition(position){
         map: map
     });
     if(UAmarker){UAmarker.setMap(null);//clears this marker
-                }
+    }
+    if(IPmarker){IPmarker.setMap(null);//clears this marker
+    }
     //console.log(CLmarker.id);
     map.setCenter(currentLocation);
     map.setZoom(10);
     
     
-    filterMarkers(position.coords.latitude, position.coords.longitude)
+    filterMarkers(position.coords.latitude, position.coords.longitude);
     
 }
 
@@ -122,12 +132,11 @@ function getCoordinates(address){
     var coordinates;
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({address:address}, function(results,status){
-         //console.log(results[0].geometry.location.lat(),results[0].geometry.location.lng());
+         
         console.log('lat: '+results[0].geometry.location.lat() +' ' +results[0].geometry.location.lng());
         if (status == google.maps.GeocoderStatus.OK) {
            
-            //coordinates = results[0].geometry.location.lat();
-            //coordinates.push(results[0].geometry.location.lat() );          //coordinates.push(results[0].geometry.location.lng() );
+            
             var markerPos = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
             
             var marker = new google.maps.Marker({

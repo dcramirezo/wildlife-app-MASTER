@@ -370,8 +370,10 @@ $('#mapYes').click(function(){
     $('#mapModal, #LocationBox').hide();
     $('.firstAidOrDead, .keys, .shelter').hide();
     navigator.geolocation.getCurrentPosition(showPosition);
+    if(ifShowPosWorks == 0){
+       IPaddressLocator(); 
+    }
     
-    //console.log('marker should be added now!');
 });
 $('#mapLoc').click(function(){
     $('#mapModal, #LocationBox').show();
