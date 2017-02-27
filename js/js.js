@@ -3,9 +3,10 @@ comeFromMap = 0; //if this variable is equal to 1, #btns should be shown otherwi
 var noOrFAid; // this variable says what to do when DONE (in panel.php) is pressed.
 var leftArrowVisibility = 0; //this var determines where this icon should be shown and what should be done based on that
 
-var addresses = []; // Keeps the addresses of the wildlife centers
-var LatLngs = [] // Keeps lat and lng of markers
-var centersInDb = [] // keeps all details of centers which retrived from DB
+//var addresses = []; // Keeps the addresses of the wildlife centers
+//var LatLngs = [] // Keeps lat and lng of markers
+//var centersInDb = [] // keeps all details of centers which retrived from DB
+
 var icons = []; // Keeps the wildlife speciallities to set the icons based on that
 var tmp = 'home'; // possible values for this var are: home/isLive/WhatHapn/
 var LandRiverSeaSky = 'commonSpecies';
@@ -297,21 +298,16 @@ $('.Qbtns').click(function(){
     $('#liveDead, #whatHapn, .footer').hide();
     $('#map-canvas, #mapFooter, #mapModal, #LocationBox').show();
     resizeMap();
-    navigator.geolocation.getCurrentPosition(showPosition);
-    //plotMarkers();
-    testPM();
-    //getCoordinates('15 Poplar Street Box Hill VIC 3128');
-    //console.log('this is box hill');
     
- 
+    plotMarkers(); 
     
     // set the width of the search field dynamically
     $('.searchInput').animate({
         width: ($(window).width()*0.50)
     });
-    $('#Pcode').animate({
+    /*$('#Pcode').animate({
         paddingLeft: ( ($(window).width()*0.83-($('.searchBtn').width()+$('.searchInput').width()) )/4 )
-    }); 
+    });*/ 
     $('.titlePane').animate({height: '25px'});
 
     leftArrowVisibility =3;
@@ -339,7 +335,7 @@ $('#mapCenters').click(function(){
 });
 
 $('#mapHome').click(function(){
-    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey').hide();
+    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey, #mapModal, #mapFooter').hide();
     $('.theImg').remove(); $(".imgQuestion").empty();
     $('.cont, #arrow-down, #underUtility, #moreLess').show(); 
     
@@ -373,8 +369,14 @@ $('#mapHome').click(function(){
 $('#mapYes').click(function(){
     $('#mapModal, #LocationBox').hide();
     $('.firstAidOrDead, .keys, .shelter').hide();
+    navigator.geolocation.getCurrentPosition(showPosition);
     
+    //console.log('marker should be added now!');
 });
+$('#mapLoc').click(function(){
+    $('#mapModal, #LocationBox').show();
+});
+
 
 $('.centersRow').click(function(){
     var imgTag = $(this).find('img').attr('src');

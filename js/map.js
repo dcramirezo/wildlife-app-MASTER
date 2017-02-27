@@ -1,5 +1,12 @@
 var map;
 var currentLocation;
+var CLmarker // golabal marker for Current Location
+var UAmarker // golabal marker for User Address
+
+//var filteredMa = [];
+var centersDetails = []; // keeps all centers details
+var markers =[];  // keeps all markers
+var filteredMarkers = []; // keeps filtered markers based on the user location
 
 
 // Defining Centers' icons ***************
@@ -22,25 +29,86 @@ var rehab_blue = 'img/keys/wildliferehab-blue.png';
 function initMap() {
       
     map = new google.maps.Map(document.getElementById('map-canvas'), {
-        center: {lat: -36.8152554, lng: 143.8},
+        center: {lat: -37.5, lng: 143.54},
         zoom: 8,
-        draggable: true
+        draggable: true ,
+        mapTypeControl: true,
+          mapTypeControlOptions: {
+              style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+              position: google.maps.ControlPosition.TOP_LEFT
+          },
+          zoomControl: true,
+          zoomControlOptions: {
+              position: google.maps.ControlPosition.TOP_LEFT
+          },
+          streetViewControl: true,
+          streetViewControlOptions: {
+              position: google.maps.ControlPosition.TOP_LEFT
+          }
     });
-    console.log('map initialized!');
+    //console.log('map initialized!');
+    
+    // Create the search box and link it to the UI element.
+        var input = document.getElementById('Pcode');
+        var searchBox = new google.maps.places.SearchBox(input);
+        //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    // Bias the SearchBox results towards current map's viewport.
+    
+    
+        map.addListener('bounds_changed', function() {
+          searchBox.setBounds(map.getBounds());
+            //console.log('Bounds changed!'); 
+        });
 
+        // Listen for the event fired when the user selects a prediction and retrieve
+        // more details for that place.
+        searchBox.addListener('places_changed', function() {
+            var places = searchBox.getPlaces();
+
+            if (places.length == 0) {return;}
+            
+            var userAddress = new google.maps.LatLng(places[0].geometry.location.lat(), places[0].geometry.location.lng());
+            
+            UAmarker = new google.maps.Marker({
+                position: userAddress,
+                id: 'UserAddress',
+                map: map
+            });            
+            
+            //console.log(UAmarker.id);
+            if(CLmarker){CLmarker.setMap(null); //clears this marker
+                        }
+            map.setCenter(userAddress);
+            map.setZoom(10);
+            filterMarkers(places[0].geometry.location.lat(), places[0].geometry.location.lng());
+            
+            $('#mapModal, #LocationBox').hide();
+        });
 } 
-
 
 function resizeMap(){
     google.maps.event.trigger(map,'resize');
 }
+
 function showPosition(position){
+    removeMarkers(filteredMarkers);
+    removeMarkers(markers);
     currentLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
     
-    var marker = new google.maps.Marker({
+    CLmarker = new google.maps.Marker({
         position: currentLocation,
+        id: 'currnetLocation',
         map: map
     });
+    if(UAmarker){UAmarker.setMap(null);//clears this marker
+                }
+    //console.log(CLmarker.id);
+    map.setCenter(currentLocation);
+    map.setZoom(10);
+    
+    
+    filterMarkers(position.coords.latitude, position.coords.longitude)
+    
 }
 
 function setMarker(location){
@@ -66,13 +134,14 @@ function getCoordinates(address){
                 position: markerPos,
                 map: map
             });
-            //setMarker(marker);
+            //setMarker(marker);            
         
         } else console.log('unsuccessful!');
         
     });    
         //return coordinates
         //console.log('coordinates is empty!');
+    
 }
 
 function iconIdentifier(centerSpec){

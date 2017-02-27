@@ -42,7 +42,7 @@
 
         <!-- Google map javascript API -->
         <script type="text/javascript" src="js/map.js"> </script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-z1AKKI962bUQPGTMhaIp9bDfnmZkL-o"  async defer></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-z1AKKI962bUQPGTMhaIp9bDfnmZkL-o&libraries=places"  async defer></script>
         <!-- End of Google map javascript API -->
 
         <script type="text/javascript" src="js/js.js"></script>

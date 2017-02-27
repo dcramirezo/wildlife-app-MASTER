@@ -173,11 +173,13 @@ p { margin: 0; padding: 0; }
     position: absolute;
     text-align: center;
     z-index: 100;
-    bottom: 1%;
+    bottom:1%;
+    margin-bottom: 4%;
 }
 .MFB{ width: 15%; float:right;margin-right:1%}
 #mapKey, #mapMenu{display:none}
 #mapModal{
+    display: none;
     position: absolute;
     top: 0%;
     left: 0%;
@@ -188,6 +190,7 @@ p { margin: 0; padding: 0; }
     z-index: 105;
 }
 #LocationBox{
+    display: none;
     position: absolute;
     width: 83%;
     height: 55%;
@@ -242,7 +245,7 @@ input::-moz-placeholder {  /* Firefox 19+ */
 
 #warnHead{background-color:#00b7bd; 
     color:white; font-size: 230%;}
-#warnContent{color:#00b7bd; font-size: 135%;padding:5%;
+#warnContent{color:#00b7bd; font-size: 115%;padding:5%;
 text-align: justify; }
 /* Warning box settings end */
 
@@ -322,9 +325,16 @@ text-align: justify; }
 }
 
 
-
-
-
+/* _____ Removes the map copyrights..at footer ___*/
+/*a[href$="google.com/maps"], .gmnoprint:not(.gm-bundled-control) {
+    display: none !important
+}
+.gm-bundled-control .gmnoprint {
+    display: block;
+} */
+img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"]
+{display:none} 
+/* _ End of Removes the map copyrights..at footer _*/
 
 
 

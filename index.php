@@ -13,9 +13,9 @@
             <br>
             <b> <span id="WhatSpe">What species is the animal?</span></b>
 
-            <input type="text" id="srch" placeholder="Search Species" style="text-align:center;">
+            <input type="text" id="srch" placeholder="Search Species" style="text-align:center; margin-bottom:5px;">
             <div class="AutoUL" id="species" ></div>
-            <span> Or select a common species bellow</span>
+            <div><span> Or select a common species bellow</span></div>
         </div>
         <div class="cont">
             <!-- Radio buttons -->
