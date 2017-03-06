@@ -12,8 +12,8 @@
                         </div>
                     </div>
                     <div class="col s6 ms ls">
-                        <div style="padding: 25% 22% 0% 0%;">
-                            <span id="Cname" class="fontCol" style="font-size:22px; font-weight:bold;">Lorne Wildlife Shelter</span>
+                        <div style="padding: 25% 22% 0% 0%; text-align: center;">
+                            <span id="Cname" class="fontCol" style="font-size:100%; font-weight:bold;">Lorne Wildlife Shelter</span>
                         </div>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
                 <!-- 1st row -->
                 <div class="row" id="shelterDes">
                     <div class="col s12 m12 l12">
-                        <div  class="fontCol" style="font-size:20px; padding:5% 12% 0% 5%; text-align:left;">
+                        <div  class="fontCol" style="font-size:100%; padding:5% 12% 5% 5%; text-align:left;">
                             This shelter is located in the Otwats region in Victoria
                             <br> They are able to treat most land mammals, birds and other animatls.
           
@@ -38,7 +38,7 @@
                 <div class="row" id="DesOrOpen" style="text-align:left;">
                     <div class="col s8 m8 l8">
                         <div  >
-                            <span class="fontCol"id= "divTxt" style="font-size:20px; font-weight:bold; padding:5% 12% 0% 10%;">Opening Hours</span>
+                            <span class="fontCol"id= "divTxt" style="font-size:100%; font-weight:bold; padding:5% 0% 5% 5%;">Opening Hours</span>
           
                         </div>
                     </div>
@@ -79,17 +79,21 @@
                 </div>
                 <div id="hr"><hr></div>
                 <div class="row">
-                    <div class="col s12 m12 l12">
+                    <div class="col s6 m6 l6">
                         <div>
-                            <img style="padding:2% 0% 0% 0%; width:35%;" src="img/keys/phoneicon.png">
+                            <img style="padding:5% 0% 5% 0%; width:60%;" src="img/keys/phoneicon.png">
                         </div>
                     </div>
-                
-                </div>
-                               
-                                  
+                    <div class="col s6 m6 l6">
+                        <div>
+                            <img style="padding:5% 0% 5% 0%; width:60%;" src="img/keys/websiteicon-alt.png">
+                        </div>
+                    </div>
+                     <hr>
+                </div>                      
             </div>
-            <div class="shlterFooter">
+            
+            <div class="shelterFooter">
                 <hr>
                 <div class="row">
                     <div style="float:right;font-size: 20px; margin:3% 5% 5% 0%;">
@@ -97,4 +101,6 @@
                     </div>                    
                 </div>
             </div>
+            
+            
         </div>

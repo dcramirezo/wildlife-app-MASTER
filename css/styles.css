@@ -8,6 +8,7 @@ body {
     font-weight: normal;
     font-style: normal;
     text-align: center;
+    //overflow-x: hidden;
 }
 
 /* Map styles 
@@ -137,11 +138,12 @@ p { margin: 0; padding: 0; }
 //.modal{overflow-x: hidden;}
 
 .panel {
-	float:left;
+    display:none;
+    float:right;
 	height:100%;
 	background: white;
 	position:absolute;
-	left:-95%;
+    right:95%;
     top:0%;
     z-index: 101;
     overflow:scroll;
@@ -152,7 +154,7 @@ p { margin: 0; padding: 0; }
     text-align: justify;
     text-justify: inter-word;    
 }
-#firstAidFooter, .keysFooter{position: absolute;//margin: 6%;
+#firstAidFooter, .keysFooter, .shelterFooter{position: absolute;//margin: 6%;
     font-size: 20px;text-align: right;bottom: 0px;
     left: 0px;right: 0px;margin-top: 6%;}
 .WHL{ margin-right: -4px; }
@@ -203,7 +205,7 @@ p { margin: 0; padding: 0; }
 }
 .centersRow:hover{    background-color: lightgray; }
 
-#mapDGeoQ{padding:15% 0% 5% 0%;}
+#mapDGeoQ{padding:12% 0% 0% 0%;}
 input::-webkit-input-placeholder {
     color: black !important;
 }
@@ -231,9 +233,21 @@ input::-moz-placeholder {  /* Firefox 19+ */
     position: absolute;width: 100%;height: 100%;
     top:0%;left:0%;
 }
-#blackBg{width: 100%; height: 100%;opacity: 0.4;
-    position: absolute;
+.filterBox{
+    position:absolute; width:90%; height: 70%;
+    top:0%;left:0%; display: none; z-index: 202;
+    background-color: white; border-radius: 5px;
+}
+#blackBg, #filterBlackBg{width: 100%; height: 100%;opacity: 0.4; position: absolute;
     z-index: 200;background-color: black;}
+#filterBlackBg{display: none;top:0%;left:0%;}
+#filterHead{background-color:#00b7bd; 
+    color:white; font-size: 205%;}
+#filterFooter{position: absolute; padding: 1rem;
+    bottom: 0;left: 0; right: 0;text-align: right;}
+.rdoButtons {
+      display: block;
+   }
 #warnBox{ width: 80%;min-height: 60%;
     position: absolute;background-color: white;
     left: 10%;top:20%;z-index: 201;
@@ -259,7 +273,7 @@ text-align: justify; }
 @media screen and (min-width: 400px) {
     .Wimages{ width: 80%;}
     .theImg{width: 28%;}
-    #mapDGeoQ{padding:10% 0% 5% 0%;}
+    #mapDGeoQ{padding:5% 0% 5% 0%;}
     #LocationBox{height: 47%;}
     .MFB{ width: 15%;}
     .KHIMG{width: 45%; padding-top: 5%;}
@@ -336,8 +350,14 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"]
 {display:none} 
 /* _ End of Removes the map copyrights..at footer _*/
 
-
-
+.radioBtns label {
+    //display:inline-block;
+    //font-size:100%;
+}
+.radioBtns{
+    text-align: left;
+    margin: 5% 0% 0% 5%;
+}
 
 
 

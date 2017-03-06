@@ -1,3 +1,4 @@
+/*
 var map;
 var currentLocation;
 var CLmarker // golabal marker for Current Location
@@ -66,6 +67,17 @@ function initMap() {
         // Listen for the event fired when the user selects a prediction and retrieve
         // more details for that place.
         searchBox.addListener('places_changed', function() {
+            
+            if(CLmarker){CLmarker.setMap(null); //clears this marker
+            }
+            if(IPmarker){IPmarker.setMap(null); //clears this marker
+            }
+            CLmarker = IPmarker = '';
+            
+            //if(CLmarker){
+                //console.log(CLmarker.position.lat());
+            //}else{console.log('not Avaibale');}
+            
             var places = searchBox.getPlaces();
 
             if (places.length == 0) {return;}
@@ -78,11 +90,6 @@ function initMap() {
                 map: map
             });            
             
-            //console.log(UAmarker.id);
-            if(CLmarker){CLmarker.setMap(null); //clears this marker
-            }
-            if(IPmarker){IPmarker.setMap(null); //clears this marker
-            }
             map.setCenter(userAddress);
             map.setZoom(10);
             filterMarkers(places[0].geometry.location.lat(), places[0].geometry.location.lng());
@@ -97,7 +104,7 @@ function resizeMap(){
 
 function showPosition(position){
     
-    ifShowPosWorks = 1;
+    //ifShowPosWorks = 1;
     
     removeMarkers(filteredMarkers);
     removeMarkers(markers);
@@ -198,7 +205,7 @@ function iconIdentifier(centerSpec){
     return iconURL
 }
 
-
+*/
 
 
 

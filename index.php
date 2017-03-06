@@ -19,7 +19,7 @@
         </div>
         <div class="cont">
             <!-- Radio buttons -->
-            <div class="rdo row">  
+            <!--div class="rdo row">  
                 <input type="radio" name="cat" id="rdo-land" value="Land"/>
                 <label for="rdo-land">Land</label>
 
@@ -32,9 +32,12 @@
                 <input type="radio" name="cat" id="rdo-river" value="river"/>
                 <label for="rdo-river">River </label>
 
+            </div-->
+            <div>
+                <a id="filter" class="waves-effect waves-light btn buttons" style=" font-size:100%;" >Filter</a>
             </div>
             <br>    
-            <!-- Radio Buttons -- Land See Sky River -->
+            <!-- Land Sea Sky River -->
             <div id="lssr">
                 
                 <!-- CCCCCCC Common Species CCCCCCC--> 
@@ -65,6 +68,7 @@
         <?php include('includes/whatHapn.php'); ?>
         <?php include('includes/panel.php'); ?>
         <?php include('includes/warning.php'); ?>
+        <?php include('includes/filter.php'); ?>
         <!--?php include('includes/mapDiv.php'); ?-->
 
 

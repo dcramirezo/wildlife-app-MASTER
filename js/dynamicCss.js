@@ -20,6 +20,14 @@ $(document).ready(function(){
     $('#warnTitle').css({
         marginLeft: ( ($('#warnHead').width() -$('#warnTitle').width() )/2  )
     });
+    $('.filterBox').css({
+        top: ( ($(window).height()-$('.filterBox').height() )/2 ),
+        left: ( ($(window).width()-$('.filterBox').width() )/2 )
+    });
+    $('#filterHead').css({
+        height: ($('.filterBox').height() *0.25)
+    });
+    
     $('#mapMenuModal').css({
         top: ( $(window).height()*.10 )
     });   
@@ -32,7 +40,7 @@ $(document).ready(function(){
     //console.log( $('#warnTitle').width()  );
     
     
-})
+});
 
 
 // Window resize 
@@ -58,7 +66,18 @@ $('#utilityBar').css({
     });
     $('#warnTitle').css({
         marginLeft: ( ($('#warnHead').width() -$('#warnTitle').width() )/2  )
-    });  
+    }); 
+    $('.filterBox').css({
+        top: ( ($(window).height()-$('.filterBox').height() )/2 ),
+        left: ( ($(window).width()-$('.filterBox').width() )/2 )
+    });    
+    $('#filterHead').css({
+        height: ($('.filterBox').height() *0.25),
+        textAlign: 'center'
+    });
+    $('#filterTitle').css({
+        marginLeft: ( ($('#filterHead').width() -$('#filterTitle').width() )/2  )
+    });
     $('#mapMenuModal').css({
         top: ( $(window).height()*.10 )
     });
@@ -69,9 +88,9 @@ $('#utilityBar').css({
         height: ($(window).height()*0.83)
     });
     
-})
+});
 
-function setFooterHeight(){
+function setFooterHeight(footerHeight){
     if ( ($('.panelContent').height() + $('.panelHeader').height() ) >= $(window).height() ){
         
         $('#firstAidFooter').css({
@@ -93,7 +112,39 @@ function setFooterHeight(){
     }else if( $('.keys').height()  < $(window).height() ){
         
         $('.keysFooter').css({
-            top: ($('.keys').height()-$('.keysFooter').height()-40 )
+            top: ($(window).height()-footerHeight -20 )
         });        
-    } 
+    }
+    
+    //set shelterFooter top property    
+    if ($('.shelter').height()  >= $(window).height() ){
+        
+        $('.shelterFooter').css({
+            top: ( $('.shelter').height() )
+        });
+    }else if( $('.shelterContent').height()  < $(window).height() ){
+        
+        $('.shelterFooter').css({
+            top: ($(window).height()-footerHeight - 20 )
+        });        
+    }
+    
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

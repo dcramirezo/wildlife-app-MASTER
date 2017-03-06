@@ -23,7 +23,10 @@
             <div style="text-align:center;">
                 <input type="text" id="Pcode" placeholder="Postcode.." style="text-align:center; color:black;">
             </div>
-
+            <div>
+                 <!--a id="" class="waves-effect waves-light btn buttons" style=" font-size:80%;" >Show all Wildlife Centers</a-->
+            </div>
+            
         </div>
         <?php include('includes/mapMenuModal.php');?>
     
