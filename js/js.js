@@ -320,7 +320,10 @@ $('.Qbtns').click(function(){
 
 $('#listicon').click(function(){
     $('#mapMenu').toggle(300);
-    $('#mapKey').toggle(500);
+    $('#mapLoc').toggle(500);
+    $('#mapKey').toggle(700);
+    $('#mapFA').toggle(900);
+
 });
 $('#mapKey').click(function(){
     $('.firstAidOrDead, .shelter, .centers').hide();
@@ -343,7 +346,7 @@ $('#mapCenters').click(function(){
 });
 
 $('#mapHome').click(function(){
-    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey, #mapModal, #mapFooter').hide();
+    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey, #mapModal, #mapLoc, #mapFA, #mapFooter').hide();
     $('.theImg').remove(); $(".imgQuestion").empty();
     $('.cont, #arrow-down, #underUtility, #moreLess').show(); 
     
@@ -469,15 +472,17 @@ $(document).keydown(function (e) {
 });
 
 $('#filter').click(function(){
-    $('#filterBlackBg').show();
-    $('.filterBox').show();
+    $('#filterBlackBg, .filterBox').show();
     $('#filterTitle').css({
         marginLeft: ( ($('#filterHead').width() -$('#filterTitle').width() )/2  )
     });
 });
 $('#filterDone').click(function(){
     $('#filterBlackBg , .filterBox').hide();
-    console.log('Alhamdolellah!');
+});
+
+$('#filterMammLand, #filterWaterLand, #filterReptiles, #filterAmphibians, #filterIntroSpec, #filterBirds, #filterOther' ).click(function(){
+    alert('Sorry, this button is not working for the moment!');
 });
 
 

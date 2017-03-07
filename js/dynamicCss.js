@@ -25,7 +25,7 @@ $(document).ready(function(){
         left: ( ($(window).width()-$('.filterBox').width() )/2 )
     });
     $('#filterHead').css({
-        height: ($('.filterBox').height() *0.25)
+        height: ($('.filterBox').height() *0.16)
     });
     
     $('#mapMenuModal').css({
@@ -72,7 +72,7 @@ $('#utilityBar').css({
         left: ( ($(window).width()-$('.filterBox').width() )/2 )
     });    
     $('#filterHead').css({
-        height: ($('.filterBox').height() *0.25),
+        height: ($('.filterBox').height() *0.16),
         textAlign: 'center'
     });
     $('#filterTitle').css({

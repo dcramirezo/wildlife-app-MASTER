@@ -54,30 +54,45 @@ function initMap() {
           }
     });
     
+        var AustraliaBounds = new google.maps.LatLngBounds(new google.maps.LatLng(-43.867240, 110.577865), new google.maps.LatLng(-10.940201, 153.730149));
+    
+        var boundOptions ={
+            bounds: AustraliaBounds
+        };
     // Create the search box and link it to the UI element.
         var input = document.getElementById('Pcode');
-        var searchBox = new google.maps.places.SearchBox(input);
-        
     
-        map.addListener('bounds_changed', function() {
-          searchBox.setBounds(map.getBounds());
+        //var autocomplete = new google.maps.places.Autocomplete(input, boundOptions);
+    
+        var searchBox = new google.maps.places.SearchBox(input);
+    
+        
+    /*
+        map.addListener(searchBox, 'bounds_changed', function() {
+          searchBox.setBounds(AustraliaBounds);
+            console.log('bounds changed..');
         });
-
+*/
         // Listen for the event fired when the user selects a prediction and retrieve
         // more details for that place.
         searchBox.addListener('places_changed', function() {
+            
+            console.log('places changed Ya GHAAEME al MOHAMMAD');
+                            
+            var places = searchBox.getPlaces();
+           
+            //searchBox.setBounds(AustraliaBounds);
+
+            if (places.length == 0) {return;}
             
             if(CLmarker){CLmarker.setMap(null); //clears this marker
             }
             if(IPmarker){IPmarker.setMap(null); //clears this marker
             }
             CLmarker = IPmarker = '';
-                    
-            var places = searchBox.getPlaces();
-
-            if (places.length == 0) {return;}
             
             var userAddress = new google.maps.LatLng(places[0].geometry.location.lat(), places[0].geometry.location.lng());
+            
             
             UAmarker = new google.maps.Marker({
                 position: userAddress,

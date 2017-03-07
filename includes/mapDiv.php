@@ -34,12 +34,7 @@
             <!-- First Aid Button -->
             <div class="row" style="bottom:4%;">
                 <div class="col s12 m12 l12">
-                    <div>
-                        <img class=" MFB" id="mapFA" src="img/keys/firstaidicon.png">
-                    </div>
-                    <div>
-                        <img class=" MFB" id="mapLoc" src="img/keys/mapicon-alt.png">
-                    </div>
+                    
                     <div>
                         <img class=" MFB" id="listicon" src="img/keys/listicon.png">
                     </div>
@@ -47,9 +42,14 @@
                         <img class=" MFB" id="mapMenu" src="img/keys/menuicon2.png">
                     </div>
                     <div>
+                        <img class=" MFB" id="mapLoc" src="img/keys/mapicon-alt.png">
+                    </div>
+                    <div>
                         <img class=" MFB" id="mapKey" src="img/keys/keyicon-alt.png">
                     </div>
-                    
+                    <div>
+                        <img class=" MFB" id="mapFA" src="img/keys/firstaidicon.png">
+                    </div>
                 </div>
   
 

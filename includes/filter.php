@@ -5,11 +5,60 @@
     <div id="filterHead" class="valign-wrapper">
         <span id="filterTitle"> Common Species Filter</span>
     </div>
-    <div id="filterContent">
     
+    
+    <div id="filterContent">
+        <div class="row" style="margin-top:2%;">
+            <div class="col s6 m6 l6">
+                <div>
+                    <img class="catsIMG" id="filterMammLand" src="img/cats/mamm-land.png" >
+                    <p class="filterCatTxt">Land Mammals</p>                
+                
+                </div>
+            </div>
+            <div class="col s6 m6 l6">
+                <div>
+                    <img class="catsIMG" id="filterWaterLand" src="img/cats/mamm-water.png" >
+                    <p class="filterCatTxt">Water Mammals</p> 
+                </div>
+            </div>     
+        </div>
+        <div class="row">
+            <div class="col s6 m6 l6">
+                <div>
+                    <img class="catsIMG" id="filterReptiles" src="img/cats/reptil.png" >
+                    <p class="filterCatTxt"> Reptiles </p> 
+                </div>
+            </div>
+            <div class="col s6 m6 l6">
+                <div>
+                    <img class="catsIMG" id="filterAmphibians" src="img/cats/amph.png" >
+                    <p class="filterCatTxt"> Amphibians</p> 
+                </div>
+            </div>     
+        </div>
+        <div class="row">
+            <div class="col s6 m6 l6">
+                <div>
+                    <img class="catsIMG" id="filterIntroSpec" src="img/cats/intro-spec.png" >
+                    <p class="filterCatTxt"> Introduced Species</p> 
+                </div>
+            </div>
+            <div class="col s6 m6 l6">
+                <div>
+                    <img class="catsIMG" id="filterBirds" src="img/cats/birds.png" >
+                    <p class="filterCatTxt"> Birds</p> 
+                </div>
+            </div>     
+        </div>
+        
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <p class="filterCatTxt" id="filterOther"> Other</p>
+            </div>
+        </div>
 
-
-      <form action="#" class="radioBtns">
+      <!--form action="#" class="radioBtns">
         <p>
           <input name="cat" type="radio" id="LM" value="Land Mammals" checked/>
           <label for="LM">Land Mammals</label>
@@ -34,7 +83,7 @@
           <input  name="cat" type="radio" id="O" value="Other"/>
           <label for="O">Other</label>
         </p>
-      </form>
+      </form-->
 
     </div>
 

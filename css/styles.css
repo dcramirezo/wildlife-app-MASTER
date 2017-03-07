@@ -154,8 +154,8 @@ p { margin: 0; padding: 0; }
     text-align: justify;
     text-justify: inter-word;    
 }
-#firstAidFooter, .keysFooter, .shelterFooter{position: absolute;//margin: 6%;
-    font-size: 20px;text-align: right;bottom: 0px;
+#firstAidFooter, .keysFooter, .shelterFooter{position: absolute;//margin: 6%;font-size: 20px;
+    text-align: right;bottom: 0px;
     left: 0px;right: 0px;margin-top: 6%;}
 .WHL{ margin-right: -4px; }
 .WHR{ margin-left: -4px; }
@@ -168,7 +168,7 @@ p { margin: 0; padding: 0; }
 .centersHeader{ background-color: #00b7bd;}
 .headersBgCol {background-color:#dbeeed;}
 #hr{display: none;}
-
+.catsIMG{ width:50%;}
 #mapFooter{
     display: none;
     width: 100%;
@@ -179,7 +179,7 @@ p { margin: 0; padding: 0; }
     margin-bottom: 4%;
 }
 .MFB{ width: 15%; float:right;margin-right:1%}
-#mapKey, #mapMenu{display:none}
+#mapKey, #mapMenu, #mapMenu, #mapLoc, #mapFA{display:none}
 #mapModal{
     display: none;
     position: absolute;
@@ -234,10 +234,12 @@ input::-moz-placeholder {  /* Firefox 19+ */
     top:0%;left:0%;
 }
 .filterBox{
-    position:absolute; width:90%; height: 70%;
+    position:absolute; width:90%; height: 90%;
     top:0%;left:0%; display: none; z-index: 202;
     background-color: white; border-radius: 5px;
 }
+.filterCatTxt{color:#00b7bd; padding:5%;}
+
 #blackBg, #filterBlackBg{width: 100%; height: 100%;opacity: 0.4; position: absolute;
     z-index: 200;background-color: black;}
 #filterBlackBg{display: none;top:0%;left:0%;}
@@ -245,9 +247,9 @@ input::-moz-placeholder {  /* Firefox 19+ */
     color:white; font-size: 205%;}
 #filterFooter{position: absolute; padding: 1rem;
     bottom: 0;left: 0; right: 0;text-align: right;}
-.rdoButtons {
+/*.rdoButtons {
       display: block;
-   }
+   } */
 #warnBox{ width: 80%;min-height: 60%;
     position: absolute;background-color: white;
     left: 10%;top:20%;z-index: 201;
@@ -350,6 +352,7 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"]
 {display:none} 
 /* _ End of Removes the map copyrights..at footer _*/
 
+/*
 .radioBtns label {
     //display:inline-block;
     //font-size:100%;
@@ -358,7 +361,7 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"]
     text-align: left;
     margin: 5% 0% 0% 5%;
 }
-
+*/
 
 
 
