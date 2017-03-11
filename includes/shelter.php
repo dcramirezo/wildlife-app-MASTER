@@ -13,7 +13,9 @@
                     </div>
                     <div class="col s6 ms ls">
                         <div style="padding: 25% 22% 0% 0%; text-align: center;">
-                            <span id="Cname" class="fontCol" style="font-size:100%; font-weight:bold;">Lorne Wildlife Shelter</span>
+                            <span id="Cname" class="fontCol" style="font-size:100%; font-weight:bold;">
+                            <!-- Shelter name should be appended here -->
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -96,9 +98,22 @@
             <div class="shelterFooter">
                 <hr>
                 <div class="row">
-                    <div style="float:right;font-size: 20px; margin:3% 5% 5% 0%;">
-                        <span class='fontCol' id="sdone"><b>DONE&#10095;</b></span>
-                    </div>                    
+                                    
+                    <div class="col s6 m6 l6">
+                        <div style="float:left;font-size: 20px; margin:3% 5% 5% 0%;">
+                            <span class='fontCol' id="bdone">   
+                                <b>&#10094;BACK</b>
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="col s6 m6 l6">
+                        <div style="float:right;font-size: 20px; margin:3% 5% 5% 0%;">
+                            <span class='fontCol' id="sdone"><b>DONE&#10095;</b></span>
+                        </div>
+                    </div>
+                    
+                                        
                 </div>
             </div>
             

@@ -77,7 +77,7 @@ function initMap() {
         // more details for that place.
         searchBox.addListener('places_changed', function() {
             
-            console.log('places changed Ya GHAAEME al MOHAMMAD');
+            //console.log('places changed Ya GHAAEME al MOHAMMAD');
                             
             var places = searchBox.getPlaces();
            
@@ -102,7 +102,11 @@ function initMap() {
             
             map.setCenter(userAddress);
             map.setZoom(10);
-            filterMarkers(places[0].geometry.location.lat(), places[0].geometry.location.lng());
+           
+            
+            centersDetails = []; //empty this array
+            $(".centersContent").append("");
+          filterMarkers(places[0].geometry.location.lat(), places[0].geometry.location.lng());
             
             $('#mapModal, #LocationBox').hide();
         });
@@ -296,11 +300,12 @@ function filterMarkers(lat, lng){
                 removeMarkers(filteredMarkers); 
                 filteredMarkers = [];
             };
-            
+            $(".centersContent").append("");
             
             // Above 4 lines can be commented!
             var res = $.parseJSON(data);
             centersDetails = [];
+            $(".centersContent").append("");
             $.each(res, function(key, val){
                 centersDetails.push(val);
                 //console.log(val.distance); 
@@ -322,6 +327,8 @@ function filterMarkers(lat, lng){
                     website: val.website,
                     map: map
                 });
+               // create centers panel 
+                appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile)
                 
                 filteredMarkers.push(marker);
                 

@@ -378,6 +378,7 @@ $('#mapHome').click(function(){
      $('#mapModal, #LocationBox').hide();
  });
 $('#mapYes').click(function(){
+    centersDetails = []; //empty this array
     $('#mapModal, #LocationBox').hide();
     $('.firstAidOrDead, .keys, .shelter').hide();
     //navigator.geolocation.getCurrentPosition(showPosition);
@@ -389,7 +390,11 @@ $('#mapYes').click(function(){
 });
 
 $('#mapLoc').click(function(){
-    $('#mapModal, #LocationBox').show();
+    //$('#mapModal, #LocationBox').show();
+    $('#mapModal, #LocationBox').hide();
+    $('.firstAidOrDead, .keys, .shelter').hide();
+    $('.centers, .panel').show();
+    $( ".panel" ).animate({right: 0}, 700);
 });
 
 
@@ -408,14 +413,6 @@ $('.centersRow').click(function(){
     $( ".panel" ).animate({right: 0}, 700);
     
 });
-
-function makeShelterPage(src, cntrNme){
-    if($("#Cimage").find('img')){
-        $("#Cimage > img").remove();
-    }
-    $("#Cimage").append("<img style='width:100%; padding:0% 0% 30% 15%;' src='" + src + "'>");
-    $('#Cname').text(cntrNme);
-}
 
 /*
 function checkRadioBtn(){
@@ -485,9 +482,82 @@ $('#filterMammLand, #filterWaterLand, #filterReptiles, #filterAmphibians, #filte
     alert('Sorry, this button is not working for the moment!');
 });
 
+$('#mylist img').bind('click', function(){
+    alert( $('#mylist img').index(this) );
+});
+
+
+$(document).on('click', '.sss', function(e){
+    //console.log($(this).attr('id') ); 
+    var id = $(this).attr('id');
+    $.each(centersDetails, function( i, val ) {
+      if(val.user_id == id ){
+          
+          var iconUrl = iconIdentifier(val.spec);
+          makeShelterPage(iconUrl,val.org_name);
+      }
+
+    });
+    
+    $( ".panel" ).animate({right: -($(window).width()*0.95) }, 700, function(){
+        $('.centers').hide();
+        $('.firstAidOrDead, .keys').hide();
+        $('.shelter').show();
+        $( ".panel" ).animate({right: 0}, 700);
+    });
+
+    //console.log($(e.currentTarget).attr('id') );
+});
+$('#bdone').click(function(){
+    $( ".panel" ).animate({right:-($(window).width()*0.95) }, 700, function(){
+        $('.shelter, .firstAidOrDead, .keys').hide();
+        $('.centers').show();
+        $( ".panel" ).animate({right: 0}, 700);
+    });
+});
+
+function appendListOfClosestCentersToPanel(user_id, iconURL,orgName, contactNo){
+    
+    $(".centersContent").append(
+        "<div class='sss row' id='"+user_id+"'>" +
+            "<div class='col s5 m5 l5'>" +
+                "<div>" +
+                    "<img class='CCIMG' src=' " + iconURL + "'>" +
+                "</div>" +
+            "</div>" +
+            "<div class='col s7 m7 l7'>" +
+                "<div class='fontCol' style='font-size:16px; font-weight:bold; padding:5% 12% 0% 0%'>"+
+                    "<div>"+
+                        "<span >"+orgName +"</span>"+
+                    "</div>" +
+                    "<div><a href=' " +contactNo +">"+
+                        "<span class='fontCol;'>"+contactNo +
+                        "</span></a>"+
+                    "</div>" +
+                "</div>"+
+            "</div>" +    
+            
+            
+        "</div> <hr>");
+}
 
 
 
+function makeShelterPage(src, cntrNme){
+    if($("#Cimage").find('img')){
+        $("#Cimage > img").remove();
+    }
+    $("#Cimage").append("<img style='width:100%; padding:0% 0% 30% 15%;' src='" + src + "'>");
+    $('#Cname').text(cntrNme);
+}
+
+/*
+"<div class='col s2 m2 l2'>"+
+                "<div >"+
+                    "<img class='CCIMGI'"+ "src='img/keys/informationicon.png'>"+
+                "</div>"+
+            "</div>"+
+            */
 
 
 
