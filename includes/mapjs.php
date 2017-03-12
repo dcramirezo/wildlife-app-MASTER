@@ -104,8 +104,9 @@ function initMap() {
             map.setZoom(10);
            
             
-            centersDetails = []; //empty this array
-            $(".centersContent").append("");
+            //centersDetails = []; //empty this array
+            //console.log('panel should be emptied now');
+            //$(".centersContent").append("");
           filterMarkers(places[0].geometry.location.lat(), places[0].geometry.location.lng());
             
             $('#mapModal, #LocationBox').hide();
@@ -300,12 +301,13 @@ function filterMarkers(lat, lng){
                 removeMarkers(filteredMarkers); 
                 filteredMarkers = [];
             };
-            $(".centersContent").append("");
+            $(".centersContent").empty();
             
             // Above 4 lines can be commented!
             var res = $.parseJSON(data);
             centersDetails = [];
-            $(".centersContent").append("");
+            $(".centersContent").empty();
+            
             $.each(res, function(key, val){
                 centersDetails.push(val);
                 //console.log(val.distance); 

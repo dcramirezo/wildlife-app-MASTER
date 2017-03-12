@@ -10,11 +10,23 @@
             <?php include('includes/menuBar.php'); ?>
         </div>
         <div class="WS row" id="underUtility">
-            <br>
-            <b> <span id="WhatSpe">What species is the animal?</span></b>
-
-            <input type="text" id="srch" placeholder="Search Species" style="text-align:center; margin-bottom:5px;">
-            <div class="AutoUL" id="species" ></div>
+            <!--br>
+            <b--><span id="WhatSpe">What species is the animal?</span></b>
+            
+            <div class="row">
+                <div class="col s6 m6 l6">
+                    <input type="text" id="srch" placeholder="SEARCH SPECIES" style="text-align:center; font-size:70%; margin-bottom:5px; border_bottom:0px; padding:0px; background-color: #2bbbad; border-radius:5px; color:#FFF; box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);">
+                    
+                    
+                    
+                    <div class="AutoUL" id="species" ></div>
+                </div>
+                <div class="col s6 m6 l6">
+                    <a id="IdonKnow" class="waves-effect waves-light btn buttons" style="font-size:70%; width:100%;" >I Don't Know?</a>
+                </div>
+            </div>
+            
+        
             <div><span> Or select a common species bellow</span></div>
         </div>
         <div class="cont">

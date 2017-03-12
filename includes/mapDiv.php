@@ -50,9 +50,7 @@
                     <div>
                         <img class=" MFB" id="mapFA" src="img/keys/firstaidicon.png">
                     </div>
-                    <div>
-                        <img class=" MFB" id="mapFA" src="img/keys/firstaidicon.png">
-                    </div>
+                    
                 </div>
   
 

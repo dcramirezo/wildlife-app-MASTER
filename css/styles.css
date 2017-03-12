@@ -272,6 +272,18 @@ text-align: justify; }
 
 #mapMenuModal{display: none;z-index: 200; position: absolute; width: 100%; left:0;}
 
+/* Changes the placeholder color*/
+input::-webkit-input-placeholder {color: white !important; }
+input:-moz-placeholder { /* Firefox 18- */
+color: white !important;  }
+input::-moz-placeholder {  /* Firefox 19+ */
+color: white !important;  }
+input:-ms-input-placeholder {  
+color: white !important; }
+
+input[id="srch"]:focus{background-color: black;}
+
+
 @media screen and (min-width: 400px) {
     .Wimages{ width: 80%;}
     .theImg{width: 28%;}
@@ -362,7 +374,6 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"]
     margin: 5% 0% 0% 5%;
 }
 */
-
 
 
 
