@@ -63,9 +63,13 @@ function initMap() {
         var input = document.getElementById('Pcode');
     
         //var autocomplete = new google.maps.places.Autocomplete(input, boundOptions);
+        var CountryOpt = {
+            componentRestrictions: {country: 'au'}
+        };    
     
-        var searchBox = new google.maps.places.SearchBox(input);
+        //var searchBox = new google.maps.places.SearchBox(input);
     
+        var searchBox = new google.maps.places.Autocomplete(input, CountryOpt);
         
     /*
         map.addListener(searchBox, 'bounds_changed', function() {

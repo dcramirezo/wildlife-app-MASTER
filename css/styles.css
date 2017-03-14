@@ -273,15 +273,16 @@ text-align: justify; }
 #mapMenuModal{display: none;z-index: 200; position: absolute; width: 100%; left:0;}
 
 /* Changes the placeholder color*/
-input::-webkit-input-placeholder {color: white !important; }
-input:-moz-placeholder { /* Firefox 18- */
+#srch::-webkit-input-placeholder {color: white !important; }
+
+#srch:-moz-placeholder { /* Firefox 18- */
 color: white !important;  }
-input::-moz-placeholder {  /* Firefox 19+ */
+#srch::-moz-placeholder {  /* Firefox 19+ */
 color: white !important;  }
-input:-ms-input-placeholder {  
+#srch:-ms-input-placeholder {  
 color: white !important; }
 
-input[id="srch"]:focus{background-color: black;}
+//input[id="srch"]:focus{background-color: black;}
 
 
 @media screen and (min-width: 400px) {
