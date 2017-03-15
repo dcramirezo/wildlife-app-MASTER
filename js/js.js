@@ -459,9 +459,9 @@ function autoCompFunc(text){
     
     liveDead('img/wildlife/any/'+CName[0]+'.png', 'Is animal alive?');   
 }
-$('#warnFooter').click(function(){
-    $('.warning').hide();
-});
+$('#warnFooter').click(function(){ $('.warning').hide(); });
+$('#XIdonKnow').click(function(){ $('.warning').hide(); });
+
 $(document).keydown(function (e) {
   if (e.keyCode == 13) {
     $('.warning').hide();
@@ -550,6 +550,14 @@ function makeShelterPage(src, cntrNme){
     $("#Cimage").append("<img style='width:100%; padding:0% 0% 30% 15%;' src='" + src + "'>");
     $('#Cname').text(cntrNme);
 }
+
+
+$('#IdonKnow').click(function(){
+    $('#warnBox').hide();
+    $('.warning, #blackBg, #IdonKnowBox').show();
+});
+
+
 
 /*
 "<div class='col s2 m2 l2'>"+

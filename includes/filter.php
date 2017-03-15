@@ -1,6 +1,9 @@
 <div id="filterBlackBg"></div>
 
-<div class="filterBox">
+<div class="filterBox"> 
+    <div style="position:absolute; right: 4%; top:1.5%;">
+        <span id="filterDone" style="font-size:22px;">X</span>
+    </div>
     
     <div id="filterHead" class="valign-wrapper">
         <span id="filterTitle"> Common Species Filter</span>
@@ -52,11 +55,11 @@
             </div>     
         </div>
         
-        <div class="row">
+        <!--div class="row">
             <div class="col s12 m12 l12">
                 <p class="filterCatTxt" id="filterOther"> Other</p>
             </div>
-        </div>
+        </div-->
 
       <!--form action="#" class="radioBtns">
         <p>
@@ -87,10 +90,10 @@
 
     </div>
 
-    <div id="filterFooter">
+    <!--div id="filterFooter">
         <hr>
         <span style="font-size:150%;color:#00b7bd; padding:2%;" id="filterDone">Done &#10095</span>
-    </div>
+    </div-->
         
     
 </div>

@@ -59,7 +59,7 @@ function initMap() {
         var boundOptions ={
             bounds: AustraliaBounds
         };
-    // Create the search box and link it to the UI element.
+        // Create the search box and link it to the UI element.
         var input = document.getElementById('Pcode');
     
         //var autocomplete = new google.maps.places.Autocomplete(input, boundOptions);
@@ -71,12 +71,7 @@ function initMap() {
     
         var searchBox = new google.maps.places.Autocomplete(input, CountryOpt);
         
-    /*
-        map.addListener(searchBox, 'bounds_changed', function() {
-          searchBox.setBounds(AustraliaBounds);
-            console.log('bounds changed..');
-        });
-*/
+
         // Listen for the event fired when the user selects a prediction and retrieve
         // more details for that place.
         searchBox.addListener('places_changed', function() {

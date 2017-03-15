@@ -14,11 +14,11 @@ $(document).ready(function(){
     $('.imgText').css({
         height:($(window).height()*0.2)
     });
-    $('#warnHead').css({
+    $('.warnHead').css({
         height: ($('#warnBox').height() *0.25)
     });
-    $('#warnTitle').css({
-        marginLeft: ( ($('#warnHead').width() -$('#warnTitle').width() )/2  )
+    $('.warnTitle').css({
+        marginLeft: ( ($('.warnHead').width() -$('.warnTitle').width() )/2  )
     });
     $('.filterBox').css({
         top: ( ($(window).height()-$('.filterBox').height() )/2 ),
@@ -61,11 +61,11 @@ $('#utilityBar').css({
     $('.imgText').css({
         height:($(window).height()*0.2)
     });
-    $('#warnHead').css({
+    $('.warnHead').css({
         height: ($('#warnBox').height() *0.25)
     });
-    $('#warnTitle').css({
-        marginLeft: ( ($('#warnHead').width() -$('#warnTitle').width() )/2  )
+    $('.warnTitle').css({
+        marginLeft: ( ($('.warnHead').width() -$('.warnTitle').width() )/2  )
     }); 
     $('.filterBox').css({
         top: ( ($(window).height()-$('.filterBox').height() )/2 ),

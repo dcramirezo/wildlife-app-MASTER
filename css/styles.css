@@ -168,7 +168,7 @@ p { margin: 0; padding: 0; }
 .centersHeader{ background-color: #00b7bd;}
 .headersBgCol {background-color:#dbeeed;}
 #hr{display: none;}
-.catsIMG{ width:50%;}
+.catsIMG{ width:70%;}
 #mapFooter{
     display: none;
     width: 100%;
@@ -250,7 +250,7 @@ input::-moz-placeholder {  /* Firefox 19+ */
 /*.rdoButtons {
       display: block;
    } */
-#warnBox{ width: 80%;min-height: 60%;
+#warnBox, #IdonKnowBox{ width: 80%;min-height: 60%;
     position: absolute;background-color: white;
     left: 10%;top:20%;z-index: 201;
     border-radius: 5px; 
@@ -259,9 +259,9 @@ input::-moz-placeholder {  /* Firefox 19+ */
 #warnFooter{ position: absolute; padding: 1rem;
     bottom: 0; left: 0; right: 0; text-align:right;}
 
-#warnHead{background-color:#00b7bd; 
+.warnHead{background-color:#00b7bd; 
     color:white; font-size: 230%;}
-#warnContent{color:#00b7bd; font-size: 115%;padding:5%;
+.warnContent{color:#00b7bd; font-size: 115%;padding:5%;
 text-align: justify; }
 /* Warning box settings end */
 

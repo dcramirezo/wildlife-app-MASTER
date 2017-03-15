@@ -2,11 +2,12 @@
     <div id="blackBg"></div>
     
     <div id="warnBox">
-        <div class="valign-wrapper" id="warnHead">
-            <span id="warnTitle"> WARNING!</span></div>
-        <div id="warnContent">
+        <div class="valign-wrapper warnHead">
+            <span class="warnTitle"> WARNING!</span></div>
+        <div class="warnContent">
             <p>
                 Please before treating or attending to any wildlife that you make sure you are safe and that you are clear of any vehicles or any other obstructions that could harm you or your other passengers.
+            </p>
         </div>
         
         <div id="warnFooter">
@@ -15,5 +16,28 @@
         </div>
         
     </div>
+    
+    <!-- I don't know pop up page -->
+    <div id="IdonKnowBox" style="display:none;">
+        
+        <div style="position:absolute; right: 4%; top:1.5%;">
+            <span id="XIdonKnow" style="font-size:22px;">X</span>
+        </div>
+        
+        <div class="valign-wrapper warnHead">
+            <span class="warnTitle"> I don't know!</span></div>
+        <div class="warnContent">
+            <p>
+                If you are having trouble identifying the species of animal, please call the Department of Environment, Water, Land and Planning below.
+            </p>
+            <br>
+            <div style="text-align:center;">
+                <a href="136 186"> <span style="font-size:200%;"><u>136 186 </u></span></a>
+            </div>
+        </div>
+        
+    </div>
+    
+    
     
 </div>
