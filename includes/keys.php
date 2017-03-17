@@ -15,14 +15,14 @@
                         </div>
                     </div>
                     <div class="col s6 m6 l6">
-                        <div>
+                        <!--div>
                             <img class="KHIMG" src="img/keys/vet-icon-aqua.png">
                         </div>
                         <div>
                              <span style="font-size:16px; font-weight:bold;">
                                 Veterinarian
                             </span>                       
-                        </div>
+                        </div-->
                     </div>                    
                 </div>
                      
@@ -35,9 +35,9 @@
                         </div>
                     </div>
                     <div class="col s3 m3 l3">
-                        <div>
+                        <!--div>
                             <img class="KCIMG" src="img/keys/vet-icon-aqua.png">
-                        </div>
+                        </div-->
                     </div>
                     <div class="col s6 m6 l6">
                         <div style="padding-top:9%;">
@@ -57,9 +57,9 @@
                         </div>
                     </div>
                     <div class="col s3 m3 l3">
-                        <div>
+                        <!--div>
                             <img class="KCIMG" src="img/keys/vet-icon-grey.png">
-                        </div>
+                        </div-->
                     </div>
                     <div class="col s6 m6 l6">
                         <div style="padding-top:9%;">
@@ -79,9 +79,9 @@
                         </div>
                     </div>
                     <div class="col s3 m3 l3">
-                        <div>
+                        <!--div>
                             <img class="KCIMG" src="img/keys/vet-icon-orange.png">
-                        </div>
+                        </div-->
                     </div>
                     <div class="col s6 m6 l6">
                         <div style="padding-top:9%;">
@@ -101,9 +101,9 @@
                         </div>
                     </div>
                     <div class="col s3 m3 l3">
-                        <div>
+                        <!--div>
                             <img class="KCIMG" src="img/keys/vet-icon-red.png">
-                        </div>
+                        </div-->
                     </div>
                     <div class="col s6 m6 l6">
                         <div style="padding-top:9%;">
@@ -123,9 +123,9 @@
                         </div>
                     </div>
                     <div class="col s3 m3 l3">
-                        <div>
+                        <!--div>
                             <img class="KCIMG" src="img/keys/vet-icon-pink.png">
-                        </div>
+                        </div-->
                     </div>
                     <div class="col s6 m6 l6">
                         <div style="padding-top:9%;">
@@ -145,9 +145,9 @@
                         </div>
                     </div>
                     <div class="col s3 m3 l3">
-                        <div>
+                        <!--div>
                             <img class="KCIMG" src="img/keys/vet-icon-blue.png">
-                        </div>
+                        </div-->
                     </div>
                     <div class="col s6 m6 l6">
                         <div style="padding-top:9%;">

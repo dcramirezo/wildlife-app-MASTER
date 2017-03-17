@@ -36,10 +36,13 @@
                 <div class="col s12 m12 l12">
                     
                     <div>
-                        <img class=" MFB" id="listicon" src="img/keys/listicon.png">
+                        <img class=" MFB" id="listicon-alt" src="img/keys/listicon-alt.png">
                     </div>
                     <div>
                         <img class=" MFB" id="mapMenu" src="img/keys/menuicon2.png">
+                    </div>
+                    <div>
+                        <img class=" MFB" id="listicon" src="img/keys/listicon.png">
                     </div>
                     <div>
                         <img class=" MFB" id="mapLoc" src="img/keys/mapicon-alt.png">

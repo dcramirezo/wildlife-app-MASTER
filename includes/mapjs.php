@@ -54,12 +54,7 @@ function initMap() {
           }
     });
     
-        var AustraliaBounds = new google.maps.LatLngBounds(new google.maps.LatLng(-43.867240, 110.577865), new google.maps.LatLng(-10.940201, 153.730149));
-    
-        var boundOptions ={
-            bounds: AustraliaBounds
-        };
-        // Create the search box and link it to the UI element.
+        
         var input = document.getElementById('Pcode');
     
         //var autocomplete = new google.maps.places.Autocomplete(input, boundOptions);
@@ -74,15 +69,16 @@ function initMap() {
 
         // Listen for the event fired when the user selects a prediction and retrieve
         // more details for that place.
-        searchBox.addListener('places_changed', function() {
+        searchBox.addListener('place_changed', function() {
             
             //console.log('places changed Ya GHAAEME al MOHAMMAD');
                             
-            var places = searchBox.getPlaces();
-           
+            var places = searchBox.getPlace();
+            
             //searchBox.setBounds(AustraliaBounds);
+            //console.log(places.geometry.location.lat());
 
-            if (places.length == 0) {return;}
+            if (places.length == 0) { return;}
             
             if(CLmarker){CLmarker.setMap(null); //clears this marker
             }
@@ -90,7 +86,8 @@ function initMap() {
             }
             CLmarker = IPmarker = '';
             
-            var userAddress = new google.maps.LatLng(places[0].geometry.location.lat(), places[0].geometry.location.lng());
+            //var userAddress = new google.maps.LatLng(places[0].geometry.location.lat(), places[0].geometry.location.lng());
+            var userAddress = new google.maps.LatLng(places.geometry.location.lat(), places.geometry.location.lng());
             
             
             UAmarker = new google.maps.Marker({
@@ -106,7 +103,8 @@ function initMap() {
             //centersDetails = []; //empty this array
             //console.log('panel should be emptied now');
             //$(".centersContent").append("");
-          filterMarkers(places[0].geometry.location.lat(), places[0].geometry.location.lng());
+           //filterMarkers(places[0].geometry.location.lat(), places[0].geometry.location.lng());
+           filterMarkers(places.geometry.location.lat(), places.geometry.location.lng());
             
             $('#mapModal, #LocationBox').hide();
         });
@@ -329,7 +327,7 @@ function filterMarkers(lat, lng){
                     map: map
                 });
                // create centers panel 
-                appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile)
+                appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile);
                 
                 filteredMarkers.push(marker);
                 

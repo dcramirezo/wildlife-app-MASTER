@@ -45,30 +45,41 @@ $(window).resize(function(){
         right: -panelPos
     });  
 });
-/*
-$('#rdo-land').click(function(){
+
+$('#filterMammLand').click(function(){
+    $('.commonSpecies,.waterMammals,.birds,.reptilesAmphibians, .introduced, #filterBlackBg , .filterBox').hide();
     $('.land').show();
-    $('.sea, .sky, .river, .commonSpecies').hide();
     LandRiverSeaSky = 'land';
 });
-$('#rdo-sea').click(function(){
-    $('.sea').show();
-    $('.land, .sky, .river, .commonSpecies').hide();
-    LandRiverSeaSky = 'sea';
+$('#filterWaterLand').click(function(){
+    $('.commonSpecies,.land,.birds,.reptilesAmphibians, .introduced, #filterBlackBg , .filterBox').hide();
+    $('.waterMammals').show();
+    LandRiverSeaSky = 'waterMammals';
 });
-$('#rdo-sky').click(function(){
-    $('.sky').show();
-    $('.land, .sea, .river, .commonSpecies').hide();
-    LandRiverSeaSky = 'sky';
+
+$('#filterReptilesAmphibians').click(function(){
+    $('.commonSpecies,.land,.birds,.waterMammals, .introduced, #filterBlackBg , .filterBox').hide();
+    $('.reptilesAmphibians').show();
+    LandRiverSeaSky = 'reptilesAmphibians';
 });
-$('#rdo-river').click(function(){
-    $('.river').show();
-    $('.sea, .sky, .land, .commonSpecies').hide();
-    LandRiverSeaSky = 'river';
+
+$('#filterBirds').click(function(){
+    $('.commonSpecies,.land,.birds,.waterMammals, .introduced, .reptilesAmphibians, #filterBlackBg , .filterBox').hide();
+    $('.birds').show();
+    LandRiverSeaSky = 'birds';
 });
-*/
+$('#filterIntroSpec').click(function(){
+    $('.commonSpecies,.land,.birds,.waterMammals, reptilesAmphibians, #filterBlackBg , .filterBox').hide();
+    $('.introduced').show();
+    LandRiverSeaSky = 'introduced';
+});
+$('#filterIdonKnow' ).click(function(){
+    alert('Sorry, this button is not working for the moment!');
+    $('#filterBlackBg , .filterBox').hide();
+});
+
 $('#arrow-down').click(function(){
-    $('.toggleDiv, #arrow-up').show();
+    $('.toggleDiv, #arrow-up').show(1200);
     $('#arrow-down').hide(); 
     //moreLessText = 'less';
     $('#moreLess').text('Less');
@@ -76,7 +87,7 @@ $('#arrow-down').click(function(){
     
 });
 $('#arrow-up').click(function(){
-    $('.toggleDiv').hide(1500);
+    $('.toggleDiv').hide(1200);
     $('#arrow-up').hide();
     $('#arrow-down').show();
     //moreLessText = 'more';
@@ -93,7 +104,7 @@ $('#moreLess').click(function(){
  // -------------------------------------
 
 function liveDead(src, txt){
-    $('#WS, .cont, .land, .sea, .sky, .river, #arrow-down, #arrow-up, #moreLess, #underUtility').hide();
+    $('#WS, .cont, .land, .waterMammals, .birds, .introduced, .reptilesAmphibians, #arrow-down, #arrow-up, #moreLess, #underUtility').hide();
     $('#liveDead').show();
     
     tmp = 'isLive';
@@ -136,19 +147,21 @@ $('#leftArrow').click(function(){
         
         if( LandRiverSeaSky== 'commonSpecies' ){        
             $('.commonSpeices').show();
-            $('.land,.sea,.sky,.river').hide();
+            $('.land,.waterMammals,.reptilesAmphibians,.introduced, .birds').hide();
         }else if( LandRiverSeaSky== 'land' ){        
             $('.land').show();
-            $('.commonSpecies,.sea,.sky,.river').hide();
-        }else if( LandRiverSeaSky== 'sea' ){        
-            $('.sea').show();
-            $('.commonSpecies,.land,.sky,.river').hide();
-        }else if( LandRiverSeaSky== 'sky' ){        
-            $('.sky').show();
-            $('.commonSpecies,.sea,.land,.river').hide();
-        }else if( LandRiverSeaSky== 'river' ){        
-            $('.river').show();
-            $('.commonSpecies,.sea,.sky,.land').hide();
+            $('.commonSpecies,.waterMammals,.birds,.reptilesAmphibians, .introduced').hide();
+        }else if( LandRiverSeaSky== 'waterMammals' ){        
+            $('.waterMammals').show();
+            $('.commonSpecies,.land,.birds,.reptilesAmphibians, .introduced').hide();
+        }else if( LandRiverSeaSky== 'birds' ){        
+            $('.birds').show();
+            $('.commonSpecies,.waterMammals,.land,.reptilesAmphibians, .introduced').hide();
+        }else if( LandRiverSeaSky== 'reptilesAmphibians' ){        
+            $('.reptilesAmphibians').show();
+            $('.commonSpecies,.waterMammals,.birds,.land, .introduced').hide();
+        }else if( LandRiverSeaSky== 'introduced' ){        
+            $('.introduced').show();            $('.commonSpecies,.waterMammals,.birds,.land, .reptilesAmphibians,').hide();
         }
         
         $('#moreLess').text('more');
@@ -318,11 +331,12 @@ $('.Qbtns').click(function(){
     tmp ='map';
 });
 
-$('#listicon').click(function(){
-    $('#mapMenu').toggle(300);
-    $('#mapLoc').toggle(500);
+$('#listicon-alt').click(function(){
+    $('#mapMenu').toggle(250);
+    $('#listicon').toggle(400);
+    $('#mapLoc').toggle(550);
     $('#mapKey').toggle(700);
-    $('#mapFA').toggle(900);
+    $('#mapFA').toggle(850);
 
 });
 $('#mapKey').click(function(){
@@ -352,20 +366,23 @@ $('#mapHome').click(function(){
     
     if( LandRiverSeaSky== 'commonSpeices' ){        
         $('.commonSpeices').show();
-        $('.river,.sea,.sky,.land').hide();
+        $('.reptilesAmphibians,.waterMammals,.birds,.land, .introduced').hide();
     }else if( LandRiverSeaSky== 'land' ){        
         $('.land').show();
-        $('.commonSpecies,.sea,.sky,.river').hide();
-    }else if( LandRiverSeaSky== 'sea' ){        
-        $('.sea').show();
-        $('.commonSpecies,.river,.sky,.land').hide();
-    }else if( LandRiverSeaSky== 'sky' ){        
-        $('.sky').show();
-        $('.commonSpecies,.sea,.river,.land').hide();
-    }else if( LandRiverSeaSky== 'river' ){        
-        $('.river').show();
-        $('.commonSpecies,.sea,.sky,.land').hide();
-    }
+        $('.commonSpecies,.waterMammals,.birds,.reptilesAmphibians, .introduced').hide();
+    }else if( LandRiverSeaSky== 'waterMammals' ){        
+        $('.waterMammals').show();
+        $('.commonSpecies,.reptilesAmphibians,.birds,.land, .introduced').hide();
+    }else if( LandRiverSeaSky== 'birds' ){        
+        $('.birds').show();
+        $('.commonSpecies,.waterMammals,.reptilesAmphibians,.land, .introduced').hide();
+    }else if( LandRiverSeaSky== 'reptilesAmphibians' ){        
+        $('.reptilesAmphibians').show();
+        $('.commonSpecies,.waterMammals,.birds,.land, .introduced').hide();
+    }else if( LandRiverSeaSky== 'introduced' ){        
+            $('.introduced').show();            $('.commonSpecies,.waterMammals,.birds,.land, .reptilesAmphibians').hide();
+        }
+    
     //$('body').css('overflow', 'auto');
     comeFromMap = 1;
     //checkRadioBtn();
@@ -389,7 +406,7 @@ $('#mapYes').click(function(){
     
 });
 
-$('#mapLoc').click(function(){
+$('#listicon').click(function(){
     //$('#mapModal, #LocationBox').show();
     $('#mapModal, #LocationBox').hide();
     $('.firstAidOrDead, .keys, .shelter').hide();
@@ -397,6 +414,9 @@ $('#mapLoc').click(function(){
     $( ".panel" ).animate({right: 0}, 700);
 });
 
+$('#mapLoc').click(function(){
+    $('#mapModal, #LocationBox').show();
+});
 
 $('.centersRow').click(function(){
     var imgTag = $(this).find('img').attr('src');
@@ -438,7 +458,6 @@ function checkRadioBtn(){
 }
 */
 $('#locBoxSrch').click(function(){
-    console.log('loc box!');
     $('#LocationBox').show();
 });
 
@@ -476,10 +495,6 @@ $('#filter').click(function(){
 });
 $('#filterDone').click(function(){
     $('#filterBlackBg , .filterBox').hide();
-});
-
-$('#filterMammLand, #filterWaterLand, #filterReptiles, #filterAmphibians, #filterIntroSpec, #filterBirds, #filterOther' ).click(function(){
-    alert('Sorry, this button is not working for the moment!');
 });
 
 $('#mylist img').bind('click', function(){

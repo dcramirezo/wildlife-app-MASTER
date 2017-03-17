@@ -49,28 +49,33 @@
                 <a id="filter" class="waves-effect waves-light btn buttons" style=" font-size:100%;" >Filter</a>
             </div>
             <br>    
-            <!-- Land Sea Sky River -->
+            <!-- Land waterMammals birds reptilesAmphibians -->
             <div id="lssr">
                 
                 <!-- CCCCCCC Common Species CCCCCCC--> 
                 <?php include('includes/commonSpecies.php'); ?>
-                <!-- CCCCC End Common Species CCCCCCC-->  
+                <!-- CCCCC End Common Species CCCCC-->  
                 
-                <!-- LLLLLL Land Wildlifes LLLLLLLL--> 
+                <!-- LLLLLL Land Mammals LLLLLLLL--> 
                 <?php include('includes/land.php'); ?>
-                <!-- LLLLLLL End of LAND LLLLLLLLLL-->  
+                <!-- LLLLLLL End of Mammals LLLLLL-->  
 
-                <!-- SSSSSSS Sea WildLife SSSSSSSSS--> 
-                <?php include('includes/sea.php'); ?>   
-                <!-- SSSSSSSSS End Sea SSSSSSSSSSSS--> 
+                <!--  waterMammals WildLife --> 
+                <?php include('includes/waterMammals.php'); ?>   
+                <!--  End waterMammals --> 
 
-                <!-- KKKKKKKKK Sky Wildlife KKKKKKKKK -->
-                <?php include('includes/sky.php'); ?>    
-                <!-- KKKKKKKKk End of Sky KKKKKKkkKKK -->
+                <!-- BBBBBB Birds  BBBBBB -->
+                <?php include('includes/birds.php'); ?>    
+                <!-- BBBBBB End of birds BBBBBB -->
 
-                <!-- RRRRRRRRR River Wildlife RRRRRRR -->
-                <?php include('includes/river.php'); ?>     
-                <!-- RRRRRRRR End of River RRRRRRRRRR -->    
+                <!-- RR reptilesAmphibians  RRR -->
+                <?php include('includes/reptilesAmphibians.php'); ?>     
+                <!--  End of reptilesAmphibians -->
+                
+                <!-- IIII Introduced  IIII -->
+                <?php include('includes/introduced.php'); ?>     
+                <!--  End of Introduced -->
+                
             </div>
         </div> 
         <?php include('includes/mapDiv.php'); ?>

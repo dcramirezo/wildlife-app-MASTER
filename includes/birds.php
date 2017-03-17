@@ -1,10 +1,10 @@
-    <div class = "sky">
+    <div class = "birds">
         <div class="row">
             <div class="col s4 m4 l4" id="r1c1">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sky/Plumed Whistling Duck.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife_icons/Birds/Duck.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Plumed Whistling Duck</p>
+                    <p>Duck</p>
                 </div>
             </div>
             <div class="col s4 m4 l4" id="r1c2">
@@ -28,23 +28,23 @@
         <div class="row">
             <div class="col s4 m4 l4" id="r2c1">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sky/Emu.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife/sky/Lorikeet.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Emu</p>
+                    <p>Lorikeet</p>
                 </div>
             </div>
             <div class="col s4 m4 l4" id="r2c2">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sky/Rainbow Lorikeet.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife_icons/Birds/Kookaburra.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Rainbow Lorikeet</p>
+                    <p>Kookaburra</p>
                 </div>        
             </div>
             <div class="col s4 m4 l4" id="r2c3">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sky/Black Swan.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife_icons/Birds/Eagle.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Black Swan</p>
+                    <p>Eagle</p>
                 </div>           
             </div>       
 
@@ -57,23 +57,23 @@
              <br>
             <div class="col s4 m4 l4" id="r3c1">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sky/Malleefowl.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife_icons/Birds/Owl.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Malleefowl</p>
+                    <p>Owl</p>
                 </div>
             </div>
             <div class="col s4 m4 l4" id="r3c2">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sky/Blue Billed Duck.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife_icons/Birds/Hawk.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Blue Billed Duck</p>
+                    <p>Hawk</p>
                 </div>        
             </div>
             <div class="col s4 m4 l4" id="r3c3">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sky/Stubble Quail.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife_icons/Birds/Buzzard.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Stubble Quail</p>
+                    <p>Buzzard</p>
                 </div>           
             </div>       
 
@@ -83,9 +83,9 @@
              <br>
             <div class="col s4 m4 l4" id="r4c1">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sky/Owlet Nightjar.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife_icons/Birds/Falcon.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Owlet Nightjar</p>
+                    <p>Falcon</p>
                 </div>
             </div>
             <div class="col s4 m4 l4" id="r4c2">
@@ -103,6 +103,18 @@
                 </div>           
             </div>       
 
-        </div>  
+        </div> 
+        <div class="row toggleDiv">
+             <br>
+            <div class="col s4 m4 l4" id="r4c1">
+                <div class="img_caption_div">
+                    <img class="Wimages responsive-img" src="img/wildlife/sky/Emu.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <br>
+                    <p>Emu</p>
+                </div>
+            </div>
+            
+        </div>
+        
     </div>
     

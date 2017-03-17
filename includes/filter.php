@@ -29,14 +29,14 @@
         <div class="row">
             <div class="col s6 m6 l6">
                 <div>
-                    <img class="catsIMG" id="filterReptiles" src="img/cats/reptil.png" >
-                    <p class="filterCatTxt"> Reptiles </p> 
+                    <img class="catsIMG" id="filterReptilesAmphibians" src="img/cats/amph-reptile.png" >
+                    <p class="filterCatTxt"> Reptiles & Amphibians </p> 
                 </div>
             </div>
             <div class="col s6 m6 l6">
                 <div>
-                    <img class="catsIMG" id="filterAmphibians" src="img/cats/amph.png" >
-                    <p class="filterCatTxt"> Amphibians</p> 
+                    <img class="catsIMG" id="filterBirds" src="img/cats/birds.png" >
+                    <p class="filterCatTxt"> Birds</p> 
                 </div>
             </div>     
         </div>
@@ -49,8 +49,8 @@
             </div>
             <div class="col s6 m6 l6">
                 <div>
-                    <img class="catsIMG" id="filterBirds" src="img/cats/birds.png" >
-                    <p class="filterCatTxt"> Birds</p> 
+                    <img class="catsIMG" id="filterIdonKnow" src="img/cats/questionicon.png" >
+                    <p class="filterCatTxt"> I don't know</p> 
                 </div>
             </div>     
         </div>

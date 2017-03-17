@@ -58,7 +58,7 @@ p { margin: 0; padding: 0; }
 #logo{ height: 50%; }
 #WhatSpe{ font-size: 20px; }
 .rdo{ margin-top: 20px;}
-.land, .sea, .sky, .river, .toggleDiv, #liveDead, #whatHapn{ display: none;}
+.land, .waterMammals, .birds, .reptilesAmphibians, .introduced, .toggleDiv, #liveDead, #whatHapn{ display: none;}
 #whatHapn{margin-bottom: 5%;}
 
 #isAlive{    background-color: #00b7bd; }
@@ -179,7 +179,7 @@ p { margin: 0; padding: 0; }
     margin-bottom: 4%;
 }
 .MFB{ width: 15%; float:right;margin-right:1%}
-#mapKey, #mapMenu, #mapMenu, #mapLoc, #mapFA{display:none}
+#mapKey, #mapMenu, #mapMenu, #mapLoc, #mapFA, #listicon{display:none}
 #mapModal{
     display: none;
     position: absolute;
