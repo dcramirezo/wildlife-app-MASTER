@@ -25,10 +25,11 @@
                     <a id="IdonKnow" class="waves-effect waves-light btn buttons" style="font-size:70%; width:100%;" >I Don't Know?</a>
                 </div>
             </div>
-            
+            <br />
         
             <div><span> Or select a common species bellow</span></div>
         </div>
+        <br>
         <div class="cont">
             <!-- Radio buttons -->
             <!--div class="rdo row">  
@@ -97,13 +98,25 @@
     
     </div> <!-- End of headCont -->
     <!-- footer needs to be down here otherwise jquery stuff will not work as they all include into footer.php -->
-    <?php include('includes/footer.php'); ?>
-    <?php include('includes/connect_db.php'); ?> 
-    <?php include('includes/mapjs.php'); ?> 
-    
+
+</div>
+
+<div id="menuDiv">
+    <div id="menuHead">
+        <div style="position:absolute; right: 4%; top:1.5%;">
+            <span id="closeMenu" style="font-size:22px;">X</span>
+        </div>
+        
+        Menu
+    </div>
+    <div id="menuContent"></div>
 </div>
 
 
+<?php include('includes/footer.php'); ?>
+<?php include('includes/connect_db.php'); ?> 
+<?php include('includes/mapjs.php'); ?> 
+    
 
 
 

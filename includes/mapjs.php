@@ -375,8 +375,8 @@ function IPaddressLocator(){
     //$.getJSON('http://jsonip.com/?callback=?', function(r){ console.log(r.ip); });
     
     
-    //$geoplugin->locate($ip);
-    $geoplugin->locate('14.201.3.11');
+    $geoplugin->locate($ip);
+    //$geoplugin->locate('14.201.3.11');
     
 ?>
     

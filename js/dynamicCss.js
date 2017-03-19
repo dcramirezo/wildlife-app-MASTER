@@ -11,6 +11,10 @@ $(document).ready(function(){
     $('#underUtility').css({
         height:($(window).height()*0.18)
     });
+    
+    $('.logo').css({
+        height:($(window).height()*0.10)
+    }); 
     $('.imgText').css({
         height:($(window).height()*0.2)
     });
@@ -35,10 +39,10 @@ $(document).ready(function(){
         height: ($(window).height()*0.83),
         //overflow: 'visible'
         
-    });
+    });   
     
-    //console.log( $('#warnTitle').width()  );
-    
+    //console.log('win height: '+ $(window).width()  );
+
     
 });
 
@@ -46,9 +50,15 @@ $(document).ready(function(){
 // Window resize 
 $(window).resize(function(){
     
-$('#utilityBar').css({
+    $('#utilityBar').css({
         height:($(window).height()*.10)
     });
+    /*
+    $('#trapezoidMenu').css({
+        borderBottomWidth: ($('#underUtility').height()),
+        borderLeftWidth: ($(window).width()*0.84375),
+        width: ($(window).width()*0.225)
+    }); */
     $('.menuBar').css({
         height:($(window).height()*.07)
     }); 
@@ -58,6 +68,9 @@ $('#utilityBar').css({
     $('#underUtility').css({
         height:($(window).height()*0.18)
     });
+    $('.logo').css({
+        height:($(window).height()*0.10)
+    }); 
     $('.imgText').css({
         height:($(window).height()*0.2)
     });

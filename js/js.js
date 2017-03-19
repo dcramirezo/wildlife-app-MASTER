@@ -79,6 +79,7 @@ $('#filterIdonKnow' ).click(function(){
 });
 
 $('#arrow-down').click(function(){
+    
     $('.toggleDiv, #arrow-up').show(1200);
     $('#arrow-down').hide(); 
     //moreLessText = 'less';
@@ -398,10 +399,10 @@ $('#mapYes').click(function(){
     centersDetails = []; //empty this array
     $('#mapModal, #LocationBox').hide();
     $('.firstAidOrDead, .keys, .shelter').hide();
-    //navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(showPosition);
     
     //if(ifShowPosWorks == 0){
-       IPaddressLocator(); 
+       //IPaddressLocator(); 
     //}
     
 });
@@ -581,6 +582,40 @@ $('#IdonKnow').click(function(){
                 "</div>"+
             "</div>"+
             */
+
+
+$('#trapezoidMenu').click(function(){
+    $('#wrapper').animate({left:- ($(window).width()*.85 ), right:( $(window).width()*.85 )}, 700);   
+});
+
+$('#closeMenu').click(function(){
+    console.log('Ya Ahmad Al Hassan');
+    $('#wrapper').animate({left:0, right:0}, 700);   
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

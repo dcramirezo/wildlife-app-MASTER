@@ -16,7 +16,7 @@
             </div>
             <div class="col s4 m4 l4" id="r1c3">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife_icons/Introduced/Goat.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife/land/Goat.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
                     <p>Goat</p>
                 </div>           
@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col s4 m4 l4" id="r2c1">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife_icons/Introduced/Horse.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife/land/Horse.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
                     <p>Horse</p>
                 </div>
@@ -90,14 +90,14 @@
             </div>
             <div class="col s4 m4 l4" id="r4c2">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife_icons/Introduced/Fox.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife/land/Fox.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
                     <p>Fox</p>
                 </div> 
             </div>
             <div class="col s4 m4 l4" id="r4c3">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife_icons/Introduced/Camel.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife/land/Camel.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
                     <p>Camel</p>
                 </div> 
@@ -108,7 +108,7 @@
              <br>
             <div class="col s4 m4 l4" id="r4c1">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife_icons/Introduced/Buffalo.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife/land/Buffalo.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
                     <p>Buffalo</p>
                 </div> 
