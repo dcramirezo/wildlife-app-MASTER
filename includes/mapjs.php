@@ -84,7 +84,9 @@ function initMap() {
             }
             if(IPmarker){IPmarker.setMap(null); //clears this marker
             }
-            CLmarker = IPmarker = '';
+            if(UAmarker){UAmarker.setMap(null); //clears this marker
+            }
+            CLmarker = IPmarker = UAmarker = '';
             
             //var userAddress = new google.maps.LatLng(places[0].geometry.location.lat(), places[0].geometry.location.lng());
             var userAddress = new google.maps.LatLng(places.geometry.location.lat(), places.geometry.location.lng());
@@ -221,7 +223,7 @@ function iconIdentifier(centerSpec){
   
     
     
-    /* This function plots all available markers */
+    /* This function plots all available markers as default when user navigates to the Map page*/
 function plotMarkers(){
      // delete current markers
     $.ajax({
@@ -231,11 +233,16 @@ function plotMarkers(){
             if(filteredMarkers){ removeMarkers(filteredMarkers); };
             filteredMarkers = [];
             
+            // counter for number of Centers
+            var CentersCounter = 0;
+            // emthy the sliding panel from previousely added Wildlife Centers list to add a new list
+            $(".centersContent").empty();
+            
             var results = $.parseJSON(data);
             centersDetails = [];
             $.each(results, function(key, val){
                 centersDetails.push(val);
-
+                
                 iconUrl = iconIdentifier(val.spec);
                 var icon = {
                     url: iconUrl,
@@ -268,11 +275,18 @@ function plotMarkers(){
                     setFooterHeight($('.shelterFooter').height());
 
                 });
-
+                
+                // append a list of 20 Wildlife Centers to the sliding panel by defualt
+                if(CentersCounter<21){
+                    CentersCounter++;
+                     appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile);
+                };
+                
+                
             });
         },
         error: function(){
-            console.log('Addresses of Wildlife Centers cannot be found.');
+            console.log('Wildlife Centers Addresses cannot be found.');
         }
     });
 
@@ -290,6 +304,7 @@ function filterMarkers(lat, lng){
             lng: lng    
         },
         success: function(data) {
+                        
             if(markers){ 
                 removeMarkers(markers); 
                 markers = [];
@@ -298,12 +313,13 @@ function filterMarkers(lat, lng){
                 removeMarkers(filteredMarkers); 
                 filteredMarkers = [];
             };
+            // emthy the sliding panel from previousely added Wildlife Centers list to add a new list 
             $(".centersContent").empty();
             
             // Above 4 lines can be commented!
             var res = $.parseJSON(data);
             centersDetails = [];
-            $(".centersContent").empty();
+            //$(".centersContent").empty();
             
             $.each(res, function(key, val){
                 centersDetails.push(val);

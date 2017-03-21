@@ -2,22 +2,27 @@ $(document).ready(function(){
     $('#utilityBar').css({
         height:($(window).height()*.10)
     });
-    $('.menuBar').css({
-        height:($(window).height()*.07)
-    }); 
-    $('.imgText').css({
-        height:($(window).height()*0.18)
-    }); 
+    //$('.menuBar').css({
+        //height:($(window).height()*.07)
+    //}); 
     $('#underUtility').css({
         height:($(window).height()*0.18)
     });
-    
     $('.logo').css({
         height:($(window).height()*0.10)
-    }); 
+    });
+    $('#menuHead').css({
+        height:($(window).height()*0.10)
+    });
     $('.imgText').css({
         height:($(window).height()*0.2)
     });
+    //$('#map-canvas').css({
+        //height:($(window).height())
+    //});
+    //$('#imgQHolder').css({
+        //paddingLeft: ( ($(window).width() -$('#imgQHolder').width() )/2  )
+    //});   
     $('.warnHead').css({
         height: ($('#warnBox').height() *0.25)
     });
@@ -53,33 +58,34 @@ $(window).resize(function(){
     $('#utilityBar').css({
         height:($(window).height()*.10)
     });
-    /*
-    $('#trapezoidMenu').css({
-        borderBottomWidth: ($('#underUtility').height()),
-        borderLeftWidth: ($(window).width()*0.84375),
-        width: ($(window).width()*0.225)
-    }); */
-    $('.menuBar').css({
-        height:($(window).height()*.07)
-    }); 
-    $('.imgText').css({
-        height:($(window).height()*0.18)
-    }); 
+    //$('.menuBar').css({
+       //height:($(window).height()*.07)
+    //}); 
     $('#underUtility').css({
         height:($(window).height()*0.18)
     });
     $('.logo').css({
         height:($(window).height()*0.10)
-    }); 
+    });
+    $('#menuHead').css({
+        height:($(window).height()*0.10)
+    });
+    
     $('.imgText').css({
         height:($(window).height()*0.2)
     });
+    //$('#map-canvas').css({
+        //height:($(window).height())
+    //});
+    //$('#imgQHolder').css({
+        //paddingLeft: ( ($(window).width() -$('#imgQHolder').width() )/2  )
+    //});
     $('.warnHead').css({
         height: ($('#warnBox').height() *0.25)
     });
     $('.warnTitle').css({
         marginLeft: ( ($('.warnHead').width() -$('.warnTitle').width() )/2  )
-    }); 
+    });     
     $('.filterBox').css({
         top: ( ($(window).height()-$('.filterBox').height() )/2 ),
         left: ( ($(window).width()-$('.filterBox').width() )/2 )

@@ -1,4 +1,4 @@
-<div id="mapMenuModal" class="row">
+<!--div id="mapMenuModal" class="row">
     <div class="collection">
         <div style="position:absolute; right: 4%; top:1.5%;">
             <span id="closeMapMenu" style="font-size:22px;">X</span>
@@ -11,4 +11,4 @@
         <a id="mapRegister" class="collection-item"><h5>Register</h5></a>
     </div>    
     
-</div>
+</div-->

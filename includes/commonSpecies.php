@@ -24,36 +24,35 @@
             </div>
         </div>
 
-
-        <br>
-        <!--div class="row">
+        <div class="row">
+            <br>
             <div class="col s4 m4 l4" id="r1c1">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sea/Seal.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife/land/Koala.jpg" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Seal</p>
+                    <p>Koala</p>
                 </div>
             </div>
             <div class="col s4 m4 l4" id="r1c2">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sea/Penguin.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife_icons\Birds/Kookaburra.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Penguin</p>
+                    <p>Kookaburra</p>
                 </div>        
             </div>
             <div class="col s4 m4 l4" id="r1c3">
                 <div class="img_caption_div">
-                    <img class="Wimages responsive-img" src="img/wildlife/sea/Blue Whale.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <img class="Wimages responsive-img" src="img/wildlife/sea/Seal.png" onclick="liveDead(this.src,imgQuestionOrText)">
                     <br>
-                    <p>Blue Whale</p>
+                    <p>Seal</p>
                 </div>           
             </div>
-        </div-->
+        </div
 
 
         <!-- hidden by default -->
 
-        <div class="row toggleDiv">
+        <!--div class="row toggleDiv">
              <br>
             <div class="col s4 m4 l4" id="r1c1">
                 <div class="img_caption_div">
@@ -77,7 +76,7 @@
                 </div>           
             </div>
 
-        </div>
+        </div-->
 
         <div class="row toggleDiv">
              <br>

@@ -1,6 +1,6 @@
 <div class="row" id="whatHapn">
     
-
+    <br>
     <div class="row" id="wrow1">
         <div class="col s6 m6 l6">
             <div class='WHL'> 
@@ -46,7 +46,7 @@
                 <a class="waves-effect waves-light btn Qbtns" id="Qbtn7">Traffic collision</a>
             </div>    
         </div>
-        <div class="col s6 m6 l6 ">
+        <div class="col s6 m6 l6">
             <div class="WHR">
                 <a class="waves-effect waves-light btn Qbtns" id="Qbtn8">Other</a>
             </div>

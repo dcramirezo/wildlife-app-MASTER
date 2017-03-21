@@ -1,14 +1,15 @@
 <?php include('includes/header.php'); ?>
 
 <div id="wrapper" class ="container-fluid" >
+    <div id="blackLayer"></div>
     <div class="headCont">
         <div class="row">  
             <!-- Utility Bar -->    
-            <?php include('includes/utilityBar.php'); ?> 
+            <?php include('includes/utilityBar.php');?> 
         </div>
-        <div>
-            <?php include('includes/menuBar.php'); ?>
-        </div>
+        <!--div>
+            <!--?php include('includes/menuBar.php');?>
+        </div-->
         <div class="WS row" id="underUtility">
             <!--br>
             <b--><span id="WhatSpe">What species is the animal?</span></b>
@@ -25,27 +26,11 @@
                     <a id="IdonKnow" class="waves-effect waves-light btn buttons" style="font-size:70%; width:100%;" >I Don't Know?</a>
                 </div>
             </div>
-            <br />
         
             <div><span> Or select a common species bellow</span></div>
         </div>
-        <br>
         <div class="cont">
-            <!-- Radio buttons -->
-            <!--div class="rdo row">  
-                <input type="radio" name="cat" id="rdo-land" value="Land"/>
-                <label for="rdo-land">Land</label>
 
-                <input type="radio" name="cat" id="rdo-sea" value="sea"/>
-                <label for="rdo-sea">Sea</label>
-
-                <input type="radio" name="cat" id="rdo-sky" value="sky"/>
-                <label for="rdo-sky">Sky</label>
-
-                <input type="radio" name="cat" id="rdo-river" value="river"/>
-                <label for="rdo-river">River </label>
-
-            </div-->
             <div>
                 <a id="filter" class="waves-effect waves-light btn buttons" style=" font-size:100%;" >Filter</a>
             </div>
@@ -58,11 +43,11 @@
                 <!-- CCCCC End Common Species CCCCC-->  
                 
                 <!-- LLLLLL Land Mammals LLLLLLLL--> 
-                <?php include('includes/land.php'); ?>
+                <?php include('includes/land.php');?>
                 <!-- LLLLLLL End of Mammals LLLLLL-->  
 
                 <!--  waterMammals WildLife --> 
-                <?php include('includes/waterMammals.php'); ?>   
+                <?php include('includes/waterMammals.php');?>   
                 <!--  End waterMammals --> 
 
                 <!-- BBBBBB Birds  BBBBBB -->
@@ -102,14 +87,26 @@
 </div>
 
 <div id="menuDiv">
-    <div id="menuHead">
+    <div id="menuHead" class="">
+        <span style="">Menu</span>
         <div style="position:absolute; right: 4%; top:1.5%;">
             <span id="closeMenu" style="font-size:22px;">X</span>
         </div>
-        
-        Menu
+  
     </div>
-    <div id="menuContent"></div>
+    <div id="menuContent">
+        <div class="collection">     
+            <a id="mapHome" class="collection-item"><h6>Home</h6></a>
+            <a id="mapAbout" class="collection-item"><h6>About</h6></a>
+            <a id="mapFAQ" class="collection-item">
+            <h6>F.A.Q</h6></a>
+            <a id="mapHelp" class="collection-item"><h6>Help</h6></a>
+            <a id="Wgroups" class="collection-item"><h6>Wildlife Groups</h6></a>
+            <a id="mapRegister" class="collection-item"><h6>Register</h6></a>
+            <a href="https://www2.delwp.vic.gov.au/" id="mapDELWP" class="collection-item" style="padding-left:20%;"><h6>Department of Environment, Water, Land & Planning</h6></a>
+        </div> 
+        
+    </div>
 </div>
 
 

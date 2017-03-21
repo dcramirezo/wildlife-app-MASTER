@@ -134,9 +134,13 @@ function liveDead(src, txt){
     
     Wn = (srcArr[(srcArr.length-1)].slice(0, -4)).replace(/\%20/g, ' ');
     
+    $(".imgQuestion, #specieName").empty();
     //console.log(srcArr[(srcArr.length-1)].slice(0, -4));
     
-    $(".imgQuestion").append( Wn+ '<br> '+ txt);
+    //$(".imgQuestion").append( Wn+ '<br> '+ txt);
+    $(".imgQuestion").append(txt);
+    $("#specieName").append( Wn);
+    
     $('#leftArrow').show();
 }
 
@@ -315,6 +319,10 @@ $('#DesOrOpen').click(function(){
 $('.Qbtns').click(function(){
     $('#liveDead, #whatHapn, .footer').hide();
     $('#map-canvas, #mapFooter, #mapModal, #LocationBox').show();
+    
+    $('#map-canvas').css({
+        height:($(window).height()*0.9)
+    });
     resizeMap();
     
     plotMarkers(); 
@@ -333,11 +341,11 @@ $('.Qbtns').click(function(){
 });
 
 $('#listicon-alt').click(function(){
-    $('#mapMenu').toggle(250);
-    $('#listicon').toggle(400);
-    $('#mapLoc').toggle(550);
+    //$('#mapMenu').toggle(250);
+    $('#mapLoc').toggle(300);
+    $('#listicon').toggle(500);
     $('#mapKey').toggle(700);
-    $('#mapFA').toggle(850);
+    $('#mapFA').toggle(900);
 
 });
 $('#mapKey').click(function(){
@@ -361,9 +369,10 @@ $('#mapCenters').click(function(){
 });
 
 $('#mapHome').click(function(){
-    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey, #mapModal, #mapLoc, #mapFA, #mapFooter').hide();
+    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey, #listicon, #mapModal, #mapLoc, #mapFA, #mapFooter, #liveDead, #whatHapn').hide();
     $('.theImg').remove(); $(".imgQuestion").empty();
     $('.cont, #arrow-down, #underUtility, #moreLess').show(); 
+    $('#closeMenu').click(); // triger this button
     
     if( LandRiverSeaSky== 'commonSpeices' ){        
         $('.commonSpeices').show();
@@ -585,12 +594,13 @@ $('#IdonKnow').click(function(){
 
 
 $('#trapezoidMenu').click(function(){
-    $('#wrapper').animate({left:- ($(window).width()*.85 ), right:( $(window).width()*.85 )}, 700);   
+    $('#wrapper').animate({left:- ($(window).width()*.80 ), right:( $(window).width()*.80 )}, 700); 
+    $('#blackLayer').show();
 });
 
 $('#closeMenu').click(function(){
-    console.log('Ya Ahmad Al Hassan');
-    $('#wrapper').animate({left:0, right:0}, 700);   
+    $('#wrapper').animate({left:0, right:0}, 700);
+    $('#blackLayer').hide();
 });
 
 

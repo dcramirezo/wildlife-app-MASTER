@@ -1,14 +1,14 @@
 $(document).ready(function() {
-    $.ajax({
-        type: "GET",
-        url: "species.csv",
-        dataType: "text",
-        success: function(data) {processData(data);}
-        });
+    //$.ajax({
+        //type: "GET",
+        //url: "wildlife_rehab_database.txt",
+        //dataType: "text",
+        //success: function(data) {processData(data);}
+        //});
 
     // Let's process the data from the data file
-    function processData(data) {
-        var lines = data.split('##');
+    //function processData(data) {
+        //var lines = data.split('##');
 
         //Set up the data arrays
         //var time = [];
@@ -26,12 +26,35 @@ $(document).ready(function() {
            //data1.push(parseFloat(values[1])); 
            //data2.push(parseFloat(values[2]));
            //data3.push(parseFloat(values[3]));
-        console.log(lines[0]);
+        /*
+        for (var j=1; j<lines.length; j++) {
+            
+            var values = lines[j].split('*');
+   
+            console.log(
+                "('"+$.trim(values[1])+"'" + 
+                ", '"+$.trim(values[2])+"'" + 
+                ", '"+$.trim(values[3])+"'" + 
+                ", '"+$.trim(values[4])+"'" + 
+                ", '"+$.trim(values[5])+"'" + 
+                ", '"+$.trim(values[6])+"'" + 
+                ", '"+$.trim(values[7])+"'" +  
+                ", "+$.trim(values[9]) + 
+                ", "+$.trim(values[10]) + 
+                ", '"+$.trim(values[8])+"'" +            
+                ", '"+$.trim(values[11])+"'" + 
+                ", '"+$.trim(values[12])+"'" +
+                ", '"+$.trim(values[13])+"'),"
+            
+            ); 
+        } */
 
        //}
 
     // For display
     //var x= 0;
     //console.log(headings[0]+" : "+time[x]+headings[1]+" : "+data1[x]+headings[2]+" : "+data2[x]+headings[4]+" : "+data2[x]);
-    }
+    
+
+    //}
 })

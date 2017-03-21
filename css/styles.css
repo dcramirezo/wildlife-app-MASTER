@@ -15,36 +15,21 @@ body {
 /* Map styles 
 #mapDiv,*/
 #map-canvas {
-    //height: 100%;
+    height: 100%;
     display: none;
     overflow:visible;
-    /*width: 100%;
-    //margin: -95px 0px 0px 0px; */
 }
 
 hr{ margin: 0px;}
 p { margin: 0; padding: 0; }
 
 .headCont{
-  min-height: 100%;
+  height: 100%;
   /* equal to footer height margin-bottom: -95px; */
 }
-/*
-.headCont:after { //content: ""; //display: block;}
-.footer, .headCont:after {//height: 95px; }
-*/
-.menuBar{ background-color:#797390; color:white;}
-/*.headCont.extr:after {
-  height: 0px; 
-}*/
+
 .Wimages{ width: 100%;}
-/*.footer{  
-    //background-color:#00b7bd;
-    //position: relative;
-    //margin-bottom: 0;
-    //width: 100%;
-    //height: 95px;
-}*/
+
 .downF{margin-top: 1%;}
 .row{
     text-align: center;
@@ -56,16 +41,9 @@ p { margin: 0; padding: 0; }
     color: white;
     text-align: left;
 }
-.ThreelineBarMenu {
-    width: 100%;
-    height: 3px;
-    background-color: black;
-    margin: 6px;
-}
 
 .logo{ height: 100%; }
 #WhatSpe{ font-size: 20px; }
-.rdo{ margin-top: 20px;}
 .land, .waterMammals, .birds, .reptilesAmphibians, .introduced, .toggleDiv, #liveDead, #whatHapn{ display: none;}
 #whatHapn{margin-bottom: 5%;}
 
@@ -90,13 +68,13 @@ p { margin: 0; padding: 0; }
 
 .theImg{ margin-top: 2%; border-radius: 50%; width: 30%; }
 .imgText{background-color:#00b7bd;}
-.imgQuestion{ 
-    font-size: 24px;
-    font-weight:bold;
+.imgQuestion, #specieName{ 
+    font-size: 140%;
+    //font-weight:bold;
     color:white;
-    text-align: center;
+    //text-align: center;
 }
-.bckNxt{ display: none;    width: 60%; }
+.bckNxt{ display: none;    width: 35px; }
 
 .Qbtns{
     background-color:#00b7bd;
@@ -166,7 +144,7 @@ p { margin: 0; padding: 0; }
     text-align: right;bottom: 0px;
     left: 0px;right: 0px;margin-top: 6%;}
 .WHL{ margin-right: -4px; }
-.WHR{ margin-left: -4px; }
+.WHR{ margin-left: -4px;  }
 .fontCol{color:#00b7bd;}
 
 .KHIMG{width: 60%;    padding-top: 15%; }
@@ -295,10 +273,14 @@ color: white !important; }
 #menuDiv{
     width: 100%;
     height: 100%;
-    background-color: #00b7bd;
     z-index: 1;
 }
-
+#menuHead{
+    background-color: #00b7bd; color: white;font-size: 200%; padding-top: 8px;
+}
+#blackLayer{
+    display: none; background-color: black; opacity: 0.4; z-index: 205; width: 100%; height: 100%; position: absolute;
+}
 #trapezoidMenu {float: right; height: 100%;}
 
 @media screen and (min-width: 400px) {

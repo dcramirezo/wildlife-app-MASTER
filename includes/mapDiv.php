@@ -28,7 +28,7 @@
             </div>
             
         </div>
-        <?php include('includes/mapMenuModal.php');?>
+        <!--?php include('includes/mapMenuModal.php');?-->
     
         <div class="row" id="mapFooter">
             <!-- First Aid Button -->
@@ -39,13 +39,10 @@
                         <img class=" MFB" id="listicon-alt" src="img/keys/listicon-alt.png">
                     </div>
                     <div>
-                        <img class=" MFB" id="mapMenu" src="img/keys/menuicon2.png">
+                        <img class=" MFB" id="mapLoc" src="img/keys/mapicon-alt.png">
                     </div>
                     <div>
                         <img class=" MFB" id="listicon" src="img/keys/listicon.png">
-                    </div>
-                    <div>
-                        <img class=" MFB" id="mapLoc" src="img/keys/mapicon-alt.png">
                     </div>
                     <div>
                         <img class=" MFB" id="mapKey" src="img/keys/keyicon-alt.png">
