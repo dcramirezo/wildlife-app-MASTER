@@ -1,11 +1,11 @@
         <div class="firstAidOrDead">
             
-            <div class="panelHeader imgText">
+            <div class="panelHeader imgText valign-wrapper">
                 <div style="position:absolute; right: 4%; top:1.5%;">
                     <span class="close" style="font-size:22px;">X</span>
                 </div>
                 <div id="panelIMG" style="display:none;"></div>
-                <div style="font-size:200%; color:white; padding-bottom:9%; padding-top:7%;">
+                <div id="panelTxtContainer" style="font-size:200%;color:white;">
                     <span id="panelTxt"></span>        
                 </div>        
             </div>
@@ -17,7 +17,7 @@
             
             <div class="panelFooter" id="firstAidFooter">
                 <hr>
-                <div style="padding:10px 0px 10px 0px;">
+                <div style="padding:10px 10px 10px 10px;">
                     <span class='fontCol' id="done"><b>DONE&#10095;</b></span>
                 </div>
             </div>

@@ -61,7 +61,8 @@ p { margin: 0; padding: 0; }
 #donKnow{background-color: #cdd0d6; color: black;}
 #FAid{    background-color: #891111; }
 .keys, .centers, .shelter, #arrow-up, #openingHours, #OpenHArrow, #shelterOpenH, #mapDiv{    display: none; }
-.menuBar{padding-left: 1%;}
+.menuBar{//padding-left: 1%;}
+#trapezoidMenu {float: right;height: 100%;}
 #moreLess{padding-top:1%;font-size: 140%;}
 
 .img_caption_div{    text-align: center; }
@@ -152,7 +153,7 @@ p { margin: 0; padding: 0; }
 .CCIMG{width: 80%;    margin: 5% 0% 2% 0%;; }
 .CCIMGI{width: 100%;    padding-top: 70%; }
 .centersHeader{ background-color: #00b7bd;}
-.headersBgCol {background-color:#dbeeed;}
+.headersBgCol {background-color:#dbeeed; height:150px;}
 #hr{display: none;}
 .catsIMG{ width:70%;}
 #mapFooter{
@@ -281,20 +282,24 @@ color: white !important; }
 #blackLayer{
     display: none; background-color: black; opacity: 0.4; z-index: 205; width: 100%; height: 100%; position: absolute;
 }
-#trapezoidMenu {float: right; height: 100%;}
+#Cimage {margin-left: 10%; width:50%;}
+.ShelPW{padding:15px 0px 0px 0px; width:40%;}
 
 @media screen and (min-width: 400px) {
-    .Wimages{ width: 80%;}
+    .Wimages{ width: 65%;}
     .theImg{width: 28%;}
     #mapDGeoQ{padding:5% 0% 5% 0%;}
     #LocationBox{height: 47%;}
     .MFB{ width: 15%;}
     .KHIMG{width: 45%; padding-top: 5%;}
     .KHIMG{width: 60%;}
+    #Cimage{ width: 50%;}
+    .headersBgCol{height:165px;}
+    .ShelPW{ width: 30%;}
 }
 
 @media screen and (min-width: 600px) {
-    .Wimages{ width: 60%;}
+    .Wimages, .ShelPW{ width: 60%;}
     .theImg{width: 25%;}   
     #mapDGeoQ{padding:9% 0% 5% 0%;}
     #LocationBox{height: 65%;}
@@ -303,6 +308,9 @@ color: white !important; }
     .KCIMG{width: 60%}
     .CCIMG{width: 60%;}
     .CCIMGI{width: 70%;padding-top: 35%;}
+    #Cimage{ width: 65%;}
+    .headersBgCol{height:180px;}
+    .ShelPW{ width: 25%;}
 }
 
 @media screen and (min-width: 800px) {
@@ -314,7 +322,10 @@ color: white !important; }
     .KHIMG{width: 35%;} 
     .KCIMG{width: 50%; padding-top: 3%;}
     .CCIMG{width: 40%;}
-    .CCIMGI{width: 55%;padding-top: 25%;}    
+    .CCIMGI{width: 55%;padding-top: 25%;} 
+    #Cimage{ width: 75%;}
+    .headersBgCol{height:180px;}
+    .ShelPW{ width: 20%;}
 }
 
 @media screen and (min-width: 1000px) {
@@ -326,7 +337,10 @@ color: white !important; }
     .KHIMG{width: 20%;} 
     .KCIMG{width: 30%; padding-top: 3%;}
     .CCIMG{width: 30%;}
-    .CCIMGI{width: 43%;padding-top: 18%;}    
+    .CCIMGI{width: 43%;padding-top: 18%;}
+    #Cimage{ width: 80%;}
+    .headersBgCol{height:180px;}
+    .ShelPW{ width: 15%;}
 }
 @media screen and (min-width: 1300px) {
     .Wimages{ width: 25%;}
@@ -337,19 +351,26 @@ color: white !important; }
     .KHIMG{width: 15%;} 
     .KCIMG{width: 20%; padding-top: 3%;}
     .CCIMG{width: 24%;}
-    .CCIMGI{width: 30%;padding-top: 18%;}      
+    .CCIMGI{width: 30%;padding-top: 190px;} 
+    #Cimage{ width: 80%;}
+    .headersBgCol{height:200px;}
+    .ShelPW{ width: 13%;}
 }
 
 @media screen and (min-width: 1800px) {
-    .Wimages{ width: 8%;}
+    .Wimages, #Cimage, .ShelPW{ width: 8%;}
     #mapDGeoQ{padding:2% 0% 2% 0%;}
     #LocationBox{height: 75%;}
     .MFB{ width: 8%;}
     .KHIMG{width: 10%;} 
     .KCIMG{width: 10%; padding-top: 3%;}
     .CCIMG{width: 30%;}
-    .CCIMGI{width: 40%;padding-top: 20%;}     
+    .CCIMGI{width: 40%;padding-top: 20%;} 
+    #Cimage{ width: 84%;}
+    .headersBgCol{height:200px;}
+    .ShelPW{ width: 11%;}
 }
+
 
 
 /* _____ Removes the map copyrights..at footer ___*/

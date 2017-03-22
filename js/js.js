@@ -229,9 +229,13 @@ $('#no').click(function(){
     $('.shelter, .keys, .centers').hide();
     $('.firstAidOrDead').show();
     $('.panel').show();
+        // This sets panels' header to center
+        $('#panelTxtContainer').css({
+            paddingLeft: ( ($('.panelHeader').width()*0.95-$('#panelTxtContainer').width() )/2 )
+        });
     $( ".panel" ).animate({right: 0}, 700);
     
-    setFooterHeight(56);
+    setFooterHeight(100);
 });
 
 function getWildlifeName(src){
@@ -269,6 +273,10 @@ $( "#FAid, #mapFA" ).click(function(){
     $('.keys, .centers, .shelter').hide();
     
     $('.panel').show();
+        // This sets panels' header to center
+        $('#panelTxtContainer').css({
+            paddingLeft: ( ($('.panelHeader').width()*0.95-$('#panelTxtContainer').width() )/2 )
+        });
     $( ".panel" ).animate({right: 0}, 700);
     setFooterHeight(56);
 });
@@ -320,9 +328,9 @@ $('.Qbtns').click(function(){
     $('#liveDead, #whatHapn, .footer').hide();
     $('#map-canvas, #mapFooter, #mapModal, #LocationBox').show();
     
-    $('#map-canvas').css({
-        height:($(window).height()*0.9)
-    });
+    //$('#map-canvas').css({
+        //height:($(window).height()*0.9)
+    //});
     resizeMap();
     
     plotMarkers(); 
@@ -408,6 +416,8 @@ $('#mapYes').click(function(){
     centersDetails = []; //empty this array
     $('#mapModal, #LocationBox').hide();
     $('.firstAidOrDead, .keys, .shelter').hide();
+   
+    // To use navigator.geolocation.... SSL certificate is need for Https protocol
     navigator.geolocation.getCurrentPosition(showPosition);
     
     //if(ifShowPosWorks == 0){
@@ -572,7 +582,7 @@ function makeShelterPage(src, cntrNme){
     if($("#Cimage").find('img')){
         $("#Cimage > img").remove();
     }
-    $("#Cimage").append("<img style='width:100%; padding:0% 0% 30% 15%;' src='" + src + "'>");
+    $("#Cimage").append("<img style='width:100%;' src='" + src + "'>");
     $('#Cname').text(cntrNme);
 }
 

@@ -1,5 +1,5 @@
         <div class="shelter">
-            <div class="headersBgCol" >
+            <div class="headersBgCol valign-wrapper" >
                 
                 <div style="position:absolute; right: 4%; top:1.5%;">
                     <span class="close" style="font-size:22px;">X</span>
@@ -7,12 +7,12 @@
                 
                 <div class="row">
                     <div class="col s6 ms ls">
-                        <div id="Cimage" style="padding: 25% 22% 0% 0%;">
+                        <div id="Cimage" style="//padding: 25% 22% 0% 0%;">
                             <!--img style="width:100%; padding:0% 0% 30% 15%;" src="img/keys/wildliferehab-aqua.png"-->
                         </div>
                     </div>
                     <div class="col s6 ms ls">
-                        <div style="padding: 25% 22% 0% 0%; text-align: center;">
+                        <div style="padding: 25% 22% 0% 0%; float:right;">
                             <span id="Cname" class="fontCol" style="font-size:100%; font-weight:bold;">
                             <!-- Shelter name should be appended here -->
                             </span>
@@ -37,7 +37,7 @@
                 </div>
                 <hr>
                 <!-- 2nd row -->
-                <div class="row" id="DesOrOpen" style="text-align:left;">
+                <div class="row valign-wrapper" id="DesOrOpen" style="text-align:left;">
                     <div class="col s8 m8 l8">
                         <div  >
                             <span class="fontCol"id= "divTxt" style="font-size:100%; font-weight:bold; padding:5% 0% 5% 5%;">Opening Hours</span>
@@ -49,8 +49,8 @@
                         <div style="//-webkit-transform: rotate(90deg); //width:50%; //height: 50%;" >
                             
                             <!--span class="fontCol" style=" font-size:80px;">&#8249;</span-->
-                            <img id="DesArrow" style="width:30%; margin-left:45%;" src="img/arrow-up.png">
-                            <img id="OpenHArrow" style="width:30%; margin-left:45%;" src="img/arrow-down.png">
+                            <img id="DesArrow" style="width:40px; margin-left:45%;" src="img/arrow-up.png">
+                            <img id="OpenHArrow" style="width:40px; margin-left:45%;" src="img/arrow-down.png">
 
                         </div>
                     </div>
@@ -80,15 +80,15 @@
             
                 </div>
                 <div id="hr"><hr></div>
-                <div class="row">
+                <div class="row valign-wrapper">
                     <div class="col s6 m6 l6">
                         <div>
-                            <img style="padding:5% 0% 5% 0%; width:60%;" src="img/keys/phoneicon.png">
+                            <img class="ShelPW" src="img/keys/phoneicon.png">
                         </div>
                     </div>
                     <div class="col s6 m6 l6">
                         <div>
-                            <img style="padding:5% 0% 5% 0%; width:60%;" src="img/keys/websiteicon-alt.png">
+                            <img class="ShelPW" src="img/keys/websiteicon-alt.png">
                         </div>
                     </div>
                      <hr>
