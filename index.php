@@ -12,7 +12,7 @@
         </div-->
         <div class="WS row" id="underUtility">
             <!--br>
-            <b--><span id="WhatSpe">What species is the animal?</span></b>
+            <b--><span id="WhatSpe">What is the animal?</span></b>
             
             <div class="row">
                 <div class="col s6 m6 l6">
@@ -23,7 +23,7 @@
                     <div class="AutoUL" id="species" ></div>
                 </div>
                 <div class="col s6 m6 l6">
-                    <a id="IdonKnow" class="waves-effect waves-light btn buttons" style="font-size:70%; width:100%;" >I Don't Know?</a>
+                    <a id="filter" class="waves-effect waves-light btn buttons" style=" font-size:100%; width:100%" >Filter</a>
                 </div>
             </div>
         
@@ -31,10 +31,7 @@
         </div>
         <div class="cont">
 
-            <div>
-                <a id="filter" class="waves-effect waves-light btn buttons" style=" font-size:100%;" >Filter</a>
-            </div>
-            <br>    
+            <!--br-->    
             <!-- Land waterMammals birds reptilesAmphibians -->
             <div id="lssr">
                 
@@ -79,6 +76,17 @@
             <p><b><span id="moreLess">More</span></b></p>
             <img class="responsive-img" src="img/arrow-down.png" id="arrow-down" style="position:relative; top:-13px;">
             <img class="responsive-img" src="img/arrow-up.png" id="arrow-up" >
+        </div>
+        
+        <div class="row" id="IdntKnowAndClosestShel">
+            <div class="col s6 m6 l6">
+                <a id="IdonKnow" class="waves-effect waves-light btn buttons" style="font-size:11px; width:100%; line-height:16px;" >My Closest Shelters</a>
+                
+            </div>
+            <div class="col s6 m6 l6">
+                <a id="myClosestShelters" class="waves-effect waves-light btn buttons" style="font-size:70%; width:100%;" >I Don't Know?</a>
+            </div>
+            
         </div>
     
     </div> <!-- End of headCont -->

@@ -9,7 +9,7 @@
                             <img class="KHIMG" src="img/keys/wildliferehab-aqua.png">
                         </div>
                         <div>
-                            <span style="font-size:16px; font-weight:bold;">
+                            <span style="font-size:14px; font-weight:bold;">
                                 Wildlife Rehabilitation Center
                             </span>
                         </div>

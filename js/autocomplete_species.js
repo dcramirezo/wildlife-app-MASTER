@@ -21,7 +21,7 @@ $( "#srch" ).keyup(function(e){
     srchVal = $( "#srch" ).val();
     if(srchVal!=null && srchVal!=undefined && srchVal!=''){
         $( "#species" ).html('');
-        $.getJSON("https://vbaspecies.herokuapp.com/species/search?q=" + srchVal, function(data){
+        /*$.getJSON("https://vbaspecies.herokuapp.com/species/search?q=" + srchVal, function(data){
             $.each(data, function(index, val) {
                 if(val.COMMON_NAME!=null && val.COMMON_NAME !=undefined && val.COMMON_NAME !='' && val.PRIMARY_DISCIPLINE!='Flora'){
 
@@ -30,11 +30,12 @@ $( "#srch" ).keyup(function(e){
                 }
             });
 
-        });
+        }); 
         if (e.keyCode == 13) {
             autoCompFunc($( "#srch" ).val() )
           }
     } else{$( "#species" ).html('');}
+    */
 });
 /*
 $( "#srchSubmit" ).submit(function( event ) {

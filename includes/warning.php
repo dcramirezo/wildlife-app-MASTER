@@ -6,7 +6,7 @@
             <span class="warnTitle"> WARNING!</span></div>
         <div class="warnContent">
             <p>
-                Please before treating or attending to any wildlife that you make sure you are safe and that you are clear of any vehicles or any other obstructions that could harm you or your other passengers.
+                Before assisting an animal, please ensure that you are safe, away from roads and other obstacles.
             </p>
         </div>
         

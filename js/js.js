@@ -105,7 +105,7 @@ $('#moreLess').click(function(){
  // -------------------------------------
 
 function liveDead(src, txt){
-    $('#WS, .cont, .land, .waterMammals, .birds, .introduced, .reptilesAmphibians, #arrow-down, #arrow-up, #moreLess, #underUtility').hide();
+    $('#WS, .cont, .land, .waterMammals, .birds, .introduced, .reptilesAmphibians, #arrow-down, #arrow-up, #moreLess, #underUtility, #IdntKnowAndClosestShel').hide();
     $('#liveDead').show();
     
     tmp = 'isLive';
@@ -147,7 +147,7 @@ function liveDead(src, txt){
 $('#leftArrow').click(function(){
     if(leftArrowVisibility ==1){ 
         
-        $('.cont, #arrow-down , #moreLess, #WhatSpe, #srch, #underUtility').show();
+        $('.cont, #arrow-down , #moreLess, #WhatSpe, #srch, #underUtility, #IdntKnowAndClosestShel').show();
         $('#liveDead, .toggleDiv, #leftArrow').hide();
         
         if( LandRiverSeaSky== 'commonSpecies' ){        
@@ -379,7 +379,7 @@ $('#mapCenters').click(function(){
 $('#mapHome').click(function(){
     $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey, #listicon, #mapModal, #mapLoc, #mapFA, #mapFooter, #liveDead, #whatHapn').hide();
     $('.theImg').remove(); $(".imgQuestion").empty();
-    $('.cont, #arrow-down, #underUtility, #moreLess').show(); 
+    $('.cont, #arrow-down, #underUtility, #moreLess, #IdntKnowAndClosestShel').show(); 
     $('#closeMenu').click(); // triger this button
     
     if( LandRiverSeaSky== 'commonSpeices' ){        
@@ -431,6 +431,11 @@ $('#listicon').click(function(){
     $('#mapModal, #LocationBox').hide();
     $('.firstAidOrDead, .keys, .shelter').hide();
     $('.centers, .panel').show();
+            // This sets panels' header to center
+        $('.CHText').css({
+            paddingLeft: ( ($('.centersHeader').width()*0.95-$('.CHText').width() )/2 )
+        });
+    
     $( ".panel" ).animate({right: 0}, 700);
 });
 

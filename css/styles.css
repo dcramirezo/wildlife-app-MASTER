@@ -43,7 +43,7 @@ p { margin: 0; padding: 0; }
 }
 
 .logo{ height: 100%; }
-#WhatSpe{ font-size: 20px; }
+#WhatSpe{ font-size: 20px; font-weight: bold;}
 .land, .waterMammals, .birds, .reptilesAmphibians, .introduced, .toggleDiv, #liveDead, #whatHapn{ display: none;}
 #whatHapn{margin-bottom: 5%;}
 
@@ -150,10 +150,10 @@ p { margin: 0; padding: 0; }
 
 .KHIMG{width: 60%;    padding-top: 15%; }
 .KCIMG{width: 60%;    padding-top: 15%; }
-.CCIMG{width: 80%;    margin: 5% 0% 2% 0%;; }
+.CCIMG{width: 40%;    margin: 5% 0% 2% 0%;; }
 .CCIMGI{width: 100%;    padding-top: 70%; }
-.centersHeader{ background-color: #00b7bd;}
-.headersBgCol {background-color:#dbeeed; height:150px;}
+.centersHeader{ background-color: #00b7bd; height:175px;}
+.headersBgCol {background-color:#dbeeed; height:175px;}
 #hr{display: none;}
 .catsIMG{ width:70%;}
 #mapFooter{
@@ -181,10 +181,10 @@ p { margin: 0; padding: 0; }
 #LocationBox{
     display: none;
     position: absolute;
-    width: 83%;
-    height: 55%;
+    width: 85%;
+    height: 47%;
     top: 20%;
-    left: 10%;
+    left: 8%;
     opacity: 1;
     background-color: lightgray;
     border-radius: 5px;
@@ -289,43 +289,46 @@ color: white !important; }
     .Wimages{ width: 65%;}
     .theImg{width: 28%;}
     #mapDGeoQ{padding:5% 0% 5% 0%;}
-    #LocationBox{height: 47%;}
-    .MFB{ width: 15%;}
+    #LocationBox{height: 38%;width:65%;}
+    .MFB{ width: 10%;}
     .KHIMG{width: 45%; padding-top: 5%;}
     .KHIMG{width: 60%;}
     #Cimage{ width: 50%;}
-    .headersBgCol{height:165px;}
+    .headersBgCol{height:175px;}
     .ShelPW{ width: 30%;}
+    .centersHeader{height:175px;}
 }
 
 @media screen and (min-width: 600px) {
     .Wimages, .ShelPW{ width: 60%;}
     .theImg{width: 25%;}   
     #mapDGeoQ{padding:9% 0% 5% 0%;}
-    #LocationBox{height: 65%;}
+    #LocationBox{height: 46%;width:50%;}
     .MFB{ width: 7%;}
     .KHIMG{width: 45%; padding-top: 5%;} 
     .KCIMG{width: 60%}
-    .CCIMG{width: 60%;}
+    .CCIMG{width: 30%;}
     .CCIMGI{width: 70%;padding-top: 35%;}
     #Cimage{ width: 65%;}
     .headersBgCol{height:180px;}
     .ShelPW{ width: 25%;}
+    .centersHeader{height:180px;}
 }
 
 @media screen and (min-width: 800px) {
     .Wimages{ width: 50%;}
     .theImg{width: 20%;}
     #mapDGeoQ{padding:7% 0% 5% 0%;}
-    #LocationBox{height: 70%;}
-    .MFB{ width: 8%;}
+    #LocationBox{height: 42%;width:42%;}
+    .MFB{ width: 6%;}
     .KHIMG{width: 35%;} 
     .KCIMG{width: 50%; padding-top: 3%;}
-    .CCIMG{width: 40%;}
+    .CCIMG{width: 25%;}
     .CCIMGI{width: 55%;padding-top: 25%;} 
     #Cimage{ width: 75%;}
     .headersBgCol{height:180px;}
     .ShelPW{ width: 20%;}
+    .centersHeader{height:180px;}
 }
 
 @media screen and (min-width: 1000px) {
@@ -333,42 +336,47 @@ color: white !important; }
     .theImg{width: 15%;}
     #mapDGeoQ{padding:5% 0% 4% 0%;}
     #LocationBox{height: 72%;}
+    #LocationBox{height: 40%;width:40%;}
     .MFB{ width: 5%;}
     .KHIMG{width: 20%;} 
     .KCIMG{width: 30%; padding-top: 3%;}
-    .CCIMG{width: 30%;}
+    .CCIMG{width: 20%;}
     .CCIMGI{width: 43%;padding-top: 18%;}
     #Cimage{ width: 80%;}
-    .headersBgCol{height:180px;}
+    .headersBgCol{height:185px;}
     .ShelPW{ width: 15%;}
+    .centersHeader{height:185px;}
 }
 @media screen and (min-width: 1300px) {
     .Wimages{ width: 25%;}
     .theImg{width: 10%;}
     #mapDGeoQ{padding:3% 0% 3% 0%;}
-    #LocationBox{height: 76%;}
-    .MFB{ width: 3%;}
+    #LocationBox{height: 35%;width:35%;}
+    .MFB{ width: 3.5%;}
     .KHIMG{width: 15%;} 
     .KCIMG{width: 20%; padding-top: 3%;}
-    .CCIMG{width: 24%;}
+    .CCIMG{width: 18%;}
     .CCIMGI{width: 30%;padding-top: 190px;} 
     #Cimage{ width: 80%;}
-    .headersBgCol{height:200px;}
+    .headersBgCol{height:190px;}
     .ShelPW{ width: 13%;}
+    .centersHeader{height:190px;}
 }
 
 @media screen and (min-width: 1800px) {
-    .Wimages, #Cimage, .ShelPW{ width: 8%;}
+    .Wimages{ width: 23%;}
+    .theImg{width: 8%;}
     #mapDGeoQ{padding:2% 0% 2% 0%;}
-    #LocationBox{height: 75%;}
-    .MFB{ width: 8%;}
+    #LocationBox{height: 33%;width:33%;}
+    .MFB{ width: 3%;}
     .KHIMG{width: 10%;} 
-    .KCIMG{width: 10%; padding-top: 3%;}
-    .CCIMG{width: 30%;}
-    .CCIMGI{width: 40%;padding-top: 20%;} 
-    #Cimage{ width: 84%;}
-    .headersBgCol{height:200px;}
+    .KCIMG{width: 15%; padding-top: 3%;}
+    .CCIMG{width: 15%;}
+    .CCIMGI{width: 33%;padding-top: 190px;} 
+    #Cimage{ width: 80%;}
+    .headersBgCol{height:190px;}
     .ShelPW{ width: 11%;}
+    .centersHeader{height:190px;}
 }
 
 
