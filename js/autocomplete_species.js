@@ -1,27 +1,80 @@
-/*
+var speciesList = [
+      "Possum",
+      "Koala",
+      "Kangaroo",
+      "Wallaby",
+      "Wombat",
+      "Bandicoot",
+      "Quoll",
+      "Glider",
+      "Flying Fox",
+      "Microbat",
+      "Echidna",
+      "Platypus",
+      "Duck",
+      "Owl",
+      "Emu",
+      "Penguin",
+      "Seal",
+      "Sea Turtle",
+      "Whale",
+      "Dolphin",
+      "Lizard",
+      "Dragon",
+      "Goanna",
+      "Snake",
+      "Turtle",
+      "Frog",
+      "Dog",
+      "Dingo",
+      "Deer",
+      "Fox",
+      "Feral Pig",
+      "Goat",
+      "Horse",
+      "Cat",
+      "Bat",
+      "Antechinus",
+      "Macropod",
+      "Sea Lion",
+      "Shark",
+      "Stingray",
+      "Octopus",
+      "Gecko",
+      "Toad",
+      "Water Dragon",
+      "Crocodile",
+      "Magpie",
+      "Galah",
+      "Lorikeet",
+      "Kookaburra",
+      "Eagle",
+      "Hawk",
+      "Buzzard",
+      "Falcon",
+      "Ibis",
+      "Wedge Tailed Eagle",
+      "Cow",
+      "Sheep",
+      "Rabbit",
+      "Camel",
+      "Buffalo"      
+    ];
+
+
 $( "#srch" ).autocomplete({
     
-    source: function(){ 
-        valor = $( "#srch" ).val();
-        $.getJSON("https://vbaspecies.herokuapp.com/species/search?q=" + valor, function(data){
-            
-            $.each(data, function(index, val) {
-                console.log(index +' :'+val.COMMON_NAME); 
-            });
-                   
-            //console.log(data);
-            return data
-        });
-    }
+    source: speciesList
 });
-*/
 
 
+// this is connecting to Victoria Biodiversity Atlas (VBA) to get the species list
 $( "#srch" ).keyup(function(e){
-    srchVal = $( "#srch" ).val();
+    //srchVal = $( "#srch" ).val();
+    /*
     if(srchVal!=null && srchVal!=undefined && srchVal!=''){
         $( "#species" ).html('');
-        /*$.getJSON("https://vbaspecies.herokuapp.com/species/search?q=" + srchVal, function(data){
+       /* $.getJSON("https://vbaspecies.herokuapp.com/species/search?q=" + srchVal, function(data){
             $.each(data, function(index, val) {
                 if(val.COMMON_NAME!=null && val.COMMON_NAME !=undefined && val.COMMON_NAME !='' && val.PRIMARY_DISCIPLINE!='Flora'){
 

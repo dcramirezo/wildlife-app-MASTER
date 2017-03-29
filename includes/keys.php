@@ -71,7 +71,9 @@
                 </div>
             </div>  
             <hr>
-            <div class="KeyRows" id="row3">
+            
+            
+            <!--div class="KeyRows" id="row3">
                 <div class="row">
                     <div class="col s3 m3 l3">
                         <div>
@@ -79,9 +81,7 @@
                         </div>
                     </div>
                     <div class="col s3 m3 l3">
-                        <!--div>
-                            <img class="KCIMG" src="img/keys/vet-icon-orange.png">
-                        </div-->
+
                     </div>
                     <div class="col s6 m6 l6">
                         <div style="padding-top:9%;">
@@ -101,9 +101,7 @@
                         </div>
                     </div>
                     <div class="col s3 m3 l3">
-                        <!--div>
-                            <img class="KCIMG" src="img/keys/vet-icon-red.png">
-                        </div-->
+
                     </div>
                     <div class="col s6 m6 l6">
                         <div style="padding-top:9%;">
@@ -123,9 +121,7 @@
                         </div>
                     </div>
                     <div class="col s3 m3 l3">
-                        <!--div>
-                            <img class="KCIMG" src="img/keys/vet-icon-pink.png">
-                        </div-->
+
                     </div>
                     <div class="col s6 m6 l6">
                         <div style="padding-top:9%;">
@@ -145,9 +141,6 @@
                         </div>
                     </div>
                     <div class="col s3 m3 l3">
-                        <!--div>
-                            <img class="KCIMG" src="img/keys/vet-icon-blue.png">
-                        </div-->
                     </div>
                     <div class="col s6 m6 l6">
                         <div style="padding-top:9%;">
@@ -159,7 +152,7 @@
                 </div>
                 
               
-            </div>
+            </div-->
             
             <div class="keysFooter">
                 <hr>

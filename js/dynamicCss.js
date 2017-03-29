@@ -28,7 +28,12 @@ $(document).ready(function(){
         left: ( ($(window).width()-$('.filterBox').width() )/2 )
     });
     $('#filterHead').css({
-        height: ($('.filterBox').height() *0.16)
+        height: ($('.filterBox').height() *0.16),
+        textAlign: 'center' 
+    });
+    $('#warnBox, #IdonKnowBox').css({
+        top: ( ($(window).height()-$('#IdonKnowBox').height() )/2 ),
+        left: ( ($(window).width()-$('#IdonKnowBox').width() )/2 )
     });
     
     $('#mapMenuModal').css({
@@ -39,7 +44,8 @@ $(document).ready(function(){
     //});
     $('#map-canvas').css({
         height: ($(window).height()*0.9),  
-    });   
+    });  
+    
     
     //console.log('win height: '+ $(window).width()  );
 
@@ -82,6 +88,10 @@ $(window).resize(function(){
     $('#filterHead').css({
         height: ($('.filterBox').height() *0.16),
         textAlign: 'center'
+    });
+    $('#warnBox, #IdonKnowBox').css({
+        top: ( ($(window).height()-$('#IdonKnowBox').height() )/2 ),
+        left: ( ($(window).width()-$('#IdonKnowBox').width() )/2 )
     });
     $('#filterTitle').css({
         marginLeft: ( ($('#filterHead').width() -$('#filterTitle').width() )/2  )

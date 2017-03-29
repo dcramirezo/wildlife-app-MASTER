@@ -14,7 +14,7 @@ var moreLessText = 'more';
 var Wname;
 var imgSource;
 var imgQuestionOrText = 'Is animal alive?';
-var firstAidAdvice = "<p><b>Caution!</b> This animal may be dangerous.<br>Stay calm, speak softly and move slowly to avoid distress to the animal.<br>Do not approach the animal or attempt to catch it - chasing it may result in a worse injury and unnecessary stress for the animal. Secure the area and try to prevent pets or other people from approaching the injured animal.<br>Call a licenced wildlife shelter to capture the animal or call DELWP on 136 185 to be put in touch with a Wildlife Officer.<br>In the event of a traffic collision or an animal on the road, the police can also be contacted on 000 for assistance. Check the area to make sure a pouch young has not been thrown out during the collision. dddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddd dddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddddddd dddddddddddddddd ddddddddddddddddd dddddddd d  ddddddddddd dddddddddd ddddd d ddddddd ddddd dddddddd dddddd ddddddd dddd dddddddd ddddddd ddddddd ddddddddd ddddddd</p>";
+var firstAidAdvice = "<p><b>Caution!</b> This animal may be dangerous.<br>Stay calm, speak softly and move slowly to avoid distress to the animal.<br>Do not approach the animal or attempt to catch it - chasing it may result in a worse injury and unnecessary stress for the animal. Secure the area and try to prevent pets or other people from approaching the injured animal.<br>Call a licenced wildlife shelter to capture the animal or call DELWP on 136 185 to be put in touch with a Wildlife Officer.<br>In the event of a traffic collision or an animal on the road, the police can also be contacted on 000 for assistance. Check the area to make sure a pouch young has not been thrown out during the collision. test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test  test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test </p>";
 
 var deadTxt ="Unfortunately, at this stage, if the animal is not alive, not much can be done, other that removing the animal from dangerous locations such as the road. <br> Please remain calm, do not call the police. Make sure the scene is safe for others and move on.<br> If you would like to inform DELWP, please call this number and someone will note the location of the animal. <br> <a href='136 186'><u>136 186</u> </a>";
 
@@ -69,12 +69,16 @@ $('#filterBirds').click(function(){
     LandRiverSeaSky = 'birds';
 });
 $('#filterIntroSpec').click(function(){
-    $('.commonSpecies,.land,.birds,.waterMammals, reptilesAmphibians, #filterBlackBg , .filterBox').hide();
+    $('.commonSpecies,.land,.birds,.waterMammals, .reptilesAmphibians, #filterBlackBg , .filterBox').hide();
     $('.introduced').show();
     LandRiverSeaSky = 'introduced';
 });
 $('#filterIdonKnow' ).click(function(){
-    alert('Sorry, this button is not working for the moment!');
+    //$('#warnBox').hide();
+    $('.warning, #blackBg, #IdonKnowBox').show();
+        $('#blackBg').css({
+            height: ($(document).height() )
+        });
     $('#filterBlackBg , .filterBox').hide();
 });
 
@@ -105,7 +109,7 @@ $('#moreLess').click(function(){
  // -------------------------------------
 
 function liveDead(src, txt){
-    $('#WS, .cont, .land, .waterMammals, .birds, .introduced, .reptilesAmphibians, #arrow-down, #arrow-up, #moreLess, #underUtility, #IdntKnowAndClosestShel').hide();
+    $('#WS, .cont, .land, .waterMammals, .birds, .introduced, .reptilesAmphibians, #arrow-down, #arrow-up, #moreLess, #underUtility, .IdntKnowAndClosestShel').hide();
     $('#liveDead').show();
     
     tmp = 'isLive';
@@ -147,7 +151,7 @@ function liveDead(src, txt){
 $('#leftArrow').click(function(){
     if(leftArrowVisibility ==1){ 
         
-        $('.cont, #arrow-down , #moreLess, #WhatSpe, #srch, #underUtility, #IdntKnowAndClosestShel').show();
+        $('.cont, #arrow-down , #moreLess, #WhatSpe, #srch, #underUtility, .IdntKnowAndClosestShel').show();
         $('#liveDead, .toggleDiv, #leftArrow').hide();
         
         if( LandRiverSeaSky== 'commonSpecies' ){        
@@ -233,6 +237,7 @@ $('#no').click(function(){
         $('#panelTxtContainer').css({
             paddingLeft: ( ($('.panelHeader').width()*0.95-$('#panelTxtContainer').width() )/2 )
         });
+    $('#blackLayer').show();
     $( ".panel" ).animate({right: 0}, 700);
     
     setFooterHeight(100);
@@ -251,6 +256,7 @@ $('.close').click(function(){
     $( ".panel" ).animate({right: (-panelPos)}, 700, function(){
         $( ".panel" ).hide();
     });
+    $('#blackLayer').hide();
 });
 $('#closeMapMenu').click(function(){
     $('#mapModal').toggle(500);
@@ -277,6 +283,7 @@ $( "#FAid, #mapFA" ).click(function(){
         $('#panelTxtContainer').css({
             paddingLeft: ( ($('.panelHeader').width()*0.95-$('#panelTxtContainer').width() )/2 )
         });
+    $('#blackLayer').show();
     $( ".panel" ).animate({right: 0}, 700);
     setFooterHeight(56);
 });
@@ -284,20 +291,20 @@ $( "#FAid, #mapFA" ).click(function(){
 $(document).keyup(function(e) {
      if (e.keyCode == 27) { 
          $( ".panel" ).animate({right: (-panelPos)}, 700, function(){ $( ".panel" ).hide();});
-         
+         $('#blackLayer').hide(500);
     }
 });
 
 $('#done').click(function(){
     $( ".panel" ).animate({right: (-panelPos)}, 700, function(){ $( ".panel" ).hide(); });
-    
+    $('#blackLayer').hide();
     if(noOrFAid == 'FAid'){
         alert('Hide exteral elements and show the Map!');
     }
 });
 $('#Kdone, #Cdone, #sdone').click(function(){
     $( ".panel" ).animate({right: (-panelPos)}, 700, function(){ $( ".panel" ).hide();});
-    
+    $('#blackLayer').hide();
 });
 
 $('#DesOrOpen').click(function(){
@@ -327,7 +334,11 @@ $('#DesOrOpen').click(function(){
 $('.Qbtns').click(function(){
     $('#liveDead, #whatHapn, .footer').hide();
     $('#map-canvas, #mapFooter, #mapModal, #LocationBox').show();
-    
+    // Align it to the center 
+    $('#LocationBox').css({
+        top: ( ($(window).height()-$('#LocationBox').height() )/2 ),
+        left: ( ($(window).width()-$('#LocationBox').width() )/2 )
+    });
     //$('#map-canvas').css({
         //height:($(window).height()*0.9)
     //});
@@ -348,22 +359,24 @@ $('.Qbtns').click(function(){
     tmp ='map';
 });
 
-$('#listicon-alt').click(function(){
+//$('#listicon-alt').click(function(){
     //$('#mapMenu').toggle(250);
-    $('#mapLoc').toggle(300);
-    $('#listicon').toggle(500);
-    $('#mapKey').toggle(700);
-    $('#mapFA').toggle(900);
+    //$('#mapLoc').toggle(300);
+    //$('#listicon').toggle(500);
+    //$('#mapKey').toggle(700);
+    //$('#mapFA').toggle(700);
 
-});
+//});
+/*
 $('#mapKey').click(function(){
     $('.firstAidOrDead, .shelter, .centers').hide();
     $('.keys').show();
     $('.panel').show();
+    $('#blackLayer').show();
     $( ".panel" ).animate({right: 0}, 700); 
     
     setFooterHeight($('.keysFooter').height());
-});
+}); */
 $('#mapMenu').click(function(){
     $('#mapModal').toggle(500);
     $('#mapMenuModal').toggle(500);   
@@ -379,7 +392,7 @@ $('#mapCenters').click(function(){
 $('#mapHome').click(function(){
     $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey, #listicon, #mapModal, #mapLoc, #mapFA, #mapFooter, #liveDead, #whatHapn').hide();
     $('.theImg').remove(); $(".imgQuestion").empty();
-    $('.cont, #arrow-down, #underUtility, #moreLess, #IdntKnowAndClosestShel').show(); 
+    $('.cont, #arrow-down, #underUtility, #moreLess, .IdntKnowAndClosestShel').show(); 
     $('#closeMenu').click(); // triger this button
     
     if( LandRiverSeaSky== 'commonSpeices' ){        
@@ -410,18 +423,18 @@ $('#mapHome').click(function(){
     
 });
  $('#mapModalClose').click(function(){
-     $('#mapModal, #LocationBox').hide();
+     $('#mapModal, #LocationBox').hide(500);
  });
 $('#mapYes').click(function(){
     centersDetails = []; //empty this array
-    $('#mapModal, #LocationBox').hide();
+    $('#mapModal, #LocationBox').hide(500);
     $('.firstAidOrDead, .keys, .shelter').hide();
    
     // To use navigator.geolocation.... SSL certificate is need for Https protocol
-    navigator.geolocation.getCurrentPosition(showPosition);
+    //navigator.geolocation.getCurrentPosition(showPosition);
     
     //if(ifShowPosWorks == 0){
-       //IPaddressLocator(); 
+       IPaddressLocator(); 
     //}
     
 });
@@ -435,12 +448,12 @@ $('#listicon').click(function(){
         $('.CHText').css({
             paddingLeft: ( ($('.centersHeader').width()*0.95-$('.CHText').width() )/2 )
         });
-    
+    $('#blackLayer').show();
     $( ".panel" ).animate({right: 0}, 700);
 });
 
 $('#mapLoc').click(function(){
-    $('#mapModal, #LocationBox').show();
+    $('#mapModal, #LocationBox').show(500);
 });
 
 $('.centersRow').click(function(){
@@ -453,8 +466,7 @@ $('.centersRow').click(function(){
     makeShelterPage(srcArr[(srcArr.length-1)], spTag)
 
     $('.firstAidOrDead, .keys, .centers').hide();
-    $('.shelter').show();
-    $('.panel').show();
+    $('.shelter, .panel').show();
     $( ".panel" ).animate({right: 0}, 700);
     
 });
@@ -504,11 +516,16 @@ function autoCompFunc(text){
     liveDead('img/wildlife/any/'+CName[0]+'.png', 'Is animal alive?');   
 }
 $('#warnFooter').click(function(){ $('.warning').hide(); });
-$('#XIdonKnow').click(function(){ $('.warning').hide(); });
+$('#XIdonKnow').click(function(){ 
+        $('#blackBg').css({
+            height: ($(window).height() )
+        });
+    $('.warning').hide();
+});
 
 $(document).keydown(function (e) {
   if (e.keyCode == 13) {
-    $('.warning').hide();
+      $('.warning').hide();
   }
 });
 
@@ -527,14 +544,14 @@ $('#mylist img').bind('click', function(){
 });
 
 
-$(document).on('click', '.sss', function(e){
+$(document).on('click', '.centerRowInPanel', function(e){
     //console.log($(this).attr('id') ); 
     var id = $(this).attr('id');
     $.each(centersDetails, function( i, val ) {
       if(val.user_id == id ){
           
           var iconUrl = iconIdentifier(val.spec);
-          makeShelterPage(iconUrl,val.org_name);
+          makeShelterPage(iconUrl,val.org_name, val.spec);
       }
 
     });
@@ -556,16 +573,16 @@ $('#bdone').click(function(){
     });
 });
 
-function appendListOfClosestCentersToPanel(user_id, iconURL,orgName, contactNo){
+function appendListOfClosestCentersToPanel(user_id, iconURL,orgName, contactNo, distance){
     
     $(".centersContent").append(
-        "<div class='sss row' id='"+user_id+"'>" +
-            "<div class='col s5 m5 l5'>" +
+        "<div class='centerRowInPanel row' id='"+user_id+"'>" +
+            "<div class='col s4 m4 l4'>" +
                 "<div>" +
                     "<img class='CCIMG' src=' " + iconURL + "'>" +
                 "</div>" +
             "</div>" +
-            "<div class='col s7 m7 l7'>" +
+            "<div class='col s6 m6 l6'>" +
                 "<div class='fontCol' style='font-size:16px; font-weight:bold; padding:5% 12% 0% 0%'>"+
                     "<div>"+
                         "<span >"+orgName +"</span>"+
@@ -576,36 +593,47 @@ function appendListOfClosestCentersToPanel(user_id, iconURL,orgName, contactNo){
                     "</div>" +
                 "</div>"+
             "</div>" +    
-            
+            "<div class='col s2 m2 l2'>"+
+                "<div style='padding-top:40%;'>"+
+                    "<span style='font-weight:bold; color: black'>"+ Math.round(distance*100 )/100 +
+        
+                    " KM</span>"+
+                "</div>"+
+            "</div>"+          
             
         "</div> <hr>");
 }
 
 
 
-function makeShelterPage(src, cntrNme){
+function makeShelterPage(src, cntrNme, openOrClose){
     if($("#Cimage").find('img')){
         $("#Cimage > img").remove();
     }
     $("#Cimage").append("<img style='width:100%;' src='" + src + "'>");
     $('#Cname').text(cntrNme);
+    
+    if(openOrClose == 'rehab_aqua'){
+        $('#currentlyOpenOrClose').text('Currently Open');
+        $('#currentlyOpenOrClose').css({color:'#00b7bd'});
+    } else if(openOrClose == 'rehab_grey'){
+        $('#currentlyOpenOrClose').text('Currently Close'); $('#currentlyOpenOrClose').css({color:'grey'});
+    }
+    
 }
 
 
 $('#IdonKnow').click(function(){
     $('#warnBox').hide();
     $('.warning, #blackBg, #IdonKnowBox').show();
+        $('#blackBg').css({
+            height: ($(document).height() )
+        });
 });
 
 
 
-/*
-"<div class='col s2 m2 l2'>"+
-                "<div >"+
-                    "<img class='CCIMGI'"+ "src='img/keys/informationicon.png'>"+
-                "</div>"+
-            "</div>"+
-            */
+
 
 
 $('#trapezoidMenu').click(function(){
@@ -616,6 +644,32 @@ $('#trapezoidMenu').click(function(){
 $('#closeMenu').click(function(){
     $('#wrapper').animate({left:0, right:0}, 700);
     $('#blackLayer').hide();
+});
+
+$('#myClosestShelters').click(function(){
+
+    liveDead('img/wildlife_icons/Land_Mammals/Possum.png',imgQuestionOrText)
+    $('#WS, .cont, .land, .waterMammals, .birds, .introduced, .reptilesAmphibians, #arrow-down, #arrow-up, #moreLess, #underUtility, .IdntKnowAndClosestShel').hide();
+    
+    $('#liveDead, #whatHapn, .footer').hide();
+    $('#map-canvas, #mapFooter, #mapModal, #LocationBox').show();
+    // Align it to the center 
+    $('#LocationBox').css({
+        top: ( ($(window).height()-$('#LocationBox').height() )/2 ),
+        left: ( ($(window).width()-$('#LocationBox').width() )/2 )
+    });
+    resizeMap();
+    
+    plotMarkers(); 
+    
+    // set the width of the search field dynamically
+    $('.searchInput').animate({
+        width: ($(window).width()*0.50)
+    });
+    $('.titlePane').animate({height: '25px'});
+
+    leftArrowVisibility =3;
+    tmp ='map';
 });
 
 

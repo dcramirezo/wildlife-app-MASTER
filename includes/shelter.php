@@ -27,6 +27,12 @@
                 <!-- 1st row -->
                 <div class="row" id="shelterDes">
                     <div class="col s12 m12 l12">
+                        <div class="row"> 
+                            <span id="currentlyOpenOrClose" class="fontCol" style="font-size:200%; font-weight:bold;">
+                            <!-- Shelter name should be appended here -->
+                            </span>
+                        </div>
+                        <hr>
                         <div  class="fontCol" style="font-size:100%; padding:5% 12% 5% 5%; text-align:left;">
                             This shelter is located in the Otwats region in Victoria
                             <br> They are able to treat most land mammals, birds and other animatls.

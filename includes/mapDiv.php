@@ -12,13 +12,13 @@
             </div>
 
             <div id="mapDGeoQ" >
-                <span>Can we use your current location?</span>
+                <span style="font-weight:bold; font-size:110%; color:#00b7bd;">Can we use your current location?</span>
             </div>
             <div id="mapDGeoQ">
                 <a id="mapYes" class="waves-effect waves-light btn buttons" style="width:40%; font-size:100%;" >Yes</a>
             </div>
             <div id="mapDGeoQ">
-                <span>Or enter your address bellow</span>
+                <span style="font-weight:bold; font-size:110%; color:#00b7bd;">Or enter your address bellow</span>
             </div>
             <div style="text-align:center;">
                 <input type="text" id="Pcode" placeholder="Postcode.." style="text-align:center; color:black;">
@@ -35,18 +35,18 @@
             <div class="row" style="bottom:4%;">
                 <div class="col s12 m12 l12">
                     
-                    <div>
+                    <!--div>
                         <img class=" MFB" id="listicon-alt" src="img/keys/listicon-alt.png">
-                    </div>
+                    </div-->
                     <div>
                         <img class=" MFB" id="mapLoc" src="img/keys/mapicon-alt.png">
                     </div>
                     <div>
                         <img class=" MFB" id="listicon" src="img/keys/listicon.png">
                     </div>
-                    <div>
+                    <!--div>
                         <img class=" MFB" id="mapKey" src="img/keys/keyicon-alt.png">
-                    </div>
+                    </div-->
                     <div>
                         <img class=" MFB" id="mapFA" src="img/keys/firstaidicon.png">
                     </div>

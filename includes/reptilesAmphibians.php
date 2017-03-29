@@ -79,7 +79,7 @@
 
         </div>
 
-        <div class="row toggleDiv">
+        <!--div class="row toggleDiv">
              <br>
             <div class="col s4 m4 l4" id="r4c1">
                 <div class="img_caption_div">
@@ -95,5 +95,5 @@
          
             </div>       
 
-        </div>  
+        </div-->  
     </div>

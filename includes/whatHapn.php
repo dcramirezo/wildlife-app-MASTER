@@ -1,6 +1,5 @@
 <div class="row" id="whatHapn">
-    
-    <br>
+
     <div class="row" id="wrow1">
         <div class="col s6 m6 l6">
             <div class='WHL'> 

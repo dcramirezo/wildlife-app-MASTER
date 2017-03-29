@@ -49,8 +49,9 @@ p { margin: 0; padding: 0; }
 
 #isAlive{    background-color: #00b7bd; }
 .buttons{
-    width: 200px;
-    height: 45px;
+    width: 90%;
+    height: 100%;
+    //height: 45px;
     font-size: 150%;
     padding-top: 6px;
     border-radius: 5px;
@@ -59,6 +60,8 @@ p { margin: 0; padding: 0; }
 #yes{    background-color: #00b7bd; }
 #no{    background-color: #201647; }
 #donKnow{background-color: #cdd0d6; color: black;}
+#yes, #no, #donKnow{height:100px; line-height: 90px;}
+#myClosestShelters{height:42px;}
 #FAid{    background-color: #891111; }
 .keys, .centers, .shelter, #arrow-up, #openingHours, #OpenHArrow, #shelterOpenH, #mapDiv{    display: none; }
 .menuBar{//padding-left: 1%;}
@@ -71,7 +74,7 @@ p { margin: 0; padding: 0; }
 .imgText{background-color:#00b7bd;}
 .imgQuestion, #specieName{ 
     font-size: 140%;
-    //font-weight:bold;
+    font-weight:bold;
     color:white;
     //text-align: center;
 }
@@ -104,7 +107,6 @@ p { margin: 0; padding: 0; }
 }
 
 #btns{ padding-top: 10px;}
-.buttons{ width: 90%;}
 .buttons, Qbtns {
     overflow: hidden;
 }
@@ -132,7 +134,7 @@ p { margin: 0; padding: 0; }
 	position:absolute;
     right:95%;
     top:0%;
-    z-index: 101;
+    z-index: 103;
     overflow:scroll;
 }
 .panelContent{
@@ -150,12 +152,12 @@ p { margin: 0; padding: 0; }
 
 .KHIMG{width: 60%;    padding-top: 15%; }
 .KCIMG{width: 60%;    padding-top: 15%; }
-.CCIMG{width: 40%;    margin: 5% 0% 2% 0%;; }
+.CCIMG{width: 80%;    margin: 5% 0% 2% 0%;; }
 .CCIMGI{width: 100%;    padding-top: 70%; }
 .centersHeader{ background-color: #00b7bd; height:175px;}
 .headersBgCol {background-color:#dbeeed; height:175px;}
 #hr{display: none;}
-.catsIMG{ width:70%;}
+.catsIMG{ width:60%;}
 #mapFooter{
     display: none;
     width: 100%;
@@ -166,7 +168,7 @@ p { margin: 0; padding: 0; }
     margin-bottom: 4%;
 }
 .MFB{ width: 15%; float:right;margin-right:1%}
-#mapKey, #mapMenu, #mapMenu, #mapLoc, #mapFA, #listicon{display:none}
+#mapKey, #mapMenu, #listicon-alt{display:none}
 #mapModal{
     display: none;
     position: absolute;
@@ -186,7 +188,7 @@ p { margin: 0; padding: 0; }
     top: 20%;
     left: 8%;
     opacity: 1;
-    background-color: lightgray;
+    background-color: white;
     border-radius: 5px;
     z-index: 105;
 }
@@ -221,7 +223,7 @@ input::-moz-placeholder {  /* Firefox 19+ */
     top:0%;left:0%;
 }
 .filterBox{
-    position:absolute; width:90%; height: 90%;
+    position:absolute; width:280px; height: 460px;
     top:0%;left:0%; display: none; z-index: 202;
     background-color: white; border-radius: 5px;
 }
@@ -231,13 +233,13 @@ input::-moz-placeholder {  /* Firefox 19+ */
     z-index: 200;background-color: black;}
 #filterBlackBg{display: none;top:0%;left:0%;}
 #filterHead{background-color:#00b7bd; 
-    color:white; font-size: 205%;}
+    color:white; font-size: 160%; }
 #filterFooter{position: absolute; padding: 1rem;
     bottom: 0;left: 0; right: 0;text-align: right;}
 /*.rdoButtons {
       display: block;
    } */
-#warnBox, #IdonKnowBox{ width: 80%;min-height: 60%;
+#warnBox, #IdonKnowBox{width:250px;height: 350px;;
     position: absolute;background-color: white;
     left: 10%;top:20%;z-index: 201;
     border-radius: 5px; 
@@ -280,7 +282,7 @@ color: white !important; }
     background-color: #00b7bd; color: white;font-size: 200%; padding-top: 8px;
 }
 #blackLayer{
-    display: none; background-color: black; opacity: 0.4; z-index: 205; width: 100%; height: 100%; position: absolute;
+    display: none; background-color: black; opacity: 0.4; z-index: 102; width: 100%; height: 100%; position: absolute;
 }
 #Cimage {margin-left: 10%; width:50%;}
 .ShelPW{padding:15px 0px 0px 0px; width:40%;}
@@ -291,12 +293,12 @@ color: white !important; }
     #mapDGeoQ{padding:5% 0% 5% 0%;}
     #LocationBox{height: 38%;width:65%;}
     .MFB{ width: 10%;}
-    .KHIMG{width: 45%; padding-top: 5%;}
-    .KHIMG{width: 60%;}
+    .KHIMG{width: 40%; padding-top: 5%;}
     #Cimage{ width: 50%;}
     .headersBgCol{height:175px;}
     .ShelPW{ width: 30%;}
     .centersHeader{height:175px;}
+    .filterBox{width:330px; height: 550px;}
 }
 
 @media screen and (min-width: 600px) {
@@ -305,14 +307,14 @@ color: white !important; }
     #mapDGeoQ{padding:9% 0% 5% 0%;}
     #LocationBox{height: 46%;width:50%;}
     .MFB{ width: 7%;}
-    .KHIMG{width: 45%; padding-top: 5%;} 
-    .KCIMG{width: 60%}
+    .KHIMG{width: 35%; padding-top: 5%;} 
     .CCIMG{width: 30%;}
     .CCIMGI{width: 70%;padding-top: 35%;}
     #Cimage{ width: 65%;}
     .headersBgCol{height:180px;}
     .ShelPW{ width: 25%;}
     .centersHeader{height:180px;}
+    .filterBox{width:330px; height: 550px;}
 }
 
 @media screen and (min-width: 800px) {
@@ -321,14 +323,15 @@ color: white !important; }
     #mapDGeoQ{padding:7% 0% 5% 0%;}
     #LocationBox{height: 42%;width:42%;}
     .MFB{ width: 6%;}
-    .KHIMG{width: 35%;} 
-    .KCIMG{width: 50%; padding-top: 3%;}
+    .KHIMG{width: 25%;} 
+    .KCIMG{width: 40%; padding-top: 3%;}
     .CCIMG{width: 25%;}
     .CCIMGI{width: 55%;padding-top: 25%;} 
     #Cimage{ width: 75%;}
     .headersBgCol{height:180px;}
     .ShelPW{ width: 20%;}
     .centersHeader{height:180px;}
+    .filterBox{width:340px; height: 560px;}
 }
 
 @media screen and (min-width: 1000px) {
@@ -346,6 +349,7 @@ color: white !important; }
     .headersBgCol{height:185px;}
     .ShelPW{ width: 15%;}
     .centersHeader{height:185px;}
+    .filterBox{width:340px; height: 560px;}
 }
 @media screen and (min-width: 1300px) {
     .Wimages{ width: 25%;}
@@ -361,6 +365,7 @@ color: white !important; }
     .headersBgCol{height:190px;}
     .ShelPW{ width: 13%;}
     .centersHeader{height:190px;}
+    .filterBox{width:340px; height: 560px;}
 }
 
 @media screen and (min-width: 1800px) {
@@ -377,6 +382,7 @@ color: white !important; }
     .headersBgCol{height:190px;}
     .ShelPW{ width: 11%;}
     .centersHeader{height:190px;}
+    .filterBox{width:340px; height: 560px;}
 }
 
 

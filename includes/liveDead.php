@@ -1,6 +1,7 @@
 <div class="row" id="liveDead">
     <?php include('includes/imgTitle.php'); ?>
 
+    <br>
     <div id="btns">
         <div>
              <a class="waves-effect waves-light btn buttons" id="yes">Yes</a>
@@ -14,9 +15,9 @@
             <a class="waves-effect waves-light btn buttons" id="donKnow">I don't know</a>
         </div>
         <br>
-        <div>
+        <!--div>
             <a class="waves-effect waves-light btn buttons"  id="FAid">First Aid Advice</a>
-        </div>        
+        </div-->        
         
     </div>
 

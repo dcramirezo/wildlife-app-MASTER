@@ -77,14 +77,17 @@
             <img class="responsive-img" src="img/arrow-down.png" id="arrow-down" style="position:relative; top:-13px;">
             <img class="responsive-img" src="img/arrow-up.png" id="arrow-up" >
         </div>
+        <div class="IdntKnowAndClosestShel" style="margin-top:-35px;">
+            <span style="font-size:23px; font-weight:bold;"> Or</span>
+        </div>
         
-        <div class="row" id="IdntKnowAndClosestShel">
+        <div class="row IdntKnowAndClosestShel">
             <div class="col s6 m6 l6">
-                <a id="IdonKnow" class="waves-effect waves-light btn buttons" style="font-size:11px; width:100%; line-height:16px;" >My Closest Shelters</a>
+                <a id="myClosestShelters" class="waves-effect waves-light btn buttons" style="font-size:11px; width:100%; line-height:16px;" >My Closest Shelters</a>
                 
             </div>
             <div class="col s6 m6 l6">
-                <a id="myClosestShelters" class="waves-effect waves-light btn buttons" style="font-size:70%; width:100%;" >I Don't Know?</a>
+                <a id="IdonKnow" class="waves-effect waves-light btn buttons" style="font-size:70%; width:100%;" >I Don't Know?</a>
             </div>
             
         </div>

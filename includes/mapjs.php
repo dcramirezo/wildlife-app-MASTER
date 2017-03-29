@@ -150,6 +150,7 @@ function showPosition(position){
     });
 }*/
 
+//It returns Latitude and longitude of the address that passed to it.
 function getCoordinates(address){
     var coordinates;
     var geocoder = new google.maps.Geocoder();
@@ -223,9 +224,9 @@ function iconIdentifier(centerSpec){
   
     
     
-    /* This function plots all available markers as default when user navigates to the Map page*/
+    /* This function plots markers of all Shelters when user navigates to the Map page*/
 function plotMarkers(){
-     // delete current markers
+     
     $.ajax({
         type: 'POST',
         url: 'includes/allMarkers.php',
@@ -258,7 +259,9 @@ function plotMarkers(){
                     mobile: val.mobile,
                     website: val.website,
                     icon: icon,
-                    map: map
+                    map: map,
+                    spec: val.spec,
+                    distance: val.distance
                 });
                 
                 markers.push(marker); // keep all markers here
@@ -266,11 +269,10 @@ function plotMarkers(){
                 google.maps.event.addListener(marker, 'click', function() {
                     //console.log('Organisation Name: '+ this.contactPerson +' Contact Person: '+this.orgName);
                     
-                    makeShelterPage(this.icon.url,this.orgName);
+                    makeShelterPage(this.icon.url,this.orgName, this.spec);
                     
                     $('.firstAidOrDead, .keys, .centers').hide();
-                    $('.shelter').show();
-                    $('.panel').show();
+                    $('.shelter, .panel, #blackLayer').show();
                     $( '.panel' ).animate({right: 0}, 700);
                     setFooterHeight($('.shelterFooter').height());
 
@@ -279,7 +281,7 @@ function plotMarkers(){
                 // append a list of 20 Wildlife Centers to the sliding panel by defualt
                 if(CentersCounter<21){
                     CentersCounter++;
-                     appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile);
+                     appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile,val.distance);
                 };
                 
                 
@@ -340,17 +342,21 @@ function filterMarkers(lat, lng){
                     phone: val.phone,
                     mobile: val.mobile,
                     website: val.website,
-                    map: map
+                    map: map,
+                    spec: val.spec,
+                    distance: val.distance
                 });
                // create centers panel 
-                appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile);
+               
+               //console.log('distance: '+Math.round( val.distance * 100 )/100  );
+                appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile,val.distance);
                 
                 filteredMarkers.push(marker);
                 
                 google.maps.event.addListener(marker, 'click', function() {
                     //console.log('Organisation Name: '+ this.contactPerson +' Contact Person: '+this.orgName);
                     
-                    makeShelterPage(this.icon.url,this.orgName);
+                    makeShelterPage(this.icon.url,this.orgName,this.spec);
                     
                     $('.firstAidOrDead, .keys, .centers').hide();
                     $('.shelter').show();
