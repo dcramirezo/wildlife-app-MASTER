@@ -67,6 +67,7 @@ p { margin: 0; padding: 0; }
 .menuBar{//padding-left: 1%;}
 #trapezoidMenu {float: right;height: 100%;}
 #moreLess{padding-top:1%;font-size: 140%;}
+#menuDiv{display: none;}
 
 .img_caption_div{    text-align: center; }
 
@@ -167,7 +168,7 @@ p { margin: 0; padding: 0; }
     bottom:1%;
     margin-bottom: 4%;
 }
-.MFB{ width: 15%; float:right;margin-right:1%}
+.MFB{ width: 22%; float:right;margin-right:1%}
 #mapKey, #mapMenu, #listicon-alt{display:none}
 #mapModal{
     display: none;
@@ -281,6 +282,7 @@ color: white !important; }
 #menuHead{
     background-color: #00b7bd; color: white;font-size: 200%; padding-top: 8px;
 }
+.collection a.collection-item{color:black;}
 #blackLayer{
     display: none; background-color: black; opacity: 0.4; z-index: 102; width: 100%; height: 100%; position: absolute;
 }
@@ -292,7 +294,7 @@ color: white !important; }
     .theImg{width: 28%;}
     #mapDGeoQ{padding:5% 0% 5% 0%;}
     #LocationBox{height: 38%;width:65%;}
-    .MFB{ width: 10%;}
+    .MFB{ width: 15%;}
     .KHIMG{width: 40%; padding-top: 5%;}
     #Cimage{ width: 50%;}
     .headersBgCol{height:175px;}
@@ -306,7 +308,7 @@ color: white !important; }
     .theImg{width: 25%;}   
     #mapDGeoQ{padding:9% 0% 5% 0%;}
     #LocationBox{height: 46%;width:50%;}
-    .MFB{ width: 7%;}
+    .MFB{ width: 10%;}
     .KHIMG{width: 35%; padding-top: 5%;} 
     .CCIMG{width: 30%;}
     .CCIMGI{width: 70%;padding-top: 35%;}
@@ -322,7 +324,7 @@ color: white !important; }
     .theImg{width: 20%;}
     #mapDGeoQ{padding:7% 0% 5% 0%;}
     #LocationBox{height: 42%;width:42%;}
-    .MFB{ width: 6%;}
+    .MFB{ width: 8%;}
     .KHIMG{width: 25%;} 
     .KCIMG{width: 40%; padding-top: 3%;}
     .CCIMG{width: 25%;}
@@ -340,7 +342,7 @@ color: white !important; }
     #mapDGeoQ{padding:5% 0% 4% 0%;}
     #LocationBox{height: 72%;}
     #LocationBox{height: 40%;width:40%;}
-    .MFB{ width: 5%;}
+    .MFB{ width: 7%;}
     .KHIMG{width: 20%;} 
     .KCIMG{width: 30%; padding-top: 3%;}
     .CCIMG{width: 20%;}
@@ -356,7 +358,7 @@ color: white !important; }
     .theImg{width: 10%;}
     #mapDGeoQ{padding:3% 0% 3% 0%;}
     #LocationBox{height: 35%;width:35%;}
-    .MFB{ width: 3.5%;}
+    .MFB{ width: 5.5%;}
     .KHIMG{width: 15%;} 
     .KCIMG{width: 20%; padding-top: 3%;}
     .CCIMG{width: 18%;}
@@ -373,7 +375,7 @@ color: white !important; }
     .theImg{width: 8%;}
     #mapDGeoQ{padding:2% 0% 2% 0%;}
     #LocationBox{height: 33%;width:33%;}
-    .MFB{ width: 3%;}
+    .MFB{ width: 4%;}
     .KHIMG{width: 10%;} 
     .KCIMG{width: 15%; padding-top: 3%;}
     .CCIMG{width: 15%;}

@@ -11,9 +11,12 @@ var icons = []; // Keeps the wildlife speciallities to set the icons based on th
 var tmp = 'home'; // possible values for this var are: home/isLive/WhatHapn/
 var LandRiverSeaSky = 'commonSpecies';
 var moreLessText = 'more';
-var Wname;
+var Wname; //it's value is like this: land/emu.jpg
+var wildlifeName; // it's value is like this: emu
+var QbtnsValue; //in whatHappn page, the value of the clicked button is saved in this variable to retrieve the proper First Aid adivce based on that
 var imgSource;
 var imgQuestionOrText = 'Is animal alive?';
+
 var firstAidAdvice = "<p><b>Caution!</b> This animal may be dangerous.<br>Stay calm, speak softly and move slowly to avoid distress to the animal.<br>Do not approach the animal or attempt to catch it - chasing it may result in a worse injury and unnecessary stress for the animal. Secure the area and try to prevent pets or other people from approaching the injured animal.<br>Call a licenced wildlife shelter to capture the animal or call DELWP on 136 185 to be put in touch with a Wildlife Officer.<br>In the event of a traffic collision or an animal on the road, the police can also be contacted on 000 for assistance. Check the area to make sure a pouch young has not been thrown out during the collision. test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test  test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test </p>";
 
 var deadTxt ="Unfortunately, at this stage, if the animal is not alive, not much can be done, other that removing the animal from dangerous locations such as the road. <br> Please remain calm, do not call the police. Make sure the scene is safe for others and move on.<br> If you would like to inform DELWP, please call this number and someone will note the location of the animal. <br> <a href='136 186'><u>136 186</u> </a>";
@@ -87,7 +90,7 @@ $('#arrow-down').click(function(){
     $('.toggleDiv, #arrow-up').show(1200);
     $('#arrow-down').hide(); 
     //moreLessText = 'less';
-    $('#moreLess').text('Less');
+    $('#moreLess').text('Less Animals');
     $('body, html').animate({ scrollTop: 1000 }, 1500);
     
 });
@@ -96,12 +99,12 @@ $('#arrow-up').click(function(){
     $('#arrow-up').hide();
     $('#arrow-down').show();
     //moreLessText = 'more';
-    $('#moreLess').text('More');
+    $('#moreLess').text('More Animals');
 });
 $('#moreLess').click(function(){
-    if($('#moreLess').text() === 'More'){
+    if($('#moreLess').text() === 'More Animals'){
        $('#arrow-down').click(); 
-    }else if($('#moreLess').text() === 'Less'){
+    }else if($('#moreLess').text() === 'Less Animals'){
         $('#arrow-up').click();
     }
 });
@@ -133,17 +136,17 @@ function liveDead(src, txt){
         srcArr[(srcArr.length-4)] +'/'+
         srcArr[(srcArr.length-3)] +'/'+
         srcArr[(srcArr.length-2)] +'/'+ srcArr[(srcArr.length-1)];
-    //$("#insIMG").append("<img class='theImg' src='" + source + "'>");
-    
     
     Wn = (srcArr[(srcArr.length-1)].slice(0, -4)).replace(/\%20/g, ' ');
     
+    wildlifeName = Wn; //put the wildlife Name in the global variable
+    
     $(".imgQuestion, #specieName").empty();
-    //console.log(srcArr[(srcArr.length-1)].slice(0, -4));
+    //console.log('wildlife name: '+wildlifeName);
     
     //$(".imgQuestion").append( Wn+ '<br> '+ txt);
     $(".imgQuestion").append(txt);
-    $("#specieName").append( Wn);
+    $("#specieName").append(Wn);
     
     $('#leftArrow').show();
 }
@@ -173,9 +176,10 @@ $('#leftArrow').click(function(){
             $('.introduced').show();            $('.commonSpecies,.waterMammals,.birds,.land, .reptilesAmphibians,').hide();
         }
         
-        $('#moreLess').text('more');
+        $('#moreLess').text('More Animals');
         $('.theImg').remove();
         $(".imgQuestion").empty();
+        $('#srch').val('');
         
        // liveDead(imgSource,imgQuestionOrText);
         
@@ -220,8 +224,6 @@ $('#no').click(function(){
     var src = $('.theImg').attr('src');
     var src = imgSource;
     Wname = getWildlifeName(src);
-    
-    //imgSource = "<img src='img/wildlife/" + Wname + "' class='theImg' >";
     
     $("#panelIMG >img").remove();
     //$("#panelIMG").html(imgSource);
@@ -333,15 +335,15 @@ $('#DesOrOpen').click(function(){
 
 $('.Qbtns').click(function(){
     $('#liveDead, #whatHapn, .footer').hide();
-    $('#map-canvas, #mapFooter, #mapModal, #LocationBox').show();
+    $('#map-canvas, #mapFooter, #mapModal, #LocationBox, #listicon, #mapLoc, #mapFA').show();
     // Align it to the center 
     $('#LocationBox').css({
         top: ( ($(window).height()-$('#LocationBox').height() )/2 ),
         left: ( ($(window).width()-$('#LocationBox').width() )/2 )
     });
-    //$('#map-canvas').css({
-        //height:($(window).height()*0.9)
-    //});
+    QbtnsValue = $(this).attr('value');    
+    //giveProperAdvice();
+    
     resizeMap();
     
     plotMarkers(); 
@@ -420,6 +422,7 @@ $('#mapHome').click(function(){
     
     leftArrowVisibility =0;
     tmp ='home';
+    $('#srch').val('');
     
 });
  $('#mapModalClose').click(function(){
@@ -639,10 +642,11 @@ $('#IdonKnow').click(function(){
 $('#trapezoidMenu').click(function(){
     $('#wrapper').animate({left:- ($(window).width()*.80 ), right:( $(window).width()*.80 )}, 700); 
     $('#blackLayer').show();
+    $('#menuDiv').css({display: 'block'});
 });
 
 $('#closeMenu').click(function(){
-    $('#wrapper').animate({left:0, right:0}, 700);
+    $('#wrapper').animate({left:0, right:0}, 700, function(){$('#menuDiv').css({display: 'none'});});
     $('#blackLayer').hide();
 });
 
@@ -652,7 +656,7 @@ $('#myClosestShelters').click(function(){
     $('#WS, .cont, .land, .waterMammals, .birds, .introduced, .reptilesAmphibians, #arrow-down, #arrow-up, #moreLess, #underUtility, .IdntKnowAndClosestShel').hide();
     
     $('#liveDead, #whatHapn, .footer').hide();
-    $('#map-canvas, #mapFooter, #mapModal, #LocationBox').show();
+    $('#map-canvas, #mapFooter, #mapModal, #LocationBox, #mapFA, #mapLoc, #listicon').show();
     // Align it to the center 
     $('#LocationBox').css({
         top: ( ($(window).height()-$('#LocationBox').height() )/2 ),
@@ -672,7 +676,15 @@ $('#myClosestShelters').click(function(){
     tmp ='map';
 });
 
-
+function giveProperAdvice(){
+    
+    // proper advice should be retrievd from here
+    // then should be injected to this variable to be visible in first aid panel
+    
+    //read data from csv and show them here
+    getFaAdvices();
+    //firstAidAdvice = '';
+}
 
 
 

@@ -11,8 +11,8 @@
             <!--?php include('includes/menuBar.php');?>
         </div-->
         <div class="WS row" id="underUtility">
-            <!--br>
-            <b--><span id="WhatSpe">What is the animal?</span></b>
+            <!--br-->
+            <b><span id="WhatSpe">What is the animal?</span></b>
             
             <div class="row">
                 <div class="col s6 m6 l6">
@@ -72,12 +72,17 @@
         <!--?php include('includes/mapDiv.php'); ?-->
 
 
+        <!-- down &#709;  &#708; up-->
         <div class="downF" >
-            <p><b><span id="moreLess">More</span></b></p>
-            <img class="responsive-img" src="img/arrow-down.png" id="arrow-down" style="position:relative; top:-13px;">
-            <img class="responsive-img" src="img/arrow-up.png" id="arrow-up" >
+            
+            <!--a id="" class="waves-effect waves-light btn buttons" style=" font-size:100%; width:190px;" >More Animals <img class="responsive-img" src="img/arrow-down-white.png" id="arrow-down" style="position:relative; top:-13px;"></a-->
+            
+            
+            <p><b><span id="moreLess">More Animals</span></b></p>
+            <img class="responsive-img" src="img/arrow-down.png" id="arrow-down" style="position:relative;">
+            <img class="responsive-img" src="img/arrow-up.png" id="arrow-up">
         </div>
-        <div class="IdntKnowAndClosestShel" style="margin-top:-35px;">
+        <div class="IdntKnowAndClosestShel" style="margin-top:0px;">
             <span style="font-size:23px; font-weight:bold;"> Or</span>
         </div>
         
@@ -106,16 +111,60 @@
   
     </div>
     <div id="menuContent">
-        <div class="collection">     
-            <a id="mapHome" class="collection-item"><h6>Home</h6></a>
-            <a id="mapAbout" class="collection-item"><h6>About</h6></a>
+        <!--div class="collection">     
+            <a id="mapHome" class="collection-item"><h6><b>Home</b></h6></a>
+            <a id="mapAbout" class="collection-item"><h6><b>About</b></h6></a>
             <a id="mapFAQ" class="collection-item">
-            <h6>F.A.Q</h6></a>
-            <a id="mapHelp" class="collection-item"><h6>Help</h6></a>
-            <a id="Wgroups" class="collection-item"><h6>Wildlife Groups</h6></a>
-            <a id="mapRegister" class="collection-item"><h6>Register</h6></a>
-            <a href="https://www2.delwp.vic.gov.au/" id="mapDELWP" class="collection-item" style="padding-left:20%;"><h6>Department of Environment, Water, Land & Planning</h6></a>
-        </div> 
+            <h6><b>F.A.Q</b></h6></a>
+            <a id="Wgroups" class="collection-item"><h6><b>Partners</b></h6></a>
+            <a id="mapHelp" class="collection-item"><h6><b>Help</b></h6></a>
+            <!--a id="mapRegister" class="collection-item"><h6><b>Register</b></h6></a-->
+            <!--a href="https://www2.delwp.vic.gov.au/" id="mapDELWP" class="collection-item" style="padding-left:20%;"><h6><b>Department of Environment, Water, Land & Planning</b></h6></a>
+        </div--> 
+        
+        
+      <ul class="collapsible" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header" id="mapHome">Home</div>
+        </li>
+        <li>
+          <div class="collapsible-header">About</div>
+          <div class="collapsible-body" style="    background-color: #F4F6F6;"><div style="margin-left:25%; text-align:left;"><span>The Department of Environment, Water, Land and Planning in association with Code for Australia are proud to launch the Incident and Emergency Wildlife.<br>
+          This Map was built to serve the community in locating wildlife rehabilitaion centers in Victoria, in attempt to reduce the amount of calls regarding injured wildlife going to either the police or an incorrect service.<br>
+          Also involved were Zoos Victoria to help with the first aid advice given throughout the prototype, multiple Wildlife Goups from around Victoria and Australia, Parks Victoria and a range of user centerd testing and workshops to build what you see before you.
+              </span></div>
+              
+              </div>
+        </li>
+        <li>
+          <div class="collapsible-header">F.A.Q</div>
+          <div class="collapsible-body" style="background-color: #F4F6F6;"><div style="margin-left:25%; text-align:left;"> 
+              <span>
+                  <b>Where can I find specific species?</b><br>
+                  Due to the prototype having to be built in a short time frame, we were only able to gather enough information on around 60 specie groups that the department identified as the  most reported animals in wildlife incidences.<br>
+                  <b>What if I have been bitten?</b>
+                  If you have been bitten or in any way injured it is best to seek professional medical assistance. If the animal is dangerous, make sure you remove yourself from the situation and always have your health as a priority.<br>
+                  <b>How can I register to become a Wildlife Rehabilitator?</b>
+                  If you have been bitten or in any way injured it is best to seek professional medical assistance. If the animal is dangerous, make sure you remove yourself from the situation and always have your health as a priority.
+              </span></div></div>
+        </li>
+        <li>
+          <div class="collapsible-header">Partners</div>
+          <div class="collapsible-body" style="background-color:#F4F6F6; margin-left:25%; text-align:left;"><span>DELWP (Department of Environment, Land, Water and Planning) <br> Zoos Victoria <br> Parks Victoria.</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header">Help</div>
+          <div class="collapsible-body" style=" margin-left:25%; text-align:left; background-color: #F4F6F6;"><span>Details.</span></div>
+        </li>
+        <li>
+          <a href="https://www2.delwp.vic.gov.au/"><div class="collapsible-header"><span style="padding-left:20%; color:black;">Department of Environment, Water, Land & Planning</span></div></a>
+        </li>  
+          
+      </ul>        
+        
+        
+        
+        
         
     </div>
 </div>

@@ -39,16 +39,16 @@
                         <img class=" MFB" id="listicon-alt" src="img/keys/listicon-alt.png">
                     </div-->
                     <div>
-                        <img class=" MFB" id="mapLoc" src="img/keys/mapicon-alt.png">
+                        <img class=" MFB" id="mapLoc" src="img/keys/location.png">
                     </div>
                     <div>
-                        <img class=" MFB" id="listicon" src="img/keys/listicon.png">
+                        <img class=" MFB" id="listicon" src="img/keys/list.png">
                     </div>
                     <!--div>
                         <img class=" MFB" id="mapKey" src="img/keys/keyicon-alt.png">
                     </div-->
                     <div>
-                        <img class=" MFB" id="mapFA" src="img/keys/firstaidicon.png">
+                        <img class=" MFB" id="mapFA" src="img/keys/firstaid.png">
                     </div>
                     
                 </div>

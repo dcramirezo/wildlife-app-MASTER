@@ -105,6 +105,23 @@
                 </div>           
             </div>       
 
-        </div>    
+        </div>
+        <div class="row toggleDiv">
+             <br>
+            <div class="col s4 m4 l4" id="r5c1">
+                <div class="img_caption_div">
+                    <img class="Wimages responsive-img" id="kangaroo" src="img/wildlife/land/Flying Fox.png" onclick="liveDead(this.src,imgQuestionOrText)">
+                    <br>
+                    <p>Flying Fox</p>
+                </div> 
+            </div>
+            <div class="col s4 m4 l4" id="r5c2">
+                        
+            </div>
+            <div class="col s4 m4 l4" id="r5c3">
+                        
+            </div>       
+
+        </div>
         <!--End of hidden div -->
     </div>

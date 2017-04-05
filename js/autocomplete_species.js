@@ -64,7 +64,13 @@ var speciesList = [
 
 $( "#srch" ).autocomplete({
     
-    source: speciesList
+    source: speciesList,
+    select: function(event , ui){
+        //console.log( ui.item.label);
+        liveDead('http://somthing/somthingelse/img/wildlife_icons/Birds/' +ui.item.label+'.png', 'Is animal alive?')
+    
+        
+    }
 });
 
 
@@ -74,7 +80,7 @@ $( "#srch" ).keyup(function(e){
     /*
     if(srchVal!=null && srchVal!=undefined && srchVal!=''){
         $( "#species" ).html('');
-       /* $.getJSON("https://vbaspecies.herokuapp.com/species/search?q=" + srchVal, function(data){
+       $.getJSON("https://vbaspecies.herokuapp.com/species/search?q=" + srchVal, function(data){
             $.each(data, function(index, val) {
                 if(val.COMMON_NAME!=null && val.COMMON_NAME !=undefined && val.COMMON_NAME !='' && val.PRIMARY_DISCIPLINE!='Flora'){
 
