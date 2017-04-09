@@ -47,7 +47,7 @@
                     <p>Seal</p>
                 </div>           
             </div>
-        </div
+        </div>
 
 
         <!-- hidden by default -->

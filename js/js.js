@@ -47,6 +47,7 @@ $(window).resize(function(){
         width: panelPos,
         right: -panelPos
     });  
+  
 });
 
 $('#filterMammLand').click(function(){
@@ -154,7 +155,7 @@ function liveDead(src, txt){
 $('#leftArrow').click(function(){
     if(leftArrowVisibility ==1){ 
         
-        $('.cont, #arrow-down , #moreLess, #WhatSpe, #srch, #underUtility, .IdntKnowAndClosestShel').show();
+        $('.cont, #arrow-down , #moreLess, #WhatSpe, #underUtility, .IdntKnowAndClosestShel').show();
         $('#liveDead, .toggleDiv, #leftArrow').hide();
         
         if( LandRiverSeaSky== 'commonSpecies' ){        
@@ -293,6 +294,7 @@ $( "#FAid, #mapFA" ).click(function(){
 $(document).keyup(function(e) {
      if (e.keyCode == 27) { 
          $( ".panel" ).animate({right: (-panelPos)}, 700, function(){ $( ".panel" ).hide();});
+         $('#srch, #srchClose').hide();
          $('#blackLayer').hide(500);
     }
 });
@@ -392,7 +394,7 @@ $('#mapCenters').click(function(){
 });
 
 $('#mapHome').click(function(){
-    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey, #listicon, #mapModal, #mapLoc, #mapFA, #mapFooter, #liveDead, #whatHapn').hide();
+    $('.firstAidOrDead, #leftArrow, .shelter, .keys, #map-canvas, .centers, .toggleDiv, #mapMenu, #mapMenuModal, #mapKey, #listicon, #mapModal, #mapLoc, #mapFA, #mapFooter, #liveDead, #whatHapn, #arrow-up').hide();
     $('.theImg').remove(); $(".imgQuestion").empty();
     $('.cont, #arrow-down, #underUtility, #moreLess, .IdntKnowAndClosestShel').show(); 
     $('#closeMenu').click(); // triger this button
@@ -432,6 +434,10 @@ $('#mapYes').click(function(){
     centersDetails = []; //empty this array
     $('#mapModal, #LocationBox').hide(500);
     $('.firstAidOrDead, .keys, .shelter').hide();
+    //show the centers in the panel by default
+    $('.panel, #blackLayer, .centers').show();
+    $( '.panel' ).animate({right: 0}, 700);
+    setFooterHeight($('.shelterFooter').height());
    
     // To use navigator.geolocation.... SSL certificate is need for Https protocol
     //navigator.geolocation.getCurrentPosition(showPosition);
@@ -497,6 +503,30 @@ function checkRadioBtn(){
     }
 }
 */
+
+$( '#srch' ).focus(function() {
+    $(this).data('placeholder', $(this).prop('placeholder')).removeAttr('placeholder')
+    //$('.cont').css({position:'fixed'});
+    //$('.cont, .IdntKnowAndClosestShel, .downF').css({display:'none'});
+    
+});
+$( '#srch' ).blur(function() {
+    $(this).prop('placeholder', $(this).data('placeholder'));
+    //$('.cont, .IdntKnowAndClosestShel, .downF').css({display:'block'});   
+});
+$('#srchBtn').click(function(){
+    $('#blackLayer').show(500, function(){
+       $('#srch, #srchClose').show();
+       $('#srch').css({
+            left:(($(window).width()-$('#srch').width() )/2)
+       }); 
+       $('#srchClose').css({
+            left:(($(window).width()-$(window).width()/2 )/2)
+       });    
+    });
+    
+});
+
 $('#locBoxSrch').click(function(){
     $('#LocationBox').show();
 });
@@ -554,7 +584,7 @@ $(document).on('click', '.centerRowInPanel', function(e){
       if(val.user_id == id ){
           
           var iconUrl = iconIdentifier(val.spec);
-          makeShelterPage(iconUrl,val.org_name, val.spec);
+          makeShelterPage(iconUrl,val.org_name, val.suburb);
       }
 
     });
@@ -576,7 +606,7 @@ $('#bdone').click(function(){
     });
 });
 
-function appendListOfClosestCentersToPanel(user_id, iconURL,orgName, contactNo, distance){
+function appendListOfClosestCentersToPanel(user_id, iconURL,orgName, contactNo, suburb){
     
     $(".centersContent").append(
         "<div class='centerRowInPanel row' id='"+user_id+"'>" +
@@ -598,30 +628,34 @@ function appendListOfClosestCentersToPanel(user_id, iconURL,orgName, contactNo, 
             "</div>" +    
             "<div class='col s2 m2 l2'>"+
                 "<div style='padding-top:40%;'>"+
-                    "<span style='font-weight:bold; color: black'>"+ Math.round(distance*100 )/100 +
+                    "<span style='font-weight:bold; color: black'>"+ suburb +
         
-                    " KM</span>"+
+                    "</span>"+
                 "</div>"+
             "</div>"+          
             
         "</div> <hr>");
 }
+/* + Math.round(distance*100 )/100 + */
 
 
-
-function makeShelterPage(src, cntrNme, openOrClose){
+function makeShelterPage(src, cntrNme, suburb){
     if($("#Cimage").find('img')){
         $("#Cimage > img").remove();
     }
     $("#Cimage").append("<img style='width:100%;' src='" + src + "'>");
     $('#Cname').text(cntrNme);
     
+    $("#suburb").empty();
+    $("#suburb").append(suburb);
+    
+    /*
     if(openOrClose == 'rehab_aqua'){
         $('#currentlyOpenOrClose').text('Currently Open');
         $('#currentlyOpenOrClose').css({color:'#00b7bd'});
     } else if(openOrClose == 'rehab_grey'){
         $('#currentlyOpenOrClose').text('Currently Close'); $('#currentlyOpenOrClose').css({color:'grey'});
-    }
+    }*/
     
 }
 
@@ -633,11 +667,6 @@ $('#IdonKnow').click(function(){
             height: ($(document).height() )
         });
 });
-
-
-
-
-
 
 $('#trapezoidMenu').click(function(){
     $('#wrapper').animate({left:- ($(window).width()*.80 ), right:( $(window).width()*.80 )}, 700); 
@@ -685,7 +714,9 @@ function giveProperAdvice(){
     getFaAdvices();
     //firstAidAdvice = '';
 }
-
+$('#srchClose').click(function(){
+    $('#srch, #srchClose,#blackLayer').hide();  
+});
 
 
 

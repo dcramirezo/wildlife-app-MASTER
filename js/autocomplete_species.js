@@ -68,7 +68,8 @@ $( "#srch" ).autocomplete({
     select: function(event , ui){
         //console.log( ui.item.label);
         liveDead('http://somthing/somthingelse/img/wildlife_icons/Birds/' +ui.item.label+'.png', 'Is animal alive?')
-    
+        $('#srch, #srchClose').hide();
+        $('#blackLayer').hide(500);
         
     }
 });

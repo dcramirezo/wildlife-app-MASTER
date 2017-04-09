@@ -46,7 +46,6 @@ $(document).ready(function(){
         height: ($(window).height()*0.9),  
     });  
     
-    
     //console.log('win height: '+ $(window).width()  );
 
     

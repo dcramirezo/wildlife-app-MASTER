@@ -2,8 +2,8 @@
             
             <div class="valign-wrapper centersHeader">
                 
-                <div class="CHText" style="//padding:15% 0% 15% 0%;">
-                    <span class="" style="font-size:22px; font-weight:bold; color:white;">Wildlife incidents and emergencies</span>
+                <div class="CHText" style="padding:15% 0% 15% 0%;">
+                    <span class="" style="font-size:22px; font-weight:bold; color:white;">Wildlife Shelters and Organisations in your area</span>
                     
                         <div style="position:absolute; right: 4%; top:1.5%;">
                             <span class="close" style="font-size:22px;">X</span>

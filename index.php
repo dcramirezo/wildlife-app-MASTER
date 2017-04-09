@@ -1,7 +1,11 @@
 <?php include('includes/header.php'); ?>
 
 <div id="wrapper" class ="container-fluid" >
-    <div id="blackLayer"></div>
+    <div id="blackLayer"></div> <!--this is a black half-transparent layer which apprears behind the popups -->
+    <input type="text" id="srch" placeholder="SEARCH SPECIES" style="text-align:center; font-size:100%; margin-bottom:5px; border_bottom:0px; padding:0px; background-color: #2bbbad; border-radius:5px; color:#FFF; box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);">
+    <div class="AutoUL" id="species" ></div>
+    <a id="srchClose" class="waves-effect waves-light btn buttons" style=" font-size:80%; width:50%" >Close</a>
+    
     <div class="headCont">
         <div class="row">  
             <!-- Utility Bar -->    
@@ -12,22 +16,25 @@
         </div-->
         <div class="WS row" id="underUtility">
             <!--br-->
+            <div>
+                <span style="font-size: 100%;font-weight:bold;color:#00b7bd">
+                    This tool is used to find wildlife
+                    <br>rehabilitaters in your area.
+                </span>
+            </div>
             <b><span id="WhatSpe">What is the animal?</span></b>
             
             <div class="row">
                 <div class="col s6 m6 l6">
-                    <input type="text" id="srch" placeholder="SEARCH SPECIES" style="text-align:center; font-size:70%; margin-bottom:5px; border_bottom:0px; padding:0px; background-color: #2bbbad; border-radius:5px; color:#FFF; box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);">
+                    <a id="srchBtn" class="waves-effect waves-light btn buttons" style=" font-size:75%; width:100%" ><i class="material-icons right">search</i>Search</a>
                     
-                    
-                    
-                    <div class="AutoUL" id="species" ></div>
                 </div>
                 <div class="col s6 m6 l6">
-                    <a id="filter" class="waves-effect waves-light btn buttons" style=" font-size:100%; width:100%" >Filter</a>
+                    <a id="filter" class="waves-effect waves-light btn buttons" style=" font-size:75%; width:100%" >Filter</a>
                 </div>
             </div>
         
-            <div><span> Or select a common species bellow</span></div>
+            <div style="padding-top:5px;"><span> Or select a common species bellow</span></div>
         </div>
         <div class="cont">
 

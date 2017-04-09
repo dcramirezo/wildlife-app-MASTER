@@ -28,8 +28,8 @@
                 <div class="row" id="shelterDes">
                     <div class="col s12 m12 l12">
                         <div class="row"> 
-                            <span id="currentlyOpenOrClose" class="fontCol" style="font-size:200%; font-weight:bold;">
-                            <!-- Shelter name should be appended here -->
+                            <span id="suburb" class="fontCol" style="font-size:200%; font-weight:bold;">
+                            <!-- Shelter's suburb name should be appended here -->
                             </span>
                         </div>
                         <hr>

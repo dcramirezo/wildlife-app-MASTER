@@ -11,13 +11,14 @@
                 <span id="mapModalClose" style="font-size:22px;">X</span>
             </div>
 
-            <div id="mapDGeoQ" >
+            <div class="mapDGeoQ" >
+                <br>
                 <span style="font-weight:bold; font-size:110%; color:#00b7bd;">Can we use your current location?</span>
             </div>
-            <div id="mapDGeoQ">
+            <div class="mapDGeoQ">
                 <a id="mapYes" class="waves-effect waves-light btn buttons" style="width:40%; font-size:100%;" >Yes</a>
             </div>
-            <div id="mapDGeoQ">
+            <div class="mapDGeoQ">
                 <span style="font-weight:bold; font-size:110%; color:#00b7bd;">Or enter your address bellow</span>
             </div>
             <div style="text-align:center;">

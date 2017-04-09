@@ -17,19 +17,13 @@ var ifShowPosWorks = 0; // If showPosition func works, this var will be set to 1
 
 
 // Defining Centers' icons ***************
-var vet_grey = 'img/keys/vet-icon-grey.png';
-var vet_org  = 'img/keys/vet-icon-orange.png';
-var vet_pink = 'img/keys/vet-icon-pink.png';
-var vet_aqua = 'img/keys/vet-icon-aqua.png';
-var vet_red  = 'img/keys/vet-icon-red.png';
-var vet_blue = 'img/keys/vet-icon-blue.png';
+var org_group       = 'img/keys/wildlife-organisations.png';
+var rehab_center_1  = 'img/keys/pin-1.png';
+var rehab_center_2  = 'img/keys/pin-2.png';
+var rehab_center_3  = 'img/keys/pin-3.png';
+var rehab_center_4  = 'img/keys/pin-4.png';
+var rehab_center_5  = 'img/keys/pin-5+.png';
 
-var rehab_grey = 'img/keys/wildliferehab-grey.png';
-var rehab_org  = 'img/keys/wildliferehab-orange.png';
-var rehab_pink = 'img/keys/wildliferehab-pink.png';
-var rehab_aqua = 'img/keys/wildliferehab-aqua.png';
-var rehab_red  = 'img/keys/wildliferehab-red.png';
-var rehab_blue = 'img/keys/wildliferehab-blue.png';
 // End of defining Centers' icons ********
 
 
@@ -108,7 +102,11 @@ function initMap() {
            //filterMarkers(places[0].geometry.location.lat(), places[0].geometry.location.lng());
            filterMarkers(places.geometry.location.lat(), places.geometry.location.lng());
             
-            $('#mapModal, #LocationBox').hide();
+            $('#mapModal, #LocationBox, .firstAidOrDead, .keys, .shelter').hide();
+            //show the centers in the panel by default
+            $('.panel, #blackLayer, .centers').show();
+            $( '.panel' ).animate({right: 0}, 700);
+            setFooterHeight($('.shelterFooter').height());
         });
 } 
 
@@ -179,44 +177,14 @@ function getCoordinates(address){
 function iconIdentifier(centerSpec){
     var iconURL;
     switch (centerSpec) { 
-        case 'vet_grey': 
-            iconURL = vet_grey;
+        case 'org_group': 
+            iconURL = org_group;
             break;
-        case 'vet_org': 
-            iconURL = vet_org;
-            break;
-        case 'vet_pink': 
-            iconURL = vet_pink;
-            break;		
-        case 'vet_aqua': 
-            iconURL = vet_aqua;
-            break;
-        case 'vet_red': 
-            iconURL = vet_red;
-            break;
-        case 'vet_blue': 
-            iconURL = vet_blue;
-            break;
-        case 'rehab_grey': 
-            iconURL = rehab_grey;
-            break;
-        case 'rehab_org': 
-            iconURL = rehab_org;
-            break;
-        case 'rehab_pink': 
-            iconURL = rehab_pink;
-            break;		
-        case 'rehab_aqua': 
-            iconURL = rehab_aqua;
-            break;
-        case 'rehab_red': 
-            iconURL = rehab_red;
-            break;
-        case 'rehab_blue': 
-            iconURL = rehab_blue;
+        case 'rehab_center': 
+            iconURL = rehab_center_1;
             break;
         default:
-            console.log('The marker s icon, cannot be found!');
+            console.log('The marker`s icon, cannot be found!');
     }
     return iconURL
 }
@@ -241,35 +209,214 @@ function plotMarkers(){
             
             var results = $.parseJSON(data);
             centersDetails = [];
+            
+            var listOfSuburbsArray =[];
+            var suburbCounter =0;
+            
             $.each(results, function(key, val){
                 centersDetails.push(val);
                 
+                
+                listOfSuburbsArray.push(val.suburb);
+
+                //count the number of occurrence for the suburb name and then plot the proper marker based on that
+                $.each(listOfSuburbsArray, function(key,value) {
+                    if(value == val.suburb){
+                        suburbCounter++ ;
+                    }
+                });  
+                
+                if(suburbCounter == 1){
+                    
+                    iconUrl = iconIdentifier(val.spec);
+                    var icon = {url: iconUrl, scaledSize: new google.maps.Size(35, 45)  }  
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                    
+                }else if(suburbCounter == 2){
+                    //remove previous marker
+                    var temp_marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng)
+                    });
+                    temp_marker.setMap(null);
+                    
+                    var icon = {url: 'img/keys/pin-2.png',
+                        scaledSize: new google.maps.Size(35, 45)   }
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                }else if(suburbCounter == 3){
+                    //remove previous marker                    
+                    var temp_marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng)
+                    });
+                    temp_marker.setMap(null);
+                    
+                    var icon = {url: 'img/keys/pin-3.png',
+                        scaledSize: new google.maps.Size(35, 45)   }
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                }else if(suburbCounter == 4){
+                    //remove previous marker
+                    var temp_marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng)
+                    });
+                    temp_marker.setMap(null);
+                    
+                    var icon = {url: 'img/keys/pin-4.png',
+                        scaledSize: new google.maps.Size(35, 45)   }
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                }else if(suburbCounter == 5){
+                    //remove previous marker
+                    var temp_marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng)
+                    });
+                    temp_marker.setMap(null);
+                    
+                    var icon = {url: 'img/keys/pin-5.png',
+                        scaledSize: new google.maps.Size(35, 45)   }
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                }else if(suburbCounter > 5){
+                    //remove previous marker
+                    var temp_marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng)
+                    });
+                    temp_marker.setMap(null);
+                    
+                    var icon = {url: 'img/keys/pin-5+.png',
+                        scaledSize: new google.maps.Size(35, 45)   }
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                }
+                 
+                suburbCounter = 0;                
+                
+                /*
                 iconUrl = iconIdentifier(val.spec);
                 var icon = {
                     url: iconUrl,
                     scaledSize: new google.maps.Size(30, 30), // scaled size
                 }
-
+                
+                //console.log('suburb: '+val.suburb);
+                
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(val.lat, val.lng),
                     orgName: val.org_name,
                     contactPerson: val.contact_person,
                     address: val.address,
+                    postcode:val.postcode,
+                    suburb:val.suburb,
                     phone: val.phone,
                     mobile: val.mobile,
                     website: val.website,
                     icon: icon,
                     map: map,
                     spec: val.spec,
-                    distance: val.distance
+                    distance: val.distance,
+                    id: val.suburb
                 });
+                */
+                
+                
                 
                 markers.push(marker); // keep all markers here
                 
                 google.maps.event.addListener(marker, 'click', function() {
                     //console.log('Organisation Name: '+ this.contactPerson +' Contact Person: '+this.orgName);
                     
-                    makeShelterPage(this.icon.url,this.orgName, this.spec);
+                    makeShelterPage(this.icon.url,this.orgName, this.suburb);
                     
                     $('.firstAidOrDead, .keys, .centers').hide();
                     $('.shelter, .panel, #blackLayer').show();
@@ -281,11 +428,14 @@ function plotMarkers(){
                 // append a list of 20 Wildlife Centers to the sliding panel by defualt
                 if(CentersCounter<21){
                     CentersCounter++;
-                     appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile,val.distance);
+                     appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile,val.suburb);
                 };
                 
                 
             });
+            // here I need to plot markers for each suburb
+            
+            
         },
         error: function(){
             console.log('Wildlife Centers Addresses cannot be found.');
@@ -321,42 +471,216 @@ function filterMarkers(lat, lng){
             // Above 4 lines can be commented!
             var res = $.parseJSON(data);
             centersDetails = [];
-            //$(".centersContent").empty();
             
+            var listOfSuburbsArray =[];
+            var suburbCounter =0;
             $.each(res, function(key, val){
                 centersDetails.push(val);
                 //console.log(val.distance); 
-                            
+
+               
+                listOfSuburbsArray.push(val.suburb);
+
+                //count the number of occurrence for the suburb name and then plot the proper marker based on that
+                $.each(listOfSuburbsArray, function(key,value) {
+                    if(value == val.suburb){
+                        suburbCounter++ ;
+                    }
+                });  
+                
+                if(suburbCounter == 1){
+                    
+                    iconUrl = iconIdentifier(val.spec);
+                    var icon = {url: iconUrl, scaledSize: new google.maps.Size(35, 45)  }  
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                    
+                }else if(suburbCounter == 2){
+                    //remove previous marker
+                    var temp_marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng)
+                    });
+                    temp_marker.setMap(null);
+                    
+                    var icon = {url: 'img/keys/pin-2.png',
+                        scaledSize: new google.maps.Size(35, 45)   }
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                }else if(suburbCounter == 3){
+                    //remove previous marker                    
+                    var temp_marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng)
+                    });
+                    temp_marker.setMap(null);
+                    
+                    var icon = {url: 'img/keys/pin-3.png',
+                        scaledSize: new google.maps.Size(35, 45)   }
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                }else if(suburbCounter == 4){
+                    //remove previous marker
+                    var temp_marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng)
+                    });
+                    temp_marker.setMap(null);
+                    
+                    var icon = {url: 'img/keys/pin-4.png',
+                        scaledSize: new google.maps.Size(35, 45)   }
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                }else if(suburbCounter == 5){
+                    //remove previous marker
+                    var temp_marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng)
+                    });
+                    temp_marker.setMap(null);
+                    
+                    var icon = {url: 'img/keys/pin-5.png',
+                        scaledSize: new google.maps.Size(35, 45)   }
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                }else if(suburbCounter > 5){
+                    //remove previous marker
+                    var temp_marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng)
+                    });
+                    temp_marker.setMap(null);
+                    
+                    var icon = {url: 'img/keys/pin-5+.png',
+                        scaledSize: new google.maps.Size(35, 45)   }
+                    //plot Marker
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
+                        icon: icon,
+                        orgName: val.org_name,
+                        contactPerson: val.contact_person,
+                        address: val.address,
+                        postcode:val.postcode,
+                        suburb:val.suburb,
+                        phone: val.phone,
+                        mobile: val.mobile,
+                        website: val.website,
+                        map: map,
+                        spec: val.spec,
+                        distance: val.distance,
+                        id: val.suburb
+                    });
+                }
+                 
+                suburbCounter = 0;
+                
+                
+                
+                /*
                 iconUrl = iconIdentifier(val.spec);
                 var icon = {
                     url: iconUrl,
-                    scaledSize: new google.maps.Size(30, 30), // scaled size
+                    scaledSize: new google.maps.Size(30, 30)
                 }
 
+                
                 var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(val.lat, val.lng),
+                    position: new google.maps.LatLng(val.suburb_lat, val.suburb_lng),
                     icon: icon,
                     orgName: val.org_name,
                     contactPerson: val.contact_person,
                     address: val.address,
+                    postcode:val.postcode,
+                    suburb:val.suburb,
                     phone: val.phone,
                     mobile: val.mobile,
                     website: val.website,
                     map: map,
                     spec: val.spec,
-                    distance: val.distance
+                    distance: val.distance,
+                    id: val.suburb
                 });
+                
+                */
                // create centers panel 
-               
+
                //console.log('distance: '+Math.round( val.distance * 100 )/100  );
-                appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile,val.distance);
+                appendListOfClosestCentersToPanel(val.user_id, iconUrl,val.org_name, val.mobile,val.suburb);
                 
                 filteredMarkers.push(marker);
                 
                 google.maps.event.addListener(marker, 'click', function() {
-                    //console.log('Organisation Name: '+ this.contactPerson +' Contact Person: '+this.orgName);
-                    
-                    makeShelterPage(this.icon.url,this.orgName,this.spec);
+                    makeShelterPage(this.icon.url,this.orgName,this.suburb);
                     
                     $('.firstAidOrDead, .keys, .centers').hide();
                     $('.shelter').show();
@@ -367,8 +691,6 @@ function filterMarkers(lat, lng){
                 
                 
             });
-            
-
         },
         error: function(){
             console.log('Cannot retrieve wildlife centers around the provided location.');
@@ -397,8 +719,8 @@ function IPaddressLocator(){
     //$.getJSON('http://jsonip.com/?callback=?', function(r){ console.log(r.ip); });
     
     
-    $geoplugin->locate($ip);
-    //$geoplugin->locate('14.201.3.11');
+    //$geoplugin->locate($ip);
+    $geoplugin->locate('14.201.3.11');
     
 ?>
     
