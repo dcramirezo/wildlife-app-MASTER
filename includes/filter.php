@@ -1,12 +1,12 @@
 <div id="filterBlackBg"></div>
 
-<div class="filterBox"> 
+<div class="filterBox modal"> 
     <div style="position:absolute; right: 4%; top:1.5%;">
-        <span id="filterDone" style="font-size:22px;">X</span>
+        <span id="filterDone" style="font-size:22px; color: #fff">X</span>
     </div>
     
     <div id="filterHead" class="valign-wrapper">
-        <span id="filterTitle"> Common Species Filter</span>
+        <span id="filterTitle"> Species Filter</span>
     </div>
     
     
@@ -15,14 +15,14 @@
             <div class="col s6 m6 l6">
                 <div>
                     <img class="catsIMG" id="filterMammLand" src="img/cats/mamm-land.png" >
-                    <p class="filterCatTxt">Land Mammals</p>                
+                    <p class="filterCatTxt">Land mammals</p>                
                 
                 </div>
             </div>
             <div class="col s6 m6 l6">
                 <div>
                     <img class="catsIMG" id="filterWaterLand" src="img/cats/mamm-water.png" >
-                    <p class="filterCatTxt">Water Mammals</p> 
+                    <p class="filterCatTxt">Water mammals</p> 
                 </div>
             </div>     
         </div>
@@ -30,7 +30,7 @@
             <div class="col s6 m6 l6">
                 <div>
                     <img class="catsIMG" id="filterReptilesAmphibians" src="img/cats/amph-reptile.png" >
-                    <p class="filterCatTxt"> Reptiles & Amphibians </p> 
+                    <p class="filterCatTxt"> Reptiles & amphibians </p> 
                 </div>
             </div>
             <div class="col s6 m6 l6">
@@ -44,7 +44,7 @@
             <div class="col s6 m6 l6">
                 <div>
                     <img class="catsIMG" id="filterIntroSpec" src="img/cats/intro-spec.png" >
-                    <p class="filterCatTxt"> Introduced Species</p> 
+                    <p class="filterCatTxt"> Introduced species</p> 
                 </div>
             </div>
             <div class="col s6 m6 l6">
@@ -54,6 +54,7 @@
                 </div>
             </div>     
         </div>
+        
         
         <!--div class="row">
             <div class="col s12 m12 l12">
@@ -88,8 +89,8 @@
         </p>
       </form-->
 
+         
     </div>
-
     <!--div id="filterFooter">
         <hr>
         <span style="font-size:150%;color:#00b7bd; padding:2%;" id="filterDone">Done &#10095</span>

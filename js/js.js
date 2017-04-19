@@ -120,7 +120,7 @@ function liveDead(src, txt){
     
     if(tmp == 'isLive'){
         leftArrowVisibility = 1;
-        imgQuestionOrText = 'Is animal alive?';
+        imgQuestionOrText = 'Is the animal alive?';
     } else if(leftArrowVisibility == 'whatHapn'){
         leftArrowVisibility = 2;
         imgQuestionOrText = 'What has happened?';

@@ -4,7 +4,7 @@
     <div id="blackLayer"></div> <!--this is a black half-transparent layer which apprears behind the popups -->
     <input type="text" id="srch" placeholder="SEARCH SPECIES" style="text-align:center; font-size:100%; margin-bottom:5px; border_bottom:0px; padding:0px; background-color: #2bbbad; border-radius:5px; color:#FFF; box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);">
     <div class="AutoUL" id="species" ></div>
-    <a id="srchClose" class="waves-effect waves-light btn buttons" style=" font-size:80%; width:50%" >Close</a>
+    <a id="srchClose" class="waves-effect waves-light btn buttons" style="font-size:80%; width:50%" >Close</a>
     
     <div class="headCont">
         <div class="row">  
@@ -16,26 +16,28 @@
         </div-->
         <div class="WS row" id="underUtility">
             <!--br-->
-            <div>
-                <span style="font-size: 100%;font-weight:bold;color:#00b7bd">
-                    This tool is used to find wildlife
-                    <br>rehabilitaters in your area.
-                </span>
+            <div class="col s12 m 12 l8 offset-l2">
+                <p style="font-weight:bold;color:#00b7bd">
+                    This tool is used to find wildlife rehabilitaters in your area.
+                </p>
             </div>
-            <b><span id="WhatSpe">What is the animal?</span></b>
+           <div class="col s12 m 12 l8 offset-l2">
+                <p style="padding-top: 0;" id="WhatSpe">What is the animal?</p>
+            </div>
             
-            <div class="row">
                 <div class="col s6 m6 l6">
-                    <a id="srchBtn" class="waves-effect waves-light btn buttons" style=" font-size:75%; width:100%" ><i class="material-icons right">search</i>Search</a>
+                    <a id="srchBtn" class="waves-effect waves-light btn buttons" ><i class="material-icons left">search</i>Search</a>
                     
                 </div>
                 <div class="col s6 m6 l6">
-                    <a id="filter" class="waves-effect waves-light btn buttons" style=" font-size:75%; width:100%" >Filter</a>
+                    <a id="filter" class="waves-effect waves-light btn buttons">Filter</a>
                 </div>
+            
+            <div class="col s12 m12 l12">
+            <p> Or select a species from the list below</p>
             </div>
-        
-            <div style="padding-top:5px;"><span> Or select a common species bellow</span></div>
         </div>
+    <div class="row">
         <div class="cont">
 
             <!--br-->    
@@ -68,6 +70,8 @@
                 
             </div>
         </div> 
+</div>
+        
         <?php include('includes/mapDiv.php'); ?>
         <!-- here the liveDead section is included -->
         <?php include('includes/liveDead.php'); ?>
@@ -80,30 +84,31 @@
 
 
         <!-- down &#709;  &#708; up-->
-        <div class="downF" >
+        <div class="row downF" >
             
             <!--a id="" class="waves-effect waves-light btn buttons" style=" font-size:100%; width:190px;" >More Animals <img class="responsive-img" src="img/arrow-down-white.png" id="arrow-down" style="position:relative; top:-13px;"></a-->
             
             
-            <p><b><span id="moreLess">More Animals</span></b></p>
+            <p><b><span id="moreLess">More animals</span></b></p>
             <img class="responsive-img" src="img/arrow-down.png" id="arrow-down" style="position:relative;">
             <img class="responsive-img" src="img/arrow-up.png" id="arrow-up">
         </div>
-        <div class="IdntKnowAndClosestShel" style="margin-top:0px;">
-            <span style="font-size:23px; font-weight:bold;"> Or</span>
-        </div>
+        <div class="row">
+        <!--div class="IdntKnowAndClosestShel" style="margin-top:0px;"-->
+            <p style="font-size:23px; font-weight:bold;"> or</p>
+        <!--/div-->
         
-        <div class="row IdntKnowAndClosestShel">
+        <!--div class="IdntKnowAndClosestShel"-->
             <div class="col s6 m6 l6">
-                <a id="myClosestShelters" class="waves-effect waves-light btn buttons" style="font-size:11px; width:100%; line-height:16px;" >My Closest Shelters</a>
+                <a id="myClosestShelters" class="waves-effect waves-light btn buttons" >My closest shelters</a>
                 
             </div>
             <div class="col s6 m6 l6">
-                <a id="IdonKnow" class="waves-effect waves-light btn buttons" style="font-size:70%; width:100%;" >I Don't Know?</a>
+                <a id="IdonKnow" class="waves-effect waves-light btn buttons">I don't know!</a>
             </div>
             
+         <!--/div-->
         </div>
-    
     </div> <!-- End of headCont -->
     <!-- footer needs to be down here otherwise jquery stuff will not work as they all include into footer.php -->
 
@@ -158,10 +163,6 @@
         <li>
           <div class="collapsible-header">Partners</div>
           <div class="collapsible-body" style="background-color:#F4F6F6; margin-left:25%; text-align:left;"><span>DELWP (Department of Environment, Land, Water and Planning) <br> Zoos Victoria <br> Parks Victoria.</span></div>
-        </li>
-        <li>
-          <div class="collapsible-header">Help</div>
-          <div class="collapsible-body" style=" margin-left:25%; text-align:left; background-color: #F4F6F6;"><span>Details.</span></div>
         </li>
         <li>
           <a href="https://www2.delwp.vic.gov.au/"><div class="collapsible-header"><span style="padding-left:20%; color:black;">Department of Environment, Water, Land & Planning</span></div></a>
