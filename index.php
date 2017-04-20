@@ -7,7 +7,7 @@
     <a id="srchClose" class="waves-effect waves-light btn buttons" style="font-size:80%; width:50%" >Close</a>
     
     <div class="headCont">
-        <div class="row">  
+        <div class="row" style="margin-bottom: 0;">  
             <!-- Utility Bar -->    
             <?php include('includes/utilityBar.php');?> 
         </div>
@@ -88,17 +88,17 @@
             
             <!--a id="" class="waves-effect waves-light btn buttons" style=" font-size:100%; width:190px;" >More Animals <img class="responsive-img" src="img/arrow-down-white.png" id="arrow-down" style="position:relative; top:-13px;"></a-->
             
-            
+           <div class="col s12 m12 l12"> 
             <p><b><span id="moreLess">More animals</span></b></p>
             <img class="responsive-img" src="img/arrow-down.png" id="arrow-down" style="position:relative;">
             <img class="responsive-img" src="img/arrow-up.png" id="arrow-up">
-        </div>
-        <div class="row">
+            </div>
+        <div class="col s12 m12 l12 IdntKnowAndClosestShel" id="footer_initscreen" style="margin-bottom: 20px">
         <!--div class="IdntKnowAndClosestShel" style="margin-top:0px;"-->
             <p style="font-size:23px; font-weight:bold;"> or</p>
         <!--/div-->
         
-        <!--div class="IdntKnowAndClosestShel"-->
+        <!--div class=""-->
             <div class="col s6 m6 l6">
                 <a id="myClosestShelters" class="waves-effect waves-light btn buttons" >My closest shelters</a>
                 
@@ -108,6 +108,7 @@
             </div>
             
          <!--/div-->
+        </div>
         </div>
     </div> <!-- End of headCont -->
     <!-- footer needs to be down here otherwise jquery stuff will not work as they all include into footer.php -->

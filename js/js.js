@@ -15,7 +15,7 @@ var Wname; //it's value is like this: land/emu.jpg
 var wildlifeName; // it's value is like this: emu
 var QbtnsValue; //in whatHappn page, the value of the clicked button is saved in this variable to retrieve the proper First Aid adivce based on that
 var imgSource;
-var imgQuestionOrText = 'Is animal alive?';
+var imgQuestionOrText = 'Is animal still alive?';
 
 var firstAidAdvice = "<p><b>Caution!</b> This animal may be dangerous.<br>Stay calm, speak softly and move slowly to avoid distress to the animal.<br>Do not approach the animal or attempt to catch it - chasing it may result in a worse injury and unnecessary stress for the animal. Secure the area and try to prevent pets or other people from approaching the injured animal.<br>Call a licenced wildlife shelter to capture the animal or call DELWP on 136 185 to be put in touch with a Wildlife Officer.<br>In the event of a traffic collision or an animal on the road, the police can also be contacted on 000 for assistance. Check the area to make sure a pouch young has not been thrown out during the collision. test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test  test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test testtest test test test test test test test test test test test test test test test test test test test test test test test test test test test test test test </p>";
 
@@ -213,7 +213,7 @@ $('#yes, #donKnow').click(function(){
     $('#btns, .footer, #leftArrow').hide();
     var src = $('.theImg').attr('src');
     $('.theImg').remove(); $(".imgQuestion").empty();
-    liveDead(imgSource, 'What has happend?');
+    liveDead(imgSource, 'What has happened?');
     $('#whatHapn').show(); 
     leftArrowVisibility =2;
     tmp ='whatHapn';
@@ -465,6 +465,18 @@ $('#mapLoc').click(function(){
     $('#mapModal, #LocationBox').show(500);
 });
 
+$('#show-map').click(function(){
+    $('#mapModal, #LocationBox').hide();
+    $('.firstAidOrDead, .keys, .shelter').hide();
+    $('.centers, .panel').hide(500);
+    $('#blackLayer').hide();
+});
+
+$('#location-centers').click(function(){
+    $('#mapModal, #LocationBox').show(500);
+});
+
+
 $('.centersRow').click(function(){
     var imgTag = $(this).find('img').attr('src');
     var spanTag = $(this).find('span').text();
@@ -610,7 +622,7 @@ function appendListOfClosestCentersToPanel(user_id, iconURL,orgName, contactNo, 
     
     $(".centersContent").append(
         "<div class='centerRowInPanel row' id='"+user_id+"'>" +
-            "<div class='col s4 m4 l4'>" +
+            "<div class='col s3 m4 l4'>" +
                 "<div>" +
                     "<img class='CCIMG' src=' " + iconURL + "'>" +
                 "</div>" +
@@ -626,7 +638,7 @@ function appendListOfClosestCentersToPanel(user_id, iconURL,orgName, contactNo, 
                     "</div>" +
                 "</div>"+
             "</div>" +    
-            "<div class='col s2 m2 l2'>"+
+            "<div class='col s3 m2 l2'>"+
                 "<div style='padding-top:40%;'>"+
                     "<span style='font-weight:bold; color: black'>"+ suburb +
         
