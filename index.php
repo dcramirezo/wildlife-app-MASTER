@@ -18,7 +18,7 @@
             <!--br-->
             <div class="col s12 m 12 l8 offset-l2">
                 <p style="font-weight:bold;color:#00b7bd">
-                    This tool is used to find wildlife rehabilitaters in your area.
+                    This tool is used to find wildlife rehabilitation volunteers in your area.
                 </p>
             </div>
            <div class="col s12 m 12 l8 offset-l2">
@@ -167,6 +167,9 @@
         </li>
         <li>
           <a href="https://www2.delwp.vic.gov.au/"><div class="collapsible-header"><span style="padding-left:20%; color:black;">Department of Environment, Water, Land & Planning</span></div></a>
+        </li>  
+        <li>
+          <a href="https://goo.gl/forms/AHe0wewEPZIdjRGC2" target="_blank"><div class="collapsible-header"><span style="padding-left:20%; color:black;">Feedback</span></div></a>
         </li>  
           
       </ul>        

@@ -444,6 +444,8 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"]
         font-size:20px; 
     }
 
+    /*.centers-btns{ width: 70%; }*/
+
 }
 
 /* Tablets Portrait */
@@ -460,5 +462,12 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"]
     #list-title {
         font-size:20px; 
     }
+
+    .buttons_alive {
+        width: 80%;
+        font-size: 105%;
+    }
+
+    .centers-btns{ width: 60%; }
 
  }
