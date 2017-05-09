@@ -10,7 +10,7 @@
 
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         
         <link type="text/css" rel="stylesheet" href="css/styles.css"/>
 

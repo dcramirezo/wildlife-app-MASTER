@@ -4,7 +4,7 @@ body, html{
 }
 
 body {
-    font-family: "VIC", Arial;
+    font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     font-style: normal;
     text-align: center;
@@ -20,7 +20,7 @@ body {
 }
 
 hr{ margin: 0px;}
-p { margin: 0; padding: 0; }
+p { font-size: 100%;  }
 
 .headCont{
   height: 100%;
@@ -32,8 +32,8 @@ p { margin: 0; padding: 0; }
 .downF{margin-top: 1%;}
 .row{
     text-align: center;
-    margin: 0px;
-    padding: 0px;
+    margin-bottom: 0px;
+    //padding: 0px;
 }
 #utilityBar{
     background-color: #201647;
@@ -49,19 +49,13 @@ p { margin: 0; padding: 0; }
 
 #isAlive{    background-color: #00b7bd; }
 .buttons{
-    width: 90%;
-    height: 100%;
-    //height: 45px;
-    font-size: 150%;
-    padding-top: 6px;
-    border-radius: 5px;
-
-}
+    width: 80%;
+    }
 #yes{    background-color: #00b7bd; }
 #no{    background-color: #201647; }
 #donKnow{background-color: #cdd0d6; color: black;}
 #yes, #no, #donKnow{height:100px; line-height: 90px;}
-#myClosestShelters{height:42px;}
+
 #FAid{    background-color: #891111; }
 .keys, .centers, .shelter, #arrow-up, #openingHours, #OpenHArrow, #shelterOpenH, #mapDiv{    display: none; }
 .menuBar{//padding-left: 1%;}
@@ -85,23 +79,31 @@ p { margin: 0; padding: 0; }
     background-color:#00b7bd;
     width: 100%;
     height: 100px;
-    font-size: 115%;
-    font-weight: bold;
+    
+    font-weight: 500;
     border-radius: 5px;
     color: white;
-    line-height: 22px;
-    padding-top: 30px;
+    line-height: 100px;
+   
 }
 #Qbtn1,#Qbtn2, #Qbtn3, #Qbtn4, #Qbtn5, #Qbtn6{
     margin-bottom: 14px; 
 }
-#Qbtn2{padding-left: 16px; font-size: 18px}
-#Qbtn3{padding-left: 25px; padding-top: 18px; }
-#Qbtn4{padding-left: 18px; padding-top: 15px; }
-#Qbtn5{padding-top: 15px; line-height: 15px;font-size: 15px;}
-#Qbtn6{padding-left: 28px;}
-#Qbtn7{padding-left: 20px;}
-#Qbtn8{padding:5%; }
+#Qbtn1{line-height: 70px;
+    padding: 15px 0;}
+#Qbtn2{ 
+    
+    padding: 30px 5px;
+    line-height: 20px;}
+#Qbtn3, #Qbtn4{     padding: 30px 5px;
+    line-height: 20px; }
+#Qbtn5{    padding-top: 10px;
+    /* line-height: 15px; */
+    /* font-size: 15px; */
+    line-height: 20px;}
+#Qbtn6{    padding: 0;}
+#Qbtn7{    padding: 0;}
+
 @font-face {
     font-family: VIC;
     src: url(fonts/VIC font/WEBFONT/Light/VIC-Light.woff);
@@ -169,6 +171,7 @@ p { margin: 0; padding: 0; }
     margin-bottom: 4%;
 }
 .MFB{ width: 22%; float:right;margin-right:1%}
+.centers-btns{ width: 90%; }
 #mapKey, #mapMenu, #listicon-alt{display:none}
 #mapModal{
     display: none;
@@ -234,7 +237,7 @@ input::-moz-placeholder {  /* Firefox 19+ */
     z-index: 200;background-color: black;}
 #filterBlackBg{display: none;top:0%;left:0%;}
 #filterHead{background-color:#00b7bd; 
-    color:white; font-size: 160%; }
+    color:white; font-size: 160%; margin-bottom: 5%; font-weight: 600;}
 #filterFooter{position: absolute; padding: 1rem;
     bottom: 0;left: 0; right: 0;text-align: right;}
 /*.rdoButtons {
@@ -250,8 +253,11 @@ input::-moz-placeholder {  /* Firefox 19+ */
     bottom: 0; left: 0; right: 0; text-align:right;}
 
 .warnHead{background-color:#00b7bd; 
-    color:white; font-size: 230%;}
-.warnContent{color:#00b7bd; font-size: 115%;padding:5%;
+    color:white;     font-size: 210%;
+    font-weight: 600;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px; }
+.warnContent{color:#000; font-size: 115%;padding:5%;
 text-align: justify; }
 /* Warning box settings end */
 
@@ -291,6 +297,11 @@ color: white !important; }
 #Cimage {margin-left: 10%; width:50%;}
 .ShelPW{padding:15px 0px 0px 0px; width:40%;}
 
+
+#list-title {
+        font-size:22px; font-weight:bold; color:white;
+    }
+
 @media screen and (min-width: 400px) {
     .Wimages{ width: 65%;}
     .theImg{width: 28%;}
@@ -319,6 +330,8 @@ color: white !important; }
     .ShelPW{ width: 25%;}
     .centersHeader{height:180px;}
     .filterBox{width:330px; height: 550px;}
+
+
 }
 
 @media screen and (min-width: 800px) {
@@ -413,5 +426,48 @@ img[src="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"]
 }
 */
 
+/* Mobile Phones */
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
 
+  #myClosestShelters{ line-height:16px; }
+  .buttons{
+        width: 100%;
+        font-size: 75%;
+    }
 
+    .buttons_alive {
+        width: 80%;
+        font-size: 105%;
+    }
+
+    #list-title {
+        font-size:20px; 
+    }
+
+    /*.centers-btns{ width: 70%; }*/
+
+}
+
+/* Tablets Portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) 
+ {
+    .buttons{
+        width: 90%;
+        font-size: 75%;
+    }
+
+    #list-title {
+        font-size:20px; 
+    }
+
+    .buttons_alive {
+        width: 80%;
+        font-size: 105%;
+    }
+
+    .centers-btns{ width: 60%; }
+
+ }

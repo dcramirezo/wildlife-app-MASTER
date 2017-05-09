@@ -3,10 +3,10 @@
             <div class="valign-wrapper centersHeader">
                 
                 <div class="CHText" style="padding:15% 0% 15% 0%;">
-                    <span class="" style="font-size:22px; font-weight:bold; color:white;">Wildlife Shelters and Organisations in your area</span>
+                    <span id="list-title">Wildlife Shelters and Organisations in your area</span>
                     
                         <div style="position:absolute; right: 4%; top:1.5%;">
-                            <span class="close" style="font-size:22px;">X</span>
+                            <span class="close" style="font-size:22px; color: #fff;">X</span>
                         </div>
                     
                     
@@ -44,24 +44,24 @@
                 <hr-->        
             
             </div>
-            <div class="centersFooter">
+            <div class="centersFooter" >
+            <div class="row">
                 <!--hr-->
-                <div class="row">
-                    <!--div class="col s4 m4 l4">
-                        <div >
-                            <img class="CCIMG" src="img/keys/mapicon.png">
+                
+                    <div class="col s12 m12 l12">
+                    
+                        <div class="col s4 m4 l4">
+                            <img class="centers-btns" id="location-centers" src="img/keys/location.png">
+                        </div>
+                    
+                        <div class="col s4 m4 l4">
+                            <img class="centers-btns" id="show-map" src="img/keys/map-icon.png">
+                        </div>
+                    
+                        <div class="col s4 m4 l4">
+                            <img class="centers-btns" id="mapFA" src="img/keys/firstaid.png">
                         </div>
                     </div>
-                    <div class="col s4 m4 l4">
-                        <div >
-                            <img class="CCIMG" src="img/keys/listicon-alt.png">
-                        </div>
-                    </div>
-                    <div class="col s4 m4 l4">
-                            <div >
-                            <img class="CCIMG" src="img/keys/keyicon.png">
-                        </div>
-                    </div-->
                     
                 </div>
             </div>
