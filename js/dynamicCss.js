@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    $('#utilityBar').css({
+    /*$('#utilityBar').css({
         height:($(window).height()*.10)
-    });
+    });*/
     //$('.menuBar').css({
         //height:($(window).height()*.07)
     //}); 

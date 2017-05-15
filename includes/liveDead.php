@@ -4,15 +4,15 @@
     <br>
     <div id="btns">
         <div>
-             <a class="waves-effect waves-light btn buttons" id="yes">Yes</a>
+             <a class="waves-effect waves-light btn buttons_alive" id="yes">Yes</a>
         </div>
         <br>
         <div>
-            <a class="waves-effect waves-light btn buttons" id="no">No</a>
+            <a class="waves-effect waves-light btn buttons_alive" id="no">No</a>
         </div> 
         <br>
         <div>
-            <a class="waves-effect waves-light btn buttons" id="donKnow">I don't know</a>
+            <a class="waves-effect waves-light btn buttons_alive" id="donKnow">I don't know</a>
         </div>
         <br>
         <!--div>
